@@ -406,3 +406,70 @@ The January-March 1995 period marked the beginning of WWF's "New Generation" era
 - https://www.sacnilk.com/news/WWE_In_Your_House_1_Results_Winners_Matches_Venue_Attendance
 - https://www.prowrestlinghistory.com/supercards/usa/wwf/iyh.html
 - https://wrestlepedia.fandom.com/wiki/WWF_In_Your_House_1
+
+---
+
+## Simulator-Use Notes
+
+### Title Lineage Implications
+- **WWF Title (Diesel):** Diesel's reign began at Survivor Series 1994 and continued through this period. The Royal Rumble match with Bret Hart ended in a double countout - this should be modeled as a non-decisive finish that doesn't significantly impact title prestige but does create booking difficulties (two babyfaces).
+- **IC Title (Jeff Jarrett):** Jarrett won his first IC Title at Royal Rumble. This should be tracked as a career milestone. The title changed hands multiple times on house shows in April-May 1995 (documented in WWF Apr-Jun 1995 report) - this rapid turnover devalued the championship.
+- **Tag Titles (1-2-3 Kid & Bob Holly):** Won the vacant titles at Royal Rumble. This was a surprise victory. They would lose to Owen Hart & Yokozuna at WrestleMania XI.
+- **Women's Title (Bull Nakano):** Held throughout this period. Minimal women's division activity during New Generation era.
+
+### Roster Availability Changes
+- **Shawn Michaels:** Won Royal Rumble, earned WrestleMania XI title shot. Available throughout period, building momentum.
+- **Bret Hart:** Feuding with Owen Hart and challenging Diesel. Available and consistently working.
+- **Diesel:** WWF Champion, being pushed as top babyface. Available for all major events.
+- **Lawrence Taylor:** One-time celebrity appearance at WrestleMania XI. Not available for ongoing storylines.
+- **Jeff Jarrett:** Won IC Title at Royal Rumble. Available with The Roadie as manager.
+
+### Injuries or Absences
+- No major injuries documented during this period.
+- Razor Ramon's leg was injured at Royal Rumble (worked into the IC Title match with Jarrett) but he continued wrestling.
+
+### Morale/Backstage Politics Effects
+- **Diesel push:** Being pushed as "next Hogan" but fans were divided. This created backstage frustration as the push wasn't connecting with audiences. [Observer-reported: wrestlers were skeptical of Diesel as top babyface]
+- **New Generation era:** Widely seen as creative nadir. Morale was mixed as WWF struggled to replace Hogan and other departed stars.
+- **Bret Hart vs. Diesel booking:** Difficulty booking two babyfaces against each other. This created booking problems that weren't resolved cleanly.
+- **Lawrence Taylor main event:** Controversial decision to have non-wrestler main event WrestleMania. Some wrestlers felt this made professional wrestling look bad. [Observer-reported: mixed reactions from locker room]
+
+### Faction/Team Changes
+- **Million Dollar Corporation (Ted DiBiase):** Top heel faction. Members: Bam Bam Bigelow, Tatanka, King Kong Bundy, Kama, IRS, Nikolai Volkoff. Active throughout period.
+- **Allied Powers (Lex Luger & British Bulldog):** New tag team formed in early 1995. Both were top babyfaces.
+- **The Hart Foundation:** Bret vs. Owen feud was central programming. Davey Boy Smith aligned with Bret.
+- **1-2-3 Kid & Bob Holly:** New tag team champions. Surprise victory at Royal Rumble.
+- **Smoking Gunns:** Popular babyface tag team. Would lose titles at WrestleMania XI.
+
+### Ratings/Buyrate/Attendance Impact
+- **Royal Rumble 1995:** 1.0 buyrate, 10,000 attendance (Tampa). Solid but not exceptional.
+- **Raw ratings:** Consistently around 3.0-3.5 during this period. The New Generation era struggled to match the ratings of the late 1980s/early 1990s.
+- **WrestleMania XI build:** Lawrence Taylor involvement brought mainstream attention but was controversial.
+
+### Network/Sponsor/Censorship Pressure
+- **USA Network:** WWF's primary TV partner. No major censorship issues during this period.
+- **Lawrence Taylor involvement:** Brought mainstream media attention. NFL players appeared on WWF programming. This was a cross-promotional opportunity.
+- **Pamela Anderson:** Celebrity involvement at WrestleMania XI. Brought mainstream attention but was also controversial.
+
+### Uncertain Facts That Should Not Be Hard-Coded
+- **Diesel's push as "next Hogan":** The exact level of fan rejection is uncertain. Some fans accepted it, others rejected it strongly. This should be modeled as a variable rather than a fixed outcome.
+- **Lawrence Taylor's main event:** Whether this was ultimately beneficial or harmful to WWF is debated. Some argue it brought needed mainstream attention, others argue it damaged credibility.
+- **Royal Rumble rope-hanging spot:** Whether this was a brilliant spot or ridiculous is subjective. Different fans had different reactions.
+- **New Generation era success:** Whether this era was a complete failure or had some merits is debated. It's widely seen as a low point but had some successful elements (Shawn Michaels, Bret Hart).
+
+### Events That Should Be Optional/Branching Rather Than Forced Canon
+- **Lawrence Taylor main eventing WrestleMania:** This could be modeled as a branching event. In one branch, LT main events and brings mainstream attention. In another branch, a wrestler main events and maintains wrestling credibility.
+- **Diesel as top babyface:** This could be a branching decision. In one branch, Diesel succeeds as top babyface. In another branch, the push fails and another star (Shawn Michaels, Bret Hart) is pushed instead.
+- **Royal Rumble winner:** Shawn Michaels winning from #1 was controversial. This could be branched - in one branch Michaels wins, in another a different winner (Bret Hart, Lex Luger, etc.).
+- **Bret Hart vs. Diesel match at Royal Rumble:** The double countout finish was unsatisfying. This could be branched - in one branch they have a clean finish, in another they have the interference-heavy finish that actually happened.
+
+### Taping vs. Air Date Notes
+- **Royal Rumble 1995:** Aired live on PPV (January 22, 1995). No taping/air date discrepancies.
+- **Raw episodes:** Aired live on USA Network. No taping/air date discrepancies.
+- **Superstars/Wrestling Challenge:** These were taped shows but the specific taping vs. air dates for the February-March 1995 episodes are not well-documented in available sources. [FLAG: needs verification]
+
+### Rumor/Observer-Reported Items
+- **Diesel push skepticism:** [Observer-reported] Multiple sources indicate wrestlers were skeptical of Diesel as top babyface. This was reportedly discussed in the locker room.
+- **Lawrence Taylor main event reactions:** [Observer-reported] Mixed reactions from wrestlers. Some felt it was a good cross-promotional opportunity, others felt it damaged wrestling credibility.
+- **New Generation era morale:** [Observer-reported] Mixed morale in the locker room. Some wrestlers were excited about the new direction, others missed the Hogan era.
+- **Bret Hart vs. Diesel booking problems:** [Observer-reported] Creative team struggled with how to book two babyfaces against each other. This was discussed in creative meetings.
