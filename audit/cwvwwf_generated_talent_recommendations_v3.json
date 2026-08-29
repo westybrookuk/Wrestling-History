@@ -1,0 +1,58 @@
+[
+ {
+  "id": "GEN-gender",
+  "current_value": "Indies: 13% female (company === null && rng() < 0.13, js/engine.js L299); AJW local jobbers are 100% female (company === AJW forces gender f); training-class rookies 22% female",
+  "recommended_value": "Acceptable as-is. Optionally raise the unsigned-indie female share to ~15-18% only if you want the joshi free-agent scene (AJW, JWP, GAEA, LLPW, FMW womens division were all actively trading talent) to feel proportionate.",
+  "explanation": "Measured fresh game: 9/60 = 15% female indies (13% expected, RNG noise). The real 1995 worldwide worker pool was overwhelmingly male; women were concentrated in the joshi promotions, which the game represents via AJW (seeded real roster) plus this generated share. 13% of a WORLDWIDE pool is a reasonable order of magnitude; note only 1 of 16 companies is a joshi promotion, so a 13% female open market is, if anything, generous.",
+  "confidence": "High",
+  "source": "Code: WCW-vs-WWF @ 1754a04 (branch arena/01a042dd-wcw-vs-wwf / PR #4, \"Refine free-agent pool and testing tools\", pushed 2026-08-29); Empirical: fresh-game simulation with the real engine (this audit, 2026-08-29); Research: joshi promotion rosters 1995 (AJW/JWP/GAEA research files)"
+ },
+ {
+  "id": "GEN-international",
+  "current_value": "Every generated worker rolls an international flavour independently of the target fed: 9% japan, 9% mexico, 9% europe, 9% uk, 64% US-generic (js/engine.js L289-290)",
+  "recommended_value": "Keep the overall ~36% international share for unsigned indies, but bias the roll by the target company's country: NJPW/AJPW/FMW jobbers should draw japan names, CMLL/AAA jobbers mexico names, and US-federation jobbers mostly US names. Currently a NJPW local hand can be generated with a UK name and an AJW jobber with a European one.",
+  "explanation": "The 36% international share of the OPEN MARKET is historically fair for the period (US indies carried real Puerto Rican, Canadian, Mexican and Japanese presence, and the talent trade was global). The flaw is only the flavour-vs-fed independence for the 37 jobbers (and each January's accidental jobber batch - FA-ENG-1).",
+  "confidence": "High",
+  "source": "Code: WCW-vs-WWF @ 1754a04 (branch arena/01a042dd-wcw-vs-wwf / PR #4, \"Refine free-agent pool and testing tools\", pushed 2026-08-29); Empirical: fresh-game simulation with the real engine (this audit, 2026-08-29)"
+ },
+ {
+  "id": "GEN-stat-ranges",
+  "current_value": "Indies: pop 5-21 (gems 8-17), work 28-57 (gems 68-85), mic 18-45 (gems 40-69), ceiling 42-67 (gems 80-91), wage $3-8K, asking $5-12K. Jobbers: same stats + contract 40-119 turns. Rookies: pop 16-27, work 40-64, mic 28-49, age 18-24, ceiling 55-89, asking $12-21K",
+  "recommended_value": "Ranges are sound for a curated filler pool. Optional tuning: (a) gem pop 8-17 means a hidden gem is LESS popular than a lucky non-gem (5-21) - consider gems 14-24 so \"gem\" is strictly better on discovery; (b) non-gem asking $5-12K/month is cheap enough that any fed could stockpile them if FA-ENG-2 is fixed - consider scaling asking with ceiling.",
+  "explanation": "Verified: ceiling is a POPULARITY cap only (pop is clamped to ceiling at js/engine.js L623, L884, L1283+, while work grows independently to a hard cap of 92 at L3192). Therefore the 23.7% of generated workers who start with work > ceiling (measured 161/679) are NOT inconsistent - a great technician with modest star potential is a real archetype. Non-gems (pop 5-21, work 28-57, ceiling 42-67) sit credibly below TV level; gems (work 68-85, ceiling 80-91) are genuinely worth scouting.",
+  "confidence": "High",
+  "source": "Code: WCW-vs-WWF @ 1754a04 (branch arena/01a042dd-wcw-vs-wwf / PR #4, \"Refine free-agent pool and testing tools\", pushed 2026-08-29); Empirical: fresh-game simulation with the real engine (this audit, 2026-08-29)"
+ },
+ {
+  "id": "GEN-hidden-gems",
+  "current_value": "rng() < 0.04 per generated worker (js/engine.js L296)",
+  "recommended_value": "Keep 4%. Measured 2/60 (3.3%) at start; over the full 60+90 indy population that is ~6 gems for the period, plus the training-class rookies' own \"rare 90-ceiling diamond\" (ceiling 55-89, L3388).",
+  "explanation": "Historical calibration: the real \"hidden gems\" of 1995-2001 were mostly real people the game does not seed (Kurt Angle, the Hardys, Edge/Christian, the Dudleys, Jericho's rise, Rey Mysterio) - those belong to the missing-wrestlers list, not to a random gem roll. 4% ambient gems is a reasonable design substitute for the untrackable rest; a much higher rate would create fictional workers outshining real main-eventers.",
+  "confidence": "Medium",
+  "source": "Code: WCW-vs-WWF @ 1754a04 (branch arena/01a042dd-wcw-vs-wwf / PR #4, \"Refine free-agent pool and testing tools\", pushed 2026-08-29); Empirical: fresh-game simulation with the real engine (this audit, 2026-08-29); Research: missing-workers list (this audit)"
+ },
+ {
+  "id": "GEN-age-ranges",
+  "current_value": "Indies 18-41 (18 + rng()*24, js/engine.js L305); rookies 18-24; jobbers 18-41",
+  "recommended_value": "Acceptable. Optionally extend the indy range to 18-45: the real 1995 indie circuit carried a meaningful cohort of 40+ veterans earning shots between territories.",
+  "explanation": "Ages are internally consistent (the engine ages workers and retires them; the training-class cap of 24 and the dojo cutoff at 28, js/engine.js L4686, line up with the rookie design).",
+  "confidence": "Medium",
+  "source": "Code: WCW-vs-WWF @ 1754a04 (branch arena/01a042dd-wcw-vs-wwf / PR #4, \"Refine free-agent pool and testing tools\", pushed 2026-08-29)"
+ },
+ {
+  "id": "GEN-name-duplication",
+  "current_value": "US pool 158 first x 696 last = 109,968 combinations; each international region 30 x 30 = 900; dedup only within a single generation call (see FA-ENG-10)",
+  "recommended_value": "Acceptable for the 150-worker historical window (measured 2 duplicates in ~305 generated by 1999), but adopt the state-level name registry from FA-ENG-10 before the pools grow. Also consider one more international region (e.g. a Caribbean/Puerto Rican pool, given WWC and the US indy scene's Boricua presence).",
+  "explanation": "The small 900-name international pools are the realistic collision risk (36% of every batch draws from 3,600 total intl names); by 2001 each region's pool will have been sampled ~20+ times, so regional repeats become common even with a global registry.",
+  "confidence": "Medium",
+  "source": "Code: WCW-vs-WWF @ 1754a04 (branch arena/01a042dd-wcw-vs-wwf / PR #4, \"Refine free-agent pool and testing tools\", pushed 2026-08-29); Empirical: fresh-game simulation with the real engine (this audit, 2026-08-29)"
+ },
+ {
+  "id": "GEN-entry-rate",
+  "current_value": "15 generated indies per January 1996-2001 (90 total) + 4-6 training-class rookies per year (every year) + 37 jobbers per year (bug, FA-ENG-1)",
+  "recommended_value": "15/year is a defensible ambient supply ONCE FA-ENG-1 is fixed and FA-ENG-2 gives the market an exit. Historical cross-check: the big two promotions alone absorbed well over 15 NEW TV workers per year in this window (nWo additions, luchador imports, joshi imports, ECW exports, WWF newcomers) - but nearly all of those are the jobs of the 23 scripted FA_ARRIVALS and the real-worker corrections in this audit, not of the generated filler. If anything, 15/year of UNSIGNED filler is modest; the problem is not the rate but that nobody can ever sign them.",
+  "explanation": "Measured: the classes fire reliably (1996-2000 verified in-sim) and stack with the training class as described in FA-ENG-6. After 2001 supply tapers to 4-6 rookies/year (FA-ENG-7).",
+  "confidence": "Medium",
+  "source": "Code: WCW-vs-WWF @ 1754a04 (branch arena/01a042dd-wcw-vs-wwf / PR #4, \"Refine free-agent pool and testing tools\", pushed 2026-08-29); Empirical: fresh-game simulation with the real engine (this audit, 2026-08-29); Research: WCW/WWF 1995-2001 signing research files"
+ }
+]
