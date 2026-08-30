@@ -1,0 +1,453 @@
+[
+ {
+  "id": "kurt-angle",
+  "current_value": "Absent from the game data",
+  "recommended_value": "FA arrival ~turn 233 (televised debut November 14, 1999, Survivor Series, def. Shawn Stasiak; signed Oct 1998, dark matches from spring 1999) | suggested stats: {\"age\": 30, \"pop\": 40, \"work\": 88, \"mic\": 70, \"ceiling\": 94, \"align\": \"heel\"}",
+  "explanation": "Olympic gold medallist (1996, 110kg freestyle); WWF Champion by October 2000; four-time WWF/WCW/world champion in-window; the single most conspicuous absence from the game",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Kurt_Angle (signed 1998; televised debut Nov 14, 1999 Survivor Series; WWF Champion Oct 2000); Web: https://prowrestling.fandom.com/wiki/Kurt_Angle (b. Dec 9, 1968)",
+  "tier": 1,
+  "company": "WWF"
+ },
+ {
+  "id": "edge",
+  "current_value": "Absent from the game data",
+  "recommended_value": "FA arrival ~turn 167 (WWF debut June 22, 1998, Raw Is War, entering through the crowd) | suggested stats: {\"age\": 24, \"pop\": 30, \"work\": 78, \"mic\": 60, \"ceiling\": 92, \"align\": \"face\"}",
+  "explanation": "Became a multi-time tag/IC/US champion and, by 2001, a main-eventer (King of the Ring 2001, TLC legacy); brother-storyline anchor of The Brood",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/The_Brood_(professional_wrestling) (Edge debut June 22, 1998)",
+  "tier": 1,
+  "company": "WWF"
+ },
+ {
+  "id": "christian",
+  "current_value": "Absent from the game data",
+  "recommended_value": "FA arrival ~turn 179 (WWF debut September 27, 1998 at In Your House: Breakdown; won the Light Heavyweight title in his first match) | suggested stats: {\"age\": 24, \"pop\": 25, \"work\": 74, \"mic\": 62, \"ceiling\": 88, \"align\": \"heel\"}",
+  "explanation": "Edge's kayfabe brother; multi-time tag/Light Heavyweight champion; eventual main-eventer (slightly post-window peak)",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/The_Brood_(professional_wrestling) (Christian debut Sept 27, 1998)",
+  "tier": 1,
+  "company": "WWF"
+ },
+ {
+  "id": "gangrel",
+  "current_value": "Absent from the game data",
+  "recommended_value": "FA arrival ~turn 174 (WWF debut August 16, 1998, Sunday Night Heat) | suggested stats: {\"age\": 34, \"pop\": 28, \"work\": 62, \"mic\": 55, \"ceiling\": 72, \"align\": \"heel\"}",
+  "explanation": "Leader of The Brood; the vampire gimmick anchored the gothic mid-card of 1998-99 Suggested age approximate - verify David Heath DOB before import.",
+  "confidence": "Medium",
+  "source": "Web: https://en.wikipedia.org/wiki/The_Brood_(professional_wrestling) (Gangrel debut Aug 16, 1998)",
+  "tier": 2,
+  "company": "WWF"
+ },
+ {
+  "id": "jeff-hardy",
+  "current_value": "Absent from the game data",
+  "recommended_value": "Seeded unsigned free agent at start (he was a 17-year-old WWF enhancement jobber from 1994, under fake names); WWF contract arrival ~turn 144 (signed 1998) | suggested stats: {\"age\": 17, \"pop\": 8, \"work\": 65, \"mic\": 30, \"ceiling\": 90, \"align\": \"face\"}",
+  "explanation": "Half of the Hardy Boyz; TLC main-eventer by 2000-01; at game start he was literally the anonymous kid losing to Razor Ramon and being squashed by Waylon Mercy",
+  "confidence": "High",
+  "source": "Web: https://www.wikiwand.com/en/Jeff_Hardy (WWF enhancement talent from 1994; signed 1998; b. Aug 31, 1977)",
+  "tier": 1,
+  "company": "WWF / independent"
+ },
+ {
+  "id": "matt-hardy",
+  "current_value": "Absent from the game data",
+  "recommended_value": "Seeded unsigned free agent at start (WWF enhancement talent from 1994); WWF contract arrival ~turn 144 (signed 1998) | suggested stats: {\"age\": 20, \"pop\": 8, \"work\": 62, \"mic\": 35, \"ceiling\": 84, \"align\": \"face\"}",
+  "explanation": "See Jeff Hardy; also ran the OMEGA indie promotion with Jeff in this window",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Matt_Hardy (enhancement talent from 1994; b. Sept 23, 1974)",
+  "tier": 1,
+  "company": "WWF / independent"
+ },
+ {
+  "id": "buh-buh-ray-dudley",
+  "current_value": "Absent from the game data",
+  "recommended_value": "FA arrival ~turn 48-56 (ECW debut late 1995-early 1996 as the stuttering hillbilly of the Dudley family - exact first date unverified) | suggested stats: {\"age\": 24, \"pop\": 25, \"work\": 62, \"mic\": 60, \"ceiling\": 82, \"align\": \"face\"}",
+  "explanation": "Half of what became the Dudley Boyz, ECW's dominant tag act (7-time ECW tag champions) before the WWF move in 1999; future WWF tag champion Exact ECW first-appearance date needs verification (Low confidence on the turn; the 1996 window is solid).",
+  "confidence": "Medium",
+  "source": "Web: https://en.wikipedia.org/wiki/Dudley_Boyz (Dudley Boyz ECW debut 1996; Mark LoMonaco b. July 14, 1971)",
+  "tier": 1,
+  "company": "ECW"
+ },
+ {
+  "id": "d-von-dudley",
+  "current_value": "Absent from the game data",
+  "recommended_value": "FA arrival ~turn 61 (ECW debut April 13, 1996, Massacre on Queens Boulevard) | suggested stats: {\"age\": 23, \"pop\": 25, \"work\": 58, \"mic\": 62, \"ceiling\": 80, \"align\": \"heel\"}",
+  "explanation": "The preacher of the Dudley family; teamed with Bubba from February 1997 to form the definitive Dudley Boyz",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Dudley_Boyz (D-Von debut Apr 13, 1996)",
+  "tier": 1,
+  "company": "ECW"
+ },
+ {
+  "id": "spike-dudley",
+  "current_value": "Absent from the game data",
+  "recommended_value": "FA arrival ~turn 52+ (Little Spike Dudley debuted in ECW in 1996) | suggested stats: {\"age\": 25, \"pop\": 20, \"work\": 66, \"mic\": 45, \"ceiling\": 70, \"align\": \"face\"}",
+  "explanation": "The tiny half-brother underdog act; later a WWF Hardcore champion",
+  "confidence": "Medium",
+  "source": "Web: https://en.wikipedia.org/wiki/Dudley_Boyz (Spike debuted 1996)",
+  "tier": 2,
+  "company": "ECW"
+ },
+ {
+  "id": "big-dick-dudley",
+  "current_value": "Absent from the game data",
+  "recommended_value": "FA arrival ~turn 24 (the Dudley family act - Dudley Dudley, Little Snot Dudley, Big Dick Dudley - debuted at Hardcore Heaven, July 1, 1995) | suggested stats: {\"age\": 26, \"pop\": 20, \"work\": 50, \"mic\": 25, \"ceiling\": 55, \"align\": \"heel\"}",
+  "explanation": "The enforcer of the original 1995 Dudley family; the game already books Dances with Dudley, so this completes the unit",
+  "confidence": "Medium",
+  "source": "Web: https://tvtropes.org/pmwiki/pmwiki.php/Wrestling/TheDudleyBoys (Dudley gimmick debut July 1, 1995)",
+  "tier": 2,
+  "company": "ECW"
+ },
+ {
+  "id": "mark-henry",
+  "current_value": "Absent from the game data",
+  "recommended_value": "FA arrival ~turn 57 (first TV appearance March 11, 1996, press-slamming Jerry Lawler on Raw; in-ring debut September 21, 1996; full-time TV from December 1997) | suggested stats: {\"age\": 24, \"pop\": 30, \"work\": 55, \"mic\": 50, \"ceiling\": 88, \"align\": \"face\"}",
+  "explanation": "Olympic weightlifter on a famous 10-year contract; Nation of Domination from January 1998; European champion 1999",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Mark_Henry (first TV appearance Mar 11, 1996; in-ring debut Sept 21, 1996)",
+  "tier": 1,
+  "company": "WWF"
+ },
+ {
+  "id": "steve-blackman",
+  "current_value": "Absent from the game data",
+  "recommended_value": "FA arrival ~turn 142 (returned to WWF TV Dec 15, 1997, on Raw by December 15, 1997) | suggested stats: {\"age\": 34, \"pop\": 25, \"work\": 72, \"mic\": 25, \"ceiling\": 74, \"align\": \"face\"}",
+  "explanation": "The shoot-fighting \"Lethal Weapon\" mid-carder of 1997-2000 (Hardcore champion); had a brief WWF jobber stint in the late 1980s before this window",
+  "confidence": "Medium",
+  "source": "Web: https://thehistoryofwwe.com/wwf-results-1998/ (Blackman on Raw Dec 15, 1997)",
+  "tier": 2,
+  "company": "WWF"
+ },
+ {
+  "id": "test",
+  "current_value": "Absent from the game data",
+  "recommended_value": "FA arrival ~turn 188 (WWF debut late 1998 - the Motley Crue bodyguard/Motivator of Stephanie McMahon storyline) | suggested stats: {\"age\": 23, \"pop\": 30, \"work\": 60, \"mic\": 45, \"ceiling\": 78, \"align\": \"heel\"}",
+  "explanation": "Andrew Martin; Corporation member, then the Stephanie McMahon engagement storyline in 1999 Exact debut month within late 1998 needs verification (Low confidence on the specific turn).",
+  "confidence": "Medium",
+  "source": "Web: https://en.wikipedia.org/wiki/Test_(wrestler) (WWF 1998-2002)",
+  "tier": 2,
+  "company": "WWF"
+ },
+ {
+  "id": "taka-michinoku",
+  "current_value": "Absent from the game data",
+  "recommended_value": "FA arrival ~turn 142 (WWF Light Heavyweight tournament, Dec 1997, October-December 1997; champion by December 7, 1997; on Raw December 15, 1997) | suggested stats: {\"age\": 23, \"pop\": 20, \"work\": 78, \"mic\": 30, \"ceiling\": 74, \"align\": \"face\"}",
+  "explanation": "The first WWF Light Heavyweight champion of the modern lineage; Michinoku Pro star before that",
+  "confidence": "Medium",
+  "source": "Web: https://thehistoryofwwe.com/wwf-results-1998/ (TAKA on Raw Dec 15, 1997 as Light Heavyweight Champion)",
+  "tier": 2,
+  "company": "WWF"
+ },
+ {
+  "id": "bradshaw",
+  "current_value": "Absent from the game data",
+  "recommended_value": "FA arrival ~turn 48-55 (WWF debut as the cowboy heel in early 1996) | suggested stats: {\"age\": 29, \"pop\": 25, \"work\": 62, \"mic\": 65, \"ceiling\": 84, \"align\": \"heel\"}",
+  "explanation": "John Layfield: Justin Hawk Bradshaw (1996) -> Blackjack Bradshaw (1997-98) -> Acolyte/APA (1998-2001); in January 1995 he was working independents Exact 1996 debut month needs verification.",
+  "confidence": "Medium",
+  "source": "Web: https://thehistoryofwwe.com/wwf-results-1998/ (Bradshaw on WWF house shows 1998; b. Nov 29, 1966)",
+  "tier": 2,
+  "company": "WWF"
+ },
+ {
+  "id": "rick-rude",
+  "current_value": "Absent from the game data",
+  "recommended_value": "Not on the roster at start (CORRECT - he was forced to retire in 1994 by the back injury suffered against Sting in Japan). Add FA chain: ECW arrival ~turn 96 (Nov 1996) (November 1996, as himself), WCW/nWo arrival ~turn 137 (Nov 10, 1997) (November 1997 - the night he appeared on both Raw and Nitro), exit March 1999, deceased April 20, 1999 | suggested stats: {\"age\": 36, \"pop\": 62, \"work\": 72, \"mic\": 82, \"ceiling\": 76, \"align\": \"heel\"}",
+  "explanation": "One of the best talkers of the era; his post-retirement ECW/WCW runs are famous. The game has no trace of him",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Rick_Rude (retired 1994; final match 1997; d. Apr 20, 1999); Web: https://www.thesportster.com/wcw-rick-rude-sting-back-injury-lawsuit-gun-threat/ (1994 injury details)",
+  "tier": 1,
+  "company": "none at start (retired)"
+ },
+ {
+  "id": "megumi-kudo",
+  "current_value": "Absent from the game data",
+  "recommended_value": "Seeded FMW starter (she was the ace of FMW's women's division throughout 1995-96); optional retirement event ~turn 111 (April 29, 1997 farewell) | suggested stats: {\"age\": 25, \"pop\": 55, \"work\": 84, \"mic\": 30, \"ceiling\": 78, \"align\": \"face\", \"gender\": \"f\"}",
+  "explanation": "FMW's female ace; two-time FMW/WWA Women's champion in this window; her retirement spectacular (with the famous shark-tank cage match) was FMW's biggest women's event. The game models FMW with zero women DOB/age approximate; title status and exact retirement date should be verified before import.",
+  "confidence": "Medium",
+  "source": "Research: FMW quarterly files (Kudo as ace of the FMW joshi division)",
+  "tier": 1,
+  "company": "FMW"
+ },
+ {
+  "id": "francine",
+  "current_value": "Absent from the game data",
+  "recommended_value": "Manager/valet arrival ~turn 24 (Hardcore Heaven, July 1, 1995 - Stevie Richards' ringside fan; managed the Pitbulls to the ECW tag titles on Sept 16, 1995; Shane Douglas' Head Cheerleader from 1996) | suggested stats: {\"age\": 23, \"pop\": 25, \"work\": 30, \"mic\": 55, \"ceiling\": 65, \"align\": \"heel\", \"kind\": \"manager\"}",
+  "explanation": "ECW's defining female manager of 1995-2000",
+  "confidence": "Medium",
+  "source": "Web: https://en.wikipedia.org/wiki/Francine_(wrestler) (ECW from 1994-95; b. Feb 19, 1972)",
+  "tier": 2,
+  "company": "ECW"
+ },
+ {
+  "id": "beulah-mcgillicutty",
+  "current_value": "Absent from the game data",
+  "recommended_value": "Manager/valet arrival ~turn 10-26 (first half of 1995, as Raven's valet in the Dreamer feud; the Beulah-Francine rivalry ran from August 1995) | suggested stats: {\"age\": 24, \"pop\": 25, \"work\": 25, \"mic\": 50, \"ceiling\": 60, \"align\": \"heel\", \"kind\": \"manager\"}",
+  "explanation": "Raven's valet at the center of the Raven/Dreamer program - ECW's hottest storyline of 1995 Exact first-appearance date needs verification (Low confidence on the specific turn).",
+  "confidence": "Medium",
+  "source": "Web: https://en.wikipedia.org/wiki/Francine_(wrestling) (Beulah as Raven's valet in the 1995 angle)",
+  "tier": 2,
+  "company": "ECW"
+ },
+ {
+  "id": "terri-runnels",
+  "current_value": "Absent from the game data",
+  "recommended_value": "Manager/valet arrival ~turn 38-43 (Marlena debuted alongside Goldust in late 1995) | suggested stats: {\"age\": 28, \"pop\": 25, \"work\": 20, \"mic\": 50, \"ceiling\": 65, \"align\": \"heel\", \"kind\": \"manager\"}",
+  "explanation": "Goldust's director/valet - the finishing piece of the game's Goldust chain (see the goldust roster finding)",
+  "confidence": "Medium",
+  "source": "Web: https://en.wikipedia.org/wiki/Terri_Runnels (Marlena with Goldust from 1995)",
+  "tier": 2,
+  "company": "WWF"
+ },
+ {
+  "id": "billy-kidman",
+  "current_value": "Absent from the game data",
+  "recommended_value": "FA arrival ~turn 37 (WCW TV debut October 14, 1995; joined Raven's Flock August 1997; Cruiserweight champion 1998-2000) | suggested stats: {\"age\": 21, \"pop\": 18, \"work\": 74, \"mic\": 30, \"ceiling\": 80, \"align\": \"face\"}",
+  "explanation": "A fixture of the WCW cruiserweight division the game explicitly celebrates",
+  "confidence": "Medium",
+  "source": "Web: https://www.thesmackdownhotel.com/wrestlers/billy-kidman (WCW debut Oct 14, 1995)",
+  "tier": 2,
+  "company": "WCW"
+ },
+ {
+  "id": "gene-okerlund",
+  "current_value": "Absent from the game data",
+  "recommended_value": "Announcer/interviewer STARTER (WCW from 1993; Nitro backstage host from the first episode, Sept 4, 1995 = turn 32) | suggested stats: {\"age\": 51, \"skill\": 80, \"kind\": \"announcer\"}",
+  "explanation": "WCW's signature interviewer; the Nitro announce/host team is incomplete without him",
+  "confidence": "Medium",
+  "source": "Research: WCW quarterly files (Okerlund on Nitro from Sept 1995)",
+  "tier": 2,
+  "company": "WCW"
+ },
+ {
+  "id": "mima-shimoda",
+  "current_value": "Absent from the game data",
+  "recommended_value": "Seeded AJW starter (rising junior star in 1995; half of Las Cachorras Orientales with Etsuko Mita; WWWA tag champion by 1996-97) | suggested stats: {\"age\": 24, \"pop\": 45, \"work\": 82, \"mic\": 30, \"ceiling\": 78, \"align\": \"heel\", \"gender\": \"f\"}",
+  "explanation": "The top AJW villainess of the late 90s; her chain (with Mita) is the most conspicuous joshi omission after Hokuto",
+  "confidence": "Medium",
+  "source": "Research: AJW quarterly files",
+  "tier": 2,
+  "company": "AJW"
+ },
+ {
+  "id": "etsuko-mita",
+  "current_value": "Absent from the game data",
+  "recommended_value": "Seeded AJW starter (with Shimoda; WWWA tag champion era) | suggested stats: {\"age\": 24, \"pop\": 42, \"work\": 78, \"mic\": 28, \"ceiling\": 74, \"align\": \"heel\", \"gender\": \"f\"}",
+  "explanation": "See Mima Shimoda",
+  "confidence": "Medium",
+  "source": "Research: AJW quarterly files",
+  "tier": 2,
+  "company": "AJW"
+ },
+ {
+  "id": "universo-2000",
+  "current_value": "Absent from the game data",
+  "recommended_value": "Seeded CMLL starter (top rudo heavyweight; CMLL World Heavyweight champion multiple times in-window) | suggested stats: {\"age\": 29, \"pop\": 55, \"work\": 62, \"mic\": 25, \"ceiling\": 70, \"align\": \"heel\"}",
+  "explanation": "The top CMLL heavyweight rudo of the era",
+  "confidence": "Medium",
+  "source": "Research: CMLL quarterly files",
+  "tier": 3,
+  "company": "CMLL"
+ },
+ {
+  "id": "brazo-de-plata",
+  "current_value": "Absent from the game data",
+  "recommended_value": "Seeded CMLL starter (beloved comedy técnico; worked WWF Super Astros much later) | suggested stats: {\"age\": 34, \"pop\": 50, \"work\": 55, \"mic\": 35, \"ceiling\": 62, \"align\": \"face\"}",
+  "explanation": "CMLL mainstay with genuine drawing power in Mexico",
+  "confidence": "Medium",
+  "source": "Research: CMLL quarterly files",
+  "tier": 3,
+  "company": "CMLL"
+ },
+ {
+  "id": "lance-storm",
+  "current_value": "Absent from the game data",
+  "recommended_value": "FA arrival mid-1995-96 (ECW debut date needs verification - he was splitting time with WAR in this window) | suggested stats: {\"age\": 26, \"pop\": 15, \"work\": 78, \"mic\": 45, \"ceiling\": 78, \"align\": \"heel\"}",
+  "explanation": "The technical indie darling who became an ECW tag/TV champion (1998-2000) and WCW US champion (2000) Needs manual review: exact ECW debut date unverified.",
+  "confidence": "Low",
+  "source": "Web: https://en.wikipedia.org/wiki/Lance_Storm (ECW 1995-2000)",
+  "tier": 3,
+  "company": "ECW"
+ },
+ {
+  "id": "blue-meanie",
+  "current_value": "Absent from the game data",
+  "recommended_value": "FA arrival ~turn 44+ (ECW from late 1995; the bWo parody with Stevie Richards ran 1995-97) | suggested stats: {\"age\": 24, \"pop\": 20, \"work\": 45, \"mic\": 50, \"ceiling\": 58, \"align\": \"heel\"}",
+  "explanation": "The comedy heart of the bWo angle",
+  "confidence": "Medium",
+  "source": "Research: ECW quarterly files 1996-97",
+  "tier": 3,
+  "company": "ECW"
+ },
+ {
+  "id": "MISSING-dave-sullivan",
+  "current_value": "Absent from the game data",
+  "recommended_value": "Add to WCW: face, the dyslexic \"brother\" of Kevin Sullivan, an active January 1995 WCW mid-carder (age ~30; feud with Kevin Sullivan/Dungeon of Doom)",
+  "explanation": "Dave Sullivan was a regular on WCW TV in January 1995 (the Sullivan brothers angle ran through 1994-95). Suggested starter stats are estimates - tune to taste; the identity/company/alignment facts are verified.",
+  "confidence": "High",
+  "source": "Research: WCW_Jan-Mar_1995_Research.md (Dave Sullivan on cards; Sullivan feud)",
+  "category": "Missing"
+ },
+ {
+  "id": "MISSING-paul-roma",
+  "current_value": "Absent from the game data",
+  "recommended_value": "Add to WCW: heel mid-carder (Pretty Wonderful ran 1993-94; Roma remained under WCW contract into 1995), age ~35",
+  "explanation": "Roma was a WCW roster member in January 1995. (His Pretty Wonderful partner Paul Orndorff is already in the game.)",
+  "confidence": "High",
+  "source": "Research: WCW_Jan-Mar_1995_Research.md",
+  "category": "Missing"
+ },
+ {
+  "id": "MISSING-the-roadie",
+  "current_value": "Absent from the game data",
+  "recommended_value": "Add to WWF: heel, Jeff Jarrett's roadie (debuting with Jarrett's WWF return in early 1995; Double J's \"With My Baby Tonight\" angle ran through mid-1995), age ~26",
+  "explanation": "The Roadie (Jeff Jarrett's sidekick, later Road Dogg) was part of the WWF's early-1995 Jarrett act. He pairs naturally with the corrected Jarrett contract arc.",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Road_Dogg (Roadie debut with Jarrett, 1994-95 WWF run)",
+  "category": "Missing"
+ },
+ {
+  "id": "MISSING-ron-simmons",
+  "current_value": "Absent from the game data",
+  "recommended_value": "Add to ECW: Ron Simmons appeared in ECW in early 1995 (a short run before his WWF return as Faarooq in 1996)",
+  "explanation": "Simmons worked ECW in the first half of 1995 after leaving WCW (1994). An ECW roster entry (or short FA stint) covers the gap.",
+  "confidence": "Medium",
+  "source": "Research: ECW_1995_Research.md (Simmons on 1995 ECW cards)",
+  "category": "Missing"
+ },
+ {
+  "id": "MISSING-tully-blanchard",
+  "current_value": "Absent from the game data",
+  "recommended_value": "Add to ECW: Blanchard worked ECW dates in late 1994/early 1995 (his last major-promotion run)",
+  "explanation": "The WWF/WCW veteran was on ECW cards around the start date; a short-contract entry preserves him for old-timer angles. Deep-cut entry - spot-verify before import.",
+  "confidence": "Medium",
+  "source": "Research: ECW_1995_Research.md",
+  "category": "Missing"
+ },
+ {
+  "id": "MISSING-gangstas-smw",
+  "current_value": "Absent from the game data",
+  "recommended_value": "Add both to SMW (heels): the Gangstas debuted in SMW in early 1995 and instantly feuded with the Rock 'n' Roll Express - the highest-profile SMW act of 1995",
+  "explanation": "The Gangstas were the defining SMW heel act of 1995 (their R&R Express feud was SMW's hottest program of the year). The game has SMW representation (Dirty White Boy, Landel, Bodies, Candido) but not its top heels.",
+  "confidence": "High",
+  "source": "Research: SMW_1995_Research.md (Gangstas debut 1995; feud with R&R Express)",
+  "category": "Missing"
+ },
+ {
+  "id": "MISSING-boo-bradley",
+  "current_value": "Absent from the game data",
+  "recommended_value": "Add to SMW: mid-carder active on January 1995 SMW cards",
+  "explanation": "Boo Bradley was a regular SMW preliminary/mid-card worker in the period (the \"Boo\" dog angle was memorably ended by the Bullet).",
+  "confidence": "Medium",
+  "source": "Web: https://blogofdoom.com/ (SMW TV Jan 1995 - Boo Bradley on cards)",
+  "category": "Missing"
+ },
+ {
+  "id": "MISSING-d-lo-brown",
+  "current_value": "Absent from the game data",
+  "recommended_value": "Add to SMW as enhancement/young talent (D-Lo worked SMW undercard dates in 1995 before his WWF run)",
+  "explanation": "Accurate to the user's \"comprehensive, including enhancement talent\" scope; he was a SMW preliminary worker in 1995. Low stats appropriate.",
+  "confidence": "Medium",
+  "source": "Research: SMW_1995_Research.md",
+  "category": "Missing"
+ },
+ {
+  "id": "MISSING-al-snow",
+  "current_value": "Absent from the game data",
+  "recommended_value": "Add to SMW (he worked SMW in 1995 after his 1994 WWF release, before ECW)",
+  "explanation": "Snow passed through SMW in 1995 (and to ECW later the same year); a short SMW entry bridges him to the late-90s Head era.",
+  "confidence": "Medium",
+  "source": "Web: https://en.wikipedia.org/wiki/Al_Snow (SMW 1995)",
+  "category": "Missing"
+ },
+ {
+  "id": "MISSING-unabomb",
+  "current_value": "Absent from the game data",
+  "recommended_value": "Add to SMW: Unabomb (Glen Jacobs) was tearing up SMW in 1995 (feuding with Tracy Smothers); he is the same person as the later Isaac Yankem FA entry and eventually Kane",
+  "explanation": "The game books Isaac Yankem as a July 1995 WWF arrival, but Glen Jacobs' 1995 arc is SMW Unabomb -> WWF Isaac Yankem -> 1997+ Kane. An SMW Unabomb entry completes one of the game's own storyline chains.",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Kane_(wrestler) (Unabomb in SMW 1995; Yankem 1995-96)",
+  "category": "Missing"
+ },
+ {
+  "id": "MISSING-hiroshi-hase",
+  "current_value": "Absent from the game data",
+  "recommended_value": "Add to NJPW (age 33): one half of the reigning IWGP Tag Team champions with Keiji Muto (Nov 25, 1994 - May 6, 1995; retained vs the Steiners at Battle 7 on Jan 4, 1995)",
+  "explanation": "Required for the corrected njpw-tag title holder (see INITIAL_TITLES). Hase was a top NJPW star of the period.",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Battle_7 (Hase & Mutoh (c) def. Steiners, Jan 4, 1995)",
+  "category": "Missing"
+ },
+ {
+  "id": "MISSING-norio-honaga",
+  "current_value": "Absent from the game data",
+  "recommended_value": "Add to NJPW (age ~35): the reigning IWGP Junior Heavyweight champion (retained vs The Great Sasuke at Battle 7, Jan 4, 1995)",
+  "explanation": "Required for the corrected njpw-junior title holder (see INITIAL_TITLES). The game currently gives Liger a belt he did not hold at the date.",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Battle_7 (Honaga (c) def. Sasuke)",
+  "category": "Missing"
+ },
+ {
+  "id": "MISSING-akira-hokuto",
+  "current_value": "Absent from the game data",
+  "recommended_value": "Add to AJW (age ~28): top joshi star of the era; later the first WCW Women's champion (Nov 1996) and a Women's Cruiserweight champion in WCW",
+  "explanation": "Hokuto is arguably the biggest joshi omission - she was AJW's ace-level attraction in 1995 and crossed over to WCW in 1996, which the game's women's division would benefit from.",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Akira_Hokuto (AJW star; first WCW Women's champion 1996)",
+  "category": "Missing"
+ },
+ {
+  "id": "MISSING-roddy-piper",
+  "current_value": "Absent from the game data",
+  "recommended_value": "Add a WCW FA arrival ~turn 87 (Piper appeared at Halloween Havoc on Oct 27, 1996 to set up the Hogan vs Piper Starrcade '96 main event)",
+  "explanation": "Piper's WCW debut is a marquee 1996 moment; he headlined Starrcade '96 (Dec 29, 1996) against Hogan.",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Halloween_Havoc_(1996) (Piper's WCW appearance, Oct 27, 1996)",
+  "category": "Missing"
+ },
+ {
+  "id": "MISSING-ultimate-warrior",
+  "current_value": "Absent from the game data",
+  "recommended_value": "Add a WCW FA arrival ~turn 174 (Warrior returned Aug 17, 1998 to feud with Hogan; match at Halloween Havoc, Oct 25, 1998)",
+  "explanation": "The Warrior's 1998 WCW return is a well-known late-era event; a short-contract arrival models it.",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Ultimate_Warrior (WCW return Aug-Sept 1998; Halloween Havoc 98)",
+  "category": "Missing"
+ },
+ {
+  "id": "MISSING-curt-hennig",
+  "current_value": "Absent from the game data",
+  "recommended_value": "Add a WCW FA arrival ~turn 129 (Hennig signed with WCW in 1997, debuting with the Four Horsemen and turning on Ric Flair at Fall Brawl, Sept 14, 1997)",
+  "explanation": "Hennig's 1997 WCW run was a top-line nWo-adjacent act (US champion; the Flair turn at Fall Brawl 97).",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Curt_Hennig (WCW debut 1997; Fall Brawl Sept 14, 1997)",
+  "category": "Missing"
+ },
+ {
+  "id": "MISSING-eric-bischoff",
+  "current_value": "Absent from the game data",
+  "recommended_value": "Add as WCW authority/announcer: on-air host by early 1995 and Nitro play-by-play from Sept 4, 1995 (essential for the Nitro era)",
+  "explanation": "Bischoff was WCW's on-screen executive/host (and Nitro's lead announcer from the first episode, Sept 4, 1995, until Nov 1996). He is central to the Monday Night War the game models.",
+  "confidence": "High",
+  "source": "Web: https://officialwwe.fandom.com/wiki/WCW_Monday_Nitro (Bischoff commentator Sept 4, 1995 - Nov 18, 1996)",
+  "category": "Missing"
+ },
+ {
+  "id": "MISSING-steve-mcmichael",
+  "current_value": "Absent from the game data",
+  "recommended_value": "Add as WCW announcer from turn 32 (Nitro debut episode, Sept 4, 1995; on the booth until May 1996) and later wrestler",
+  "explanation": "Mongo was on the Nitro announce team from the first episode (Sept 4, 1995 - May 13, 1996) before becoming a wrestler (Four Horsemen).",
+  "confidence": "High",
+  "source": "Web: https://officialwwe.fandom.com/wiki/WCW_Monday_Nitro (McMichael Sept 4, 1995 - May 13, 1996)",
+  "category": "Missing"
+ },
+ {
+  "id": "MISSING-miss-elizabeth-manager",
+  "current_value": "Absent from the game data",
+  "recommended_value": "Add as WCW manager arrival ~turn 49-52 (returned to TV with Randy Savage in January 1996)",
+  "explanation": "See the roster Missing finding - Elizabeth returned to WCW TV in January 1996.",
+  "confidence": "High",
+  "source": "Research: WCW_Jan-Mar_1996_Research.md",
+  "category": "Missing"
+ }
+]
