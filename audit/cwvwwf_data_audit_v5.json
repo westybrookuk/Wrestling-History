@@ -1,0 +1,267 @@
+{
+  "meta": {
+    "audit": "CWVWWF data audit — v5 delta (generated independents made recruitable)",
+    "revision": "c2fd37f",
+    "branch": "arena/01a042dd-wcw-vs-wwf",
+    "prior_audited_revision": "de2dc15",
+    "new_commits_audited": [
+      {
+        "sha": "2db032f",
+        "subject": "Make generated independents recruitable",
+        "files": "js/engine.js, js/ui.js, js/titles.js, test/sim.js, test/ai-stress.js (+28/−8)"
+      },
+      {
+        "sha": "c2fd37f",
+        "subject": "export endReign from titles.js (1 line)",
+        "files": "js/titles.js"
+      }
+    ],
+    "date": "2026-08-30",
+    "scope": "Delta audit only: the two commits between de2dc15 and c2fd37f. js/data.js and js/timeline.js are byte-identical to 12d9fcd (verified 0-diff), so every historical-roster finding, the 265-finding correction list, the six v3 lists and the generator (GEN-*) verdicts carry over unchanged from audit/cwvwwf_data_audit_v3.* and audit/cwvwwf_data_audit_v4.*.",
+    "method": "Static re-read of the full diffs plus live empirical runs of the real engine at c2fd37f (fresh-game counts, player signings of every deal type, release/delete/save-load round-trips, instrumented AI cold-sign week, a forced bidding war, 4 spectate sims to t300, determinism hash, both test suites)."
+  },
+  "summary": {
+    "carried_findings_rechecked": 10,
+    "fixed": [
+      "FA-ENG-2",
+      "FA-ENG-5"
+    ],
+    "still_open": [
+      "FA-ENG-3",
+      "FA-ENG-6",
+      "FA-ENG-7",
+      "FA-ENG-8",
+      "FA-ENG-9",
+      "FA-ENG-10",
+      "FA-ENG-11",
+      "FA4-1"
+    ],
+    "new_findings": 8,
+    "new_major": [
+      "NEW-1",
+      "NEW-2"
+    ],
+    "checklist": "9/9 items answered: 6 PASS, 1 PASS-with-bias, 1 PASS-with-gap, 1 PARTIAL",
+    "model": "unchanged and re-verified: 408 = 311+60+37 at t0; 150 indies by t300; 37 jobbers; 6 classes; determinism preserved; both test suites pass"
+  },
+  "fix_verification": [
+    {
+      "id": "FA-ENG-2",
+      "title": "Generated independents were unsignable by anyone",
+      "status_at_v4": "OPEN",
+      "status_now": "FIXED (2db032f) — verified empirically",
+      "current_value": "2db032f rewires the whole path: (a) AI allFAs filter now admits fresh indies ((w.isIndy && w.faUntil === null) || window) at js/engine.js L3997-3999; (b) new isIndy cold-sign threshold (hard 32 / otherwise 38) at L4009; (c) the FREE AGENTS row for a fresh generated indie now offers SIGN ${asking}K/mo / PPA ${max(10, asking*0.6)}K/show / REMOVE (js/ui.js L741-743) instead of REMOVE FROM WORLD only.",
+      "evidence": [
+        "Player: signFreeAgent(written) → contract 180 (130+rint0-60), wage = max(asking, wage*1.2) = 12, faUntil/asking cleared, on roster, NOT in FA list; PPA → contract 97 (60+rint0-40), wage = max(10, round(wage*0.6)) = 10; OPEN re-sign of own release → contractType 'open', wage = round(wage*0.9).",
+        "Signed indy main-events a valid card (validateCard passes with the indy in a singles match).",
+        "AI: 11 of the 60 opening indies cold-signed by WCW in week 1 (seed 1234); by t300, 20-23 of 150 signed on normal, 35 on hard.",
+        "test/ai-stress.js now asserts an AI indy signing plus the full player lifecycle (bid → sign → release → delete) and PASSES at c2fd37f."
+      ],
+      "caveats": "The fix works mechanically but is unevenly distributed — see NEW-1 (recruitment bias), NEW-3 (bidding-war reachability) and NEW-5 (button-set inconsistency).",
+      "confidence": "High",
+      "source": "Code diff 2db032f; empirical engine runs at c2fd37f (this audit)",
+      "recommended_value": "Implemented as shipped (AI filter + threshold + SIGN/PPA buttons).",
+      "explanation": "The single biggest gap flagged at v4 is closed: generated indies are now signable by the player in all three deal types, are visible to the AI, and the full lifecycle is asserted by test/ai-stress.js. Distribution caveats are tracked as NEW-1/NEW-3/NEW-5."
+    },
+    {
+      "id": "FA-ENG-5",
+      "title": "deleteGeneratedWrestler left a stale state.bids entry",
+      "status_at_v4": "OPEN",
+      "status_now": "FIXED (2db032f) — verified empirically",
+      "current_value": "deleteGeneratedWrestler (js/engine.js L341-348) now executes `delete state.bids[id]` before splicing the wrestler out.",
+      "evidence": [
+        "placeBid() on a fresh indy, then deleteGeneratedWrestler() → wrestler gone AND state.bids[id] === undefined.",
+        "exportSave → importSave round-trip: the deletion persists (wrestler still gone, bid entry still gone, signed indies and the rest of the pool intact).",
+        "Deleting a SIGNED indy is still correctly refused ('only unsigned generated independents can be removed')."
+      ],
+      "confidence": "High",
+      "source": "Code diff 2db032f; empirical round-trip at c2fd37f (this audit)",
+      "recommended_value": "Implemented as shipped (delete state.bids[id] before splice).",
+      "explanation": "One-line fix exactly as recommended at v4; verified including the save/load round-trip."
+    }
+  ],
+  "carried_open": [
+    {
+      "id": "FA-ENG-3",
+      "status": "Still open",
+      "note": "indyPool=0 ('historical names only') still only zeroes the opening pool (js/engine.js L253); the January class hook (L3361) never reads state.game.indyPool, so 15 generated indies still arrive every January 1996-2001."
+    },
+    {
+      "id": "FA-ENG-6",
+      "status": "Still open",
+      "note": "Double January intake unchanged: 15-indy class (L3361) + 4-6 training-class rookies (L3376) every January 1996-2001. Rookies remain a separate non-isIndy population (ids 'rookie-*', faUntil 10-20w, 80% end up in ECW or retire)."
+    },
+    {
+      "id": "FA-ENG-7",
+      "status": "Still open (design note)",
+      "note": "Classes still capped at 2001 (d.year <= 2001, L3361); 2002-2007 tail is rookies-only. Confirmed again in all four t300 spectate runs (indyClassYear = [1996..2001] exactly)."
+    },
+    {
+      "id": "FA-ENG-8",
+      "status": "Still open",
+      "note": "The '1,400+ unsigned independents' comment (js/ui.js L713-714) and the residual-summary line (L772) are verbatim. Sharpened by this revision: since every isIndy row is now in the table, the hidden residual the line counts is non-generated low-pop FAs — see NEW-6."
+    },
+    {
+      "id": "FA-ENG-9",
+      "status": "Still open",
+      "note": "employmentStatus ('independent' | 'local-jobber') is still write-only — zero read sites in js/ at c2fd37f."
+    },
+    {
+      "id": "FA-ENG-10",
+      "status": "Still open",
+      "note": "Name de-duplication still per-call (usedNames Set inside generateWorldTalent); training-class generator still has none. v3 rate (≈2 duplicate names in ~305 generated workers by 1999) still the expectation."
+    },
+    {
+      "id": "FA-ENG-11",
+      "status": "Still open",
+      "note": "test/sim.js still filters 'Need at least N matches' validateCard errors at 3 sites. Full suite passes at c2fd37f ('ALL SANITY CHECKS PASSED')."
+    },
+    {
+      "id": "FA4-1",
+      "status": "Still open",
+      "note": "generateWorldTalent header comment still describes '2,500-4,000 active workers worldwide … a large unsigned independent pool' (js/engine.js L258-261). Same cleanup class as FA-ENG-8."
+    }
+  ],
+  "new_findings": [
+    {
+      "id": "NEW-1",
+      "severity": "Major (balance / realism)",
+      "category": "AI recruitment bias — structural",
+      "current_value": "AI cold-sign score = pop*0.5 + work*0.25 + mic*0.25 (+30 WWF / +15 WCW for women, +12 interest, +10 WCW young workhorse, +8 WWF mic) against an isIndy threshold of 38 on normal/easy and 32 on hard (js/engine.js L4003-4009). An ordinary male indie tops out at 21*0.5+57*0.25+45*0.25 = 36.0 — below 38 even at maximum stats — while an average female indie scores ≈24.75+15/30 ≈ 40-55. Result: the AI recruits essentially every woman and every hidden gem and no ordinary man.",
+      "recommended_value": "Lower the isIndy cold threshold to ≈24-28 on normal (or score generated workers on ceiling/potential rather than current stats), and make the gender bonus conditional on a women's-division need. Also give easy difficulty its own indy threshold (easy currently inherits 38 while historical FAs get 64).",
+      "explanation": "Measured at c2fd37f: week 1, WCW signed 11 of 60 opening indies = 8 of 14 women + 3 gems + 0 ordinary men (seed 1234). Through t300 on normal across 3 seeds: 23/20/20 of 150 signed, of which ordinary men = 0 in all three runs (women 20/19/16, gems 9/3/6). On hard: 35/150 including 6 ordinary men. WCW dominates (Bischoff aggression 0.85, moneyFloor 0.6) — WWF signed 0-4. Compounding the optics, women get male names (NEW-8), so the rival roster visibly fills with male-named women within weeks of game start.",
+      "confidence": "High",
+      "source": "Code js/engine.js L3993-4016; instrumented cold-sign week + 4 spectate sims at c2fd37f (this audit)"
+    },
+    {
+      "id": "NEW-2",
+      "severity": "Major (rules asymmetry)",
+      "category": "AI bypasses no-compete clauses",
+      "current_value": "The AI cold-sign path calls ctx.sign() directly without canSign() (js/engine.js L4010-4015); only the hot bidding path checks canSign (L4017-4019). canSign() enforces the 16-week no-compete that releaseWrestler() attaches to written releases (L843-851) — for the player only.",
+      "recommended_value": "Add a canSign(state, w, comp).ok check to the cold-sign branch, same as the hot branch.",
+      "explanation": "Reproduced at c2fd37f: WWF player released a written-contract indy (no-compete until t16, FA window t12); WCW instant-signed her at t3 — 13 weeks inside the clause — while the player attempting the same move gets 'No-compete clause: … 16 more weeks.' The engine gap predates this revision, but 2db032f newly exposes every released generated worker to it.",
+      "confidence": "High",
+      "source": "Code js/engine.js L3993-4019 vs L843-851; empirical steal at t3 of a 16-week clause (this audit)"
+    },
+    {
+      "id": "NEW-3",
+      "severity": "Medium (reachability)",
+      "category": "Bidding wars unreachable for fresh generated indies",
+      "current_value": "A fresh indie (pop 5-21, faUntil null) is never 'hot' (pop >= 55), so the UI offers no BID button (js/ui.js L739-743) and the AI never opens bids on non-hot FAs; wars on generated workers are reachable only after sign → push to pop ≥ 55 → release. A PPA release (no no-compete, 6-week window) works end-to-end; a written release does not in practice (12-week window < 16-week no-compete, so at expiry only the releasing company can win — L3404-3410 + L843-851).",
+      "recommended_value": "Acceptable as design (indies are cold-market talent) — document it. If wars on fresh indies are wanted, give first-bid indies an faUntil window (placeBid currently accepts faUntil === null, see NEW-4).",
+      "explanation": "Verified both ways: player bid on a fresh indy sits unresolved forever (no expiry); forced war on a released pushed indy worked perfectly — 'WCW RAISES its offer … $110K/month' (t5-t7), 'WCW SIGNS Todd Parrish for $110K/month after a bidding war', beating the player's $85K. Answer to the checklist item 'can enter bidding wars': yes, but only via the release path.",
+      "confidence": "High",
+      "source": "Code js/ui.js L730-743, js/engine.js L3993-4040, L3404-3410; empirical bidding war at c2fd37f (this audit)"
+    },
+    {
+      "id": "NEW-4",
+      "severity": "Low (API edge case)",
+      "category": "Programmatic bid on a fresh indy never resolves or expires",
+      "current_value": "placeBid() (js/engine.js L775-792) has no faUntil guard — unlike placeBlindBid() which rejects faUntil === null (L5538) — and the weekly expiry loop (L3406) only processes faUntil !== null workers, so a bid placed on a fresh indy sits in state.bids forever. ctx.sign() (AI cold-sign) also does not clear state.bids, so an AI signing can leave a dangling entry.",
+      "recommended_value": "Reject faUntil === null in placeBid() (mirror placeBlindBid), or open a window when first bid upon; add `delete state.bids[id]` to ctx.sign().",
+      "explanation": "No UI path can create this state (fresh indies have no BID button), so impact is API/save-import only. REMOVE now cleans the entry if the worker is deleted (FA-ENG-5 fix).",
+      "confidence": "High",
+      "source": "Code js/engine.js L775-792, L3406, L3483-3494, L5536-5539 (this audit)"
+    },
+    {
+      "id": "NEW-5",
+      "severity": "Medium (UI consistency)",
+      "category": "Inconsistent action buttons for fresh vs released generated indies",
+      "current_value": "Fresh indy row: SIGN / PPA / REMOVE — no OPEN (moonlight deals) (js/ui.js L741-743). Released non-hot indy in the 'YOUR EXPIRING CONTRACTS' section: SIGN / OPEN / PPA — no REMOVE (the isIndy branch requires tag !== 'ex', L740). So a generated worker can only get a moonlight deal after being signed and released once, and can never be removed from the world after a release — even though deleteGeneratedWrestler() would allow it (company === null).",
+      "recommended_value": "Add OPEN to the fresh-indy row (signFreeAgent handles 'open' on any free agent) and/or REMOVE for released indies.",
+      "explanation": "Engine side all three deal types work on indies (verified: OPEN re-sign gave contractType 'open', wage = round(wage*0.9)). This is purely an inconsistency of which buttons are offered where.",
+      "confidence": "High",
+      "source": "Code js/ui.js L739-750; empirical OPEN re-sign at c2fd37f (this audit)"
+    },
+    {
+      "id": "NEW-6",
+      "severity": "Low (cosmetic)",
+      "category": "Residual-market summary line now mislabels its contents",
+      "current_value": "'…and N more unsigned independents on the open market (pop under 20) — signable for a song, waiting for their shot' (js/ui.js L772). Since every isIndy worker is now rendered in the table, N counts only NON-generated low-pop free agents (e.g. released enhancement-tier workers), which the line still calls 'unsigned independents'.",
+      "recommended_value": "Re-word to '…and N more unsigned workers on the open market (pop under 20)'.",
+      "explanation": "Direct consequence of flipping indies into the notable set / adding them to the table; the hidden remainder changed meaning but the label did not.",
+      "confidence": "High",
+      "source": "Code js/ui.js L716-719, L772 (this audit)"
+    },
+    {
+      "id": "NEW-7",
+      "severity": "Info (fixed latent crash + broken intermediate commit)",
+      "category": "endReign ReferenceError — pre-existing, fixed by c2fd37f",
+      "current_value": "The 24/7 hardcore title-change branch (js/engine.js L3433) has called endReign() since long before this branch, but titles.js never exported it — a latent ReferenceError with a 12% chance per week per hardcore title holder. 2db032f added the import; c2fd37f added the export that makes it resolve. Note 2db032f STANDALONE IS BROKEN: it imports a name titles.js does not yet export, so the whole app fails to load at that commit — only c2fd37f runs.",
+      "recommended_value": "Nothing to change at head; keep the pair squashed or note it for bisect hygiene.",
+      "explanation": "Reproduced at de2dc15 with a forced hardcore champion: runWeek throws 'endReign is not defined' within 60 weeks. Same test at c2fd37f runs clean. The dormant ecw-hardcore title activates via timeline, so real games could hit this.",
+      "confidence": "High",
+      "source": "Empirical forced-24/7 runs at de2dc15 (reproduced) and c2fd37f (clean); git worktrees (this audit)"
+    },
+    {
+      "id": "NEW-8",
+      "severity": "Low-Medium (pre-existing, newly prominent)",
+      "category": "Female generated workers get male names",
+      "current_value": "makeWorker() picks the name via makeName() BEFORE rolling gender (js/engine.js L290-301), and the shared first-name pool (ROOKIE_FIRST_NAMES, 158 entries) is effectively all male — 'Quinn' is the only ambiguous entry. Every female generated indie therefore carries a male name (observed: 'Johnny Simpson [f]', 'Osamu Yamada [f]', 'Felipe Rodriguez [f]').",
+      "recommended_value": "Roll gender first and draw from gendered name pools (or tag the pools), at least for the 13% female share.",
+      "explanation": "Pre-existing generator quirk — but newly prominent because the AI now signs nearly every female indie within weeks of game start (NEW-1), so rival rosters visibly fill with male-named women.",
+      "confidence": "High",
+      "source": "Code js/engine.js L272-301 + js/data.js ROOKIE_FIRST_NAMES; instrumented t1 signings (this audit)"
+    }
+  ],
+  "verification_checklist": [
+    {
+      "item": "Generated workers signable by the player",
+      "verdict": "PASS",
+      "evidence": "SIGN/PPA buttons on every fresh indy row; signFreeAgent written (contract 130-190w), PPA (60-100w), OPEN (re-sign path) all verified; signed indy passes validateCard in a match."
+    },
+    {
+      "item": "Considered by the AI",
+      "verdict": "PASS with bias (NEW-1)",
+      "evidence": "11/60 signed in week 1; 20-23/150 by t300 on normal, 35 on hard; but ordinary male indies are mathematically excluded (score ceiling 36 < threshold 38) and WWF barely participates."
+    },
+    {
+      "item": "Can enter bidding wars",
+      "verdict": "PARTIAL (NEW-3)",
+      "evidence": "Fresh indies: no. Released-and-pushed (pop ≥ 55) indies: yes — full war verified end-to-end (WCW raised to $110K/mo and beat the player's $85K). PPA releases work; written releases are no-compete-locked in practice."
+    },
+    {
+      "item": "Written / PPA / OPEN deals behave correctly",
+      "verdict": "PASS (NEW-5 button gap)",
+      "evidence": "Contract lengths, wage math (max(asking, wage*1.2); PPA ×0.6 floor 10; OPEN ×0.9), morale/loyalty deltas, faUntil/asking cleared on sign — all exact. OPEN is only offered on the released-indy row, not the fresh one."
+    },
+    {
+      "item": "Released generated workers return to free agency correctly",
+      "verdict": "PASS (standard FA pipeline)",
+      "evidence": "releaseWrestler: company null, exCompany set, faUntil +12 (written) / +6 (PPA), asking recomputed, no-compete +16 (written). Re-appears in the FA tab ('YOUR GUY'); player can re-sign own release immediately. At window expiry follows the normal pipeline (80% ECW if age ≤ 42, else retires) — same rules as historical FAs, e.g. observed RETIRED at t20. Caveat: NEW-2 (rival AI can steal mid-no-compete)."
+    },
+    {
+      "item": "Deleted generated workers permanently removed",
+      "verdict": "PASS",
+      "evidence": "Spliced from state.wrestlers; deletion survives exportSave→importSave round-trip; deleting a signed indy is refused."
+    },
+    {
+      "item": "Deleting clears outstanding bids",
+      "verdict": "PASS",
+      "evidence": "delete state.bids[id] added (FA-ENG-5 fixed); verified with an open player bid before deletion, plus round-trip."
+    },
+    {
+      "item": "No local-jobber duplication",
+      "verdict": "PASS",
+      "evidence": "37 jobbers constant across all four t300 runs; jobbers seeded once at world generation (employmentStatus 'local-jobber'); January classes add graduates only (byCo counts stay 150 total indies)."
+    },
+    {
+      "item": "60 at start / 15 per year / 90 entering still correct",
+      "verdict": "PASS",
+      "evidence": "Fresh game 408 = 311 scripted + 60 indies + 37 jobbers; indyClassYear [1996..2001] in all runs; exactly 150 generated indies by t300 (126-129 still unsigned + 16-35 signed + 0-2 ECW/retired)."
+    }
+  ],
+  "model_verification": {
+    "fresh_game_total": 408,
+    "scripted": 311,
+    "generated_indies": 60,
+    "local_jobbers": 37,
+    "note_isIndy": "All 97 generated workers at t0 carry isIndy:true — the 37 jobbers are distinguished by employmentStatus 'local-jobber' (still unread, FA-ENG-9).",
+    "january_classes": "6 classes × 15 = 90 entering, 1996-2001, last at t291; total 150 by t300 in every run.",
+    "jobbers": "37 constant; zero late-generated jobbers.",
+    "determinism": "PRESERVED (120-week replay hash identical, same seed); test/ai-stress.js also verifies deterministic replay.",
+    "test_suites": "node test/sim.js → ALL SANITY CHECKS PASSED; node test/ai-stress.js → PASSED (12 seeded runs, 2,160 cards, save migration verified).",
+    "datajs_timelinejs": "byte-identical to 12d9fcd — all historical-roster findings and the six v3 lists carry over unchanged (see v4 JSON)."
+  },
+  "carry_over_note": "All v2 historical corrections (265 findings, per-finding sources), the v3 generator verdicts (GEN-1..7) and the six correction lists (47/12/28/79/32/7) are unchanged by this revision and remain authoritative as committed in audit/cwvwwf_data_audit_v4.json (embedded) and audit/cwvwwf_data_audit_v3.json."
+}
