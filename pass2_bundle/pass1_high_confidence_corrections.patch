@@ -1,0 +1,366 @@
+From 7621cf2356bc99686db1f9de801be55c5562af99 Mon Sep 17 00:00:00 2001
+From: arena-agent <297053741+arena-agent@users.noreply.github.com>
+Date: Sun, 30 Aug 2026 01:39:32 +0000
+Subject: [PATCH] Apply high-confidence historical corrections from the data
+ audit
+
+Wrestler corrections (js/data.js):
+- Alignments: Hulk Hogan face (until the nWo turn), Booker T heel
+  (Harlem Heat), Mabel/Mo face (MOM)
+- Contracts matched to real 1995 movements: Vader + Steve Austin 35w
+  noRenew (fired mid/late 1995), Jeff Jarrett 27w (left July 1995),
+  Bam Bam Bigelow 43w noRenew (last WWF match Nov 19, 1995),
+  British Bulldog 143w (WCW Dec 1997), Chris Benoit 34w and Shane
+  Douglas 27w noRenew (ECW departures 1995)
+- Sid moved to USWA (reigning USWA Unified champion, Jan 1995);
+  Bobby Eaton to WCW; Bobby Blaze to SMW
+- Goldust starter replaced by Dustin Rhodes (WCW babyface, 15w noRenew)
+- Birth-year age fixes: Johnny B. Badd 34, Meng 35, Avalanche 31,
+  Rocco Rock 41, Fatu 29, Hakushi 28, Adam Bomb 30, Rey Mysterio 20,
+  Nakanishi 27, Duke Droese 26, Chris Candido 24
+
+Free-agent / arrival corrections (js/data.js):
+- Removed 12 incorrect January-1995 starters (duplicates of
+  the-gladiator/avalanche/nakanishi/sione/kwang/rad-radford, and
+  barry-windham/jim-neidhart/tom-brandi/missy-hyatt who were not under
+  contract); kurasawa, rad-radford and phineas-godwinn re-added as
+  dated FA arrivals (Oct 1995 / May 1995 / Aug 1995)
+- Converted 8 not-yet-debuted starters to dated FA arrivals:
+  the-renegade (t10), man-mountain-rock (t4), Blu Brothers (t8),
+  jean-pierre-lafitte (t13), waylon-mercy (t24), disco-inferno (t34),
+  mr-jl (t34); Eddy Guerrero to an ECW arrival t13 (he was NJPW/AAA
+  talent until his April 8, 1995 ECW debut)
+- Arrival-date fixes: Goldberg t131 (Sept 22, 1997), Kane t132
+  (Oct 5, 1997), Shamrock t102, Val Venis t163, Sable t59
+  (WrestleMania XII), Jacqueline t164, Lita t245, RVD t48
+  (Jan 5, 1996), Jericho + Steiners t52, Hawk t16, Dean Douglas t27
+- Added 8 missing major workers with dated arrivals: Kurt Angle
+  (t233, Survivor Series 1999), Edge (t167, June 22, 1998), Christian
+  (t179, Sept 27, 1998), Hardy Boyz (t144), D-Von Dudley (t61, ECW
+  April 13, 1996), Mark Henry (t57, March 11, 1996), Rick Rude
+  (t90, ECW November 1996)
+
+test/sim.js: two assertions updated to the corrected data (Hogan's
+starting alignment; custom-fed draft pick replaced with a starter who
+still exists). Full suite passes; fresh game is 387 = 290 starters +
+60 generated indies + 37 local jobbers; 150 indies by 2001; all new
+arrivals verified to enter on schedule in a 300-week simulation.
+---
+ js/data.js  | 127 ++++++++++++++++++++++++++--------------------------
+ test/sim.js |   5 ++-
+ 2 files changed, 66 insertions(+), 66 deletions(-)
+
+diff --git a/js/data.js b/js/data.js
+index e0802af..3dbfde4 100644
+--- a/js/data.js
++++ b/js/data.js
+@@ -490,24 +490,24 @@ export const LICENSING_OFFERS = [
+ // ------------------------------------------------------------
+ export const WRESTLERS = [
+   // ==================== WCW ====================
+-  { id: 'hulk-hogan', name: 'Hulk Hogan', company: 'WCW', align: 'heel', pop: 97, work: 42, mic: 80, age: 41, ceiling: 97, wage: 200, contract: 240, finisher: 'Atomic Leg Drop' },
++  { id: 'hulk-hogan', name: 'Hulk Hogan', company: 'WCW', align: 'face', pop: 97, work: 42, mic: 80, age: 41, ceiling: 97, wage: 200, contract: 240, finisher: 'Atomic Leg Drop' },
+   { id: 'sting', name: 'Sting', company: 'WCW', align: 'face', pop: 88, work: 78, mic: 66, age: 35, ceiling: 94, wage: 150, contract: 240, finisher: 'Scorpion Deathlock' },
+   { id: 'ric-flair', name: 'Ric Flair', company: 'WCW', align: 'heel', pop: 86, work: 88, mic: 96, age: 45, ceiling: 92, wage: 160, contract: 150, finisher: 'Figure-Four Leglock' },
+   { id: 'randy-savage', name: 'Randy Savage', company: 'WCW', align: 'face', pop: 85, work: 72, mic: 90, age: 42, ceiling: 90, wage: 140, contract: 200, finisher: 'Flying Elbow Drop' },
+-  { id: 'vader', name: 'Vader', company: 'WCW', align: 'heel', pop: 80, work: 68, mic: 62, age: 39, ceiling: 88, wage: 120, contract: 150, finisher: 'Vader Bomb' },
++  { id: 'vader', name: 'Vader', company: 'WCW', align: 'heel', pop: 80, work: 68, mic: 62, age: 39, ceiling: 88, wage: 120, contract: 35, finisher: 'Vader Bomb', noRenew: true },
+   { id: 'jim-duggan', name: '"Hacksaw" Jim Duggan', company: 'WCW', align: 'face', pop: 65, work: 45, mic: 70, age: 41, ceiling: 68, wage: 60, contract: 60, finisher: 'Three-Point Stance Clothesline' },
+   { id: 'arn-anderson', name: 'Arn Anderson', company: 'WCW', align: 'heel', pop: 68, work: 82, mic: 68, age: 36, ceiling: 78, wage: 70, contract: 100, finisher: 'Spinebuster' },
+   { id: 'brian-pillman', name: 'Brian Pillman', company: 'WCW', align: 'face', pop: 60, work: 86, mic: 74, age: 32, ceiling: 88, wage: 55, contract: 56, finisher: 'Air Pillman', noRenew: true },
+-  { id: 'steve-austin', name: 'Steve Austin', company: 'WCW', align: 'heel', pop: 52, work: 80, mic: 76, age: 30, ceiling: 94, wage: 45, contract: 20, finisher: 'Stun Gun', noRenew: true, expiryNote: 'ERIC BISCHOFF fires Steve Austin over the phone. "He is not a draw, he will never be a draw." Austin takes the call from his kitchen — and remembers every word.' },
++  { id: 'steve-austin', name: 'Steve Austin', company: 'WCW', align: 'heel', pop: 52, work: 80, mic: 76, age: 30, ceiling: 94, wage: 45, contract: 35, finisher: 'Stun Gun', noRenew: true, expiryNote: 'ERIC BISCHOFF fires Steve Austin over the phone. "He is not a draw, he will never be a draw." Austin takes the call from his kitchen — and remembers every word.' },
+   { id: 'lord-steven-regal', name: 'Lord Steven Regal', company: 'WCW', align: 'heel', pop: 54, work: 88, mic: 64, age: 26, ceiling: 80, wage: 45, contract: 100, finisher: 'Regal Stretch' },
+-  { id: 'johnny-b-badd', name: 'Johnny B. Badd', company: 'WCW', align: 'face', pop: 60, work: 58, mic: 58, age: 31, ceiling: 72, wage: 40, contract: 80, finisher: 'Tutti Frutti' },
+-  { id: 'booker-t', name: 'Booker T', company: 'WCW', align: 'face', pop: 58, work: 74, mic: 60, age: 29, ceiling: 88, wage: 40, contract: 180, finisher: 'Harlem Hangover' },
++  { id: 'johnny-b-badd', name: 'Johnny B. Badd', company: 'WCW', align: 'face', pop: 60, work: 58, mic: 58, age: 34, ceiling: 72, wage: 40, contract: 80, finisher: 'Tutti Frutti' },
++  { id: 'booker-t', name: 'Booker T', company: 'WCW', align: 'heel', pop: 58, work: 74, mic: 60, age: 29, ceiling: 88, wage: 40, contract: 180, finisher: 'Harlem Hangover' },
+   { id: 'stevie-ray', name: 'Stevie Ray', company: 'WCW', align: 'heel', pop: 55, work: 54, mic: 52, age: 36, ceiling: 74, wage: 40, contract: 150, finisher: 'Slapjack' },
+   { id: 'marcus-bagwell', name: 'Marcus Bagwell', company: 'WCW', align: 'face', pop: 55, work: 50, mic: 48, age: 24, ceiling: 70, wage: 35, contract: 120, finisher: 'Fisherman Suplex' },
+   { id: 'the-patriot', name: 'The Patriot', company: 'WCW', align: 'face', pop: 48, work: 54, mic: 44, age: 33, ceiling: 62, wage: 30, contract: 60, finisher: 'Patriot Missile' },
+   { id: 'kevin-sullivan', name: 'Kevin Sullivan', company: 'WCW', align: 'heel', pop: 48, work: 44, mic: 74, age: 45, ceiling: 62, wage: 40, contract: 80, finisher: 'Double Stomp' },
+-  { id: 'meng', name: 'Meng', company: 'WCW', align: 'heel', pop: 44, work: 48, mic: 34, age: 31, ceiling: 60, wage: 30, contract: 80, finisher: 'Tongan Death Grip' },
+-  { id: 'avalanche', name: 'Avalanche', company: 'WCW', align: 'heel', pop: 50, work: 44, mic: 48, age: 37, ceiling: 58, wage: 35, contract: 80, finisher: 'Earthquake Splash' },
++  { id: 'meng', name: 'Meng', company: 'WCW', align: 'heel', pop: 44, work: 48, mic: 34, age: 35, ceiling: 60, wage: 30, contract: 80, finisher: 'Tongan Death Grip' },
++  { id: 'avalanche', name: 'Avalanche', company: 'WCW', align: 'heel', pop: 50, work: 44, mic: 48, age: 31, ceiling: 58, wage: 35, contract: 80, finisher: 'Earthquake Splash' },
+   { id: 'the-butcher', name: 'The Butcher', company: 'WCW', align: 'heel', pop: 48, work: 38, mic: 42, age: 37, ceiling: 56, wage: 35, contract: 60, finisher: 'Sleeper Hold' },
+   { id: 'diamond-dallas-page', name: 'Diamond Dallas Page', company: 'WCW', align: 'heel', pop: 42, work: 48, mic: 62, age: 38, ceiling: 86, wage: 30, contract: 200, finisher: 'Diamond Cutter' },
+   { id: 'one-man-gang', name: 'One Man Gang', company: 'WCW', align: 'heel', pop: 38, work: 40, mic: 40, age: 34, ceiling: 52, wage: 25, contract: 40, finisher: '747 Splash' },
+@@ -526,10 +526,10 @@ export const WRESTLERS = [
+   { id: 'razor-ramon', name: 'Razor Ramon', company: 'WWF', align: 'face', pop: 78, work: 62, mic: 84, age: 36, ceiling: 86, wage: 115, contract: 64, finisher: "Razor's Edge", noRenew: true },
+   { id: 'owen-hart', name: 'Owen Hart', company: 'WWF', align: 'heel', pop: 64, work: 88, mic: 58, age: 29, ceiling: 82, wage: 60, contract: 150, finisher: 'Sharpshooter' },
+   { id: 'yokozuna', name: 'Yokozuna', company: 'WWF', align: 'heel', pop: 68, work: 44, mic: 48, age: 28, ceiling: 72, wage: 70, contract: 100, finisher: 'Banzai Drop' },
+-  { id: 'bam-bam-bigelow', name: 'Bam Bam Bigelow', company: 'WWF', align: 'heel', pop: 63, work: 60, mic: 58, age: 33, ceiling: 74, wage: 55, contract: 40, finisher: 'Greetings from Asbury Park', noRenew: true },
++  { id: 'bam-bam-bigelow', name: 'Bam Bam Bigelow', company: 'WWF', align: 'heel', pop: 63, work: 60, mic: 58, age: 33, ceiling: 74, wage: 55, contract: 43, finisher: 'Greetings from Asbury Park', noRenew: true },
+   { id: 'lex-luger', name: 'Lex Luger', company: 'WWF', align: 'face', pop: 70, work: 54, mic: 60, age: 36, ceiling: 82, wage: 90, contract: 32, finisher: 'Torture Rack', noRenew: true },
+-  { id: 'jeff-jarrett', name: 'Jeff Jarrett', company: 'WWF', align: 'heel', pop: 58, work: 58, mic: 66, age: 27, ceiling: 76, wage: 55, contract: 90, finisher: 'Figure-Four Leglock', noRenew: true },
+-  { id: 'british-bulldog', name: 'British Bulldog', company: 'WWF', align: 'face', pop: 66, work: 68, mic: 50, age: 32, ceiling: 76, wage: 60, contract: 120, finisher: 'Running Powerslam' },
++  { id: 'jeff-jarrett', name: 'Jeff Jarrett', company: 'WWF', align: 'heel', pop: 58, work: 58, mic: 66, age: 27, ceiling: 76, wage: 55, contract: 27, finisher: 'Figure-Four Leglock', noRenew: true },
++  { id: 'british-bulldog', name: 'British Bulldog', company: 'WWF', align: 'face', pop: 66, work: 68, mic: 50, age: 32, ceiling: 76, wage: 60, contract: 143, finisher: 'Running Powerslam' },
+   { id: 'bob-backlund', name: 'Bob Backlund', company: 'WWF', align: 'heel', pop: 58, work: 54, mic: 78, age: 45, ceiling: 66, wage: 50, contract: 30, finisher: 'Crossface Chickenwing', noRenew: true },
+   { id: 'tatanka', name: 'Tatanka', company: 'WWF', align: 'face', pop: 52, work: 50, mic: 44, age: 34, ceiling: 62, wage: 40, contract: 30, finisher: 'End of the Trail', noRenew: true },
+   { id: 'irs', name: 'I.R.S.', company: 'WWF', align: 'heel', pop: 50, work: 54, mic: 64, age: 36, ceiling: 62, wage: 40, contract: 30, finisher: 'The Write-Off', noRenew: true },
+@@ -537,22 +537,21 @@ export const WRESTLERS = [
+   { id: 'bart-gunn', name: 'Bart Gunn', company: 'WWF', align: 'face', pop: 44, work: 44, mic: 38, age: 29, ceiling: 68, wage: 30, contract: 90, finisher: 'Sidewinder' },
+   { id: 'billy-gunn', name: 'Billy Gunn', company: 'WWF', align: 'face', pop: 44, work: 46, mic: 42, age: 31, ceiling: 70, wage: 30, contract: 90, finisher: 'Fameasser' },
+   { id: 'bob-holly', name: 'Bob "Spark Plug" Holly', company: 'WWF', align: 'face', pop: 40, work: 56, mic: 36, age: 32, ceiling: 60, wage: 25, contract: 100, finisher: 'Falcon Arrow' },
+-  { id: 'duke-droese', name: 'Duke "The Dumpster" Droese', company: 'WWF', align: 'face', pop: 36, work: 38, mic: 40, age: 29, ceiling: 50, wage: 20, contract: 40, finisher: 'Trash Compactor' },
+-  { id: 'fatu', name: 'Fatu', company: 'WWF', align: 'face', pop: 44, work: 50, mic: 44, age: 24, ceiling: 62, wage: 25, contract: 60, finisher: 'Samoan Splash' },
++  { id: 'duke-droese', name: 'Duke "The Dumpster" Droese', company: 'WWF', align: 'face', pop: 36, work: 38, mic: 40, age: 26, ceiling: 50, wage: 20, contract: 40, finisher: 'Trash Compactor' },
++  { id: 'fatu', name: 'Fatu', company: 'WWF', align: 'face', pop: 44, work: 50, mic: 44, age: 29, ceiling: 62, wage: 25, contract: 60, finisher: 'Samoan Splash' },
+   { id: 'samu', name: 'Samu', company: 'WWF', align: 'heel', pop: 38, work: 44, mic: 34, age: 31, ceiling: 50, wage: 25, contract: 40, finisher: 'Diving Headbutt' },
+   { id: 'henry-godwinn', name: 'Henry O. Godwinn', company: 'WWF', align: 'face', pop: 40, work: 44, mic: 38, age: 30, ceiling: 58, wage: 25, contract: 60, finisher: 'Slop Drop' },
+   { id: 'hunter-hearst-helmsley', name: 'Hunter Hearst Helmsley', company: 'WWF', align: 'heel', pop: 36, work: 62, mic: 60, age: 25, ceiling: 88, wage: 35, contract: 240, finisher: 'The Pedigree' },
+   { id: 'jerry-lawler', name: 'Jerry "The King" Lawler', company: 'WWF', align: 'heel', pop: 54, work: 48, mic: 84, age: 45, ceiling: 64, wage: 50, contract: 80, finisher: 'Piledriver' },
+   { id: 'mabel', name: 'Mabel', company: 'WWF', align: 'heel', pop: 40, work: 34, mic: 38, age: 27, ceiling: 58, wage: 30, contract: 80, finisher: 'Big Splash' },
+-  { id: 'mo', name: 'Mo', company: 'WWF', align: 'heel', pop: 33, work: 38, mic: 38, age: 30, ceiling: 46, wage: 20, contract: 40, finisher: 'Splash' },
+-  { id: 'savio-vega', name: 'Savio Vega', company: 'WWF', align: 'face', pop: 44, work: 60, mic: 44, age: 30, ceiling: 64, wage: 25, contract: 100, finisher: 'Spinning Heel Kick' },
+-  { id: 'sid', name: 'Sycho Sid', company: 'WWF', align: 'heel', pop: 62, work: 50, mic: 52, age: 34, ceiling: 74, wage: 60, contract: 100, finisher: 'Powerbomb' },
++  { id: 'mo', name: 'Mo', company: 'WWF', align: 'face', pop: 33, work: 38, mic: 38, age: 30, ceiling: 46, wage: 20, contract: 40, finisher: 'Splash' },
++  { id: 'sid', name: 'Sycho Sid', company: 'USWA', align: 'heel', pop: 62, work: 50, mic: 52, age: 34, ceiling: 74, wage: 60, contract: 100, finisher: 'Powerbomb' },
+   { id: 'king-kong-bundy', name: 'King Kong Bundy', company: 'WWF', align: 'heel', pop: 46, work: 34, mic: 44, age: 37, ceiling: 56, wage: 35, contract: 40, finisher: 'Avalanche' },
+   { id: 'doink-the-clown', name: 'Doink the Clown', company: 'WWF', align: 'face', pop: 38, work: 48, mic: 44, age: 36, ceiling: 52, wage: 25, contract: 40, finisher: 'Whoopee Cushion' },
+   { id: 'aldo-montoya', name: 'Aldo Montoya', company: 'WWF', align: 'face', pop: 28, work: 46, mic: 34, age: 24, ceiling: 45, wage: 15, contract: 30, finisher: 'Moonsault' },
+-  { id: 'adam-bomb', name: 'Adam Bomb', company: 'WWF', align: 'face', pop: 42, work: 48, mic: 44, age: 31, ceiling: 58, wage: 30, contract: 40, finisher: 'Atom Smasher', noRenew: true },
++  { id: 'adam-bomb', name: 'Adam Bomb', company: 'WWF', align: 'face', pop: 42, work: 48, mic: 44, age: 30, ceiling: 58, wage: 30, contract: 40, finisher: 'Atom Smasher', noRenew: true },
+   { id: 'barry-horowitz', name: 'Barry Horowitz', company: 'WWF', align: 'face', pop: 28, work: 44, mic: 38, age: 35, ceiling: 44, wage: 15, contract: 30, finisher: 'Palm Strike' },
+-  { id: 'hakushi', name: 'Hakushi', company: 'WWF', align: 'heel', pop: 36, work: 68, mic: 32, age: 29, ceiling: 60, wage: 25, contract: 40, finisher: 'Diving Headbutt' },
++  { id: 'hakushi', name: 'Hakushi', company: 'WWF', align: 'heel', pop: 36, work: 68, mic: 32, age: 28, ceiling: 60, wage: 25, contract: 40, finisher: 'Diving Headbutt' },
+   { id: 'kama', name: 'Kama', company: 'WWF', align: 'heel', pop: 40, work: 40, mic: 38, age: 30, ceiling: 56, wage: 25, contract: 60, finisher: 'Side Slam' },
+   { id: 'sione', name: 'Sione', company: 'WWF', align: 'heel', pop: 33, work: 40, mic: 34, age: 36, ceiling: 46, wage: 20, contract: 30, finisher: 'Samoan Drop' },
+ 
+@@ -565,17 +564,16 @@ export const WRESTLERS = [
+   { id: 'sandman', name: 'The Sandman', company: 'ECW', align: 'face', pop: 48, work: 55, mic: 60, age: 31, ceiling: 72, wage: 25, contract: 120, finisher: 'White Russian Legsweep' },
+   { id: 'tommy-dreamer', name: 'Tommy Dreamer', company: 'ECW', align: 'face', pop: 44, work: 60, mic: 55, age: 24, ceiling: 76, wage: 20, contract: 120, finisher: 'DDT' },
+   { id: 'raven', name: 'Raven', company: 'ECW', align: 'heel', pop: 46, work: 58, mic: 82, age: 30, ceiling: 78, wage: 25, contract: 100, finisher: 'Evenflow DDT' },
+-  { id: 'shane-douglas', name: 'Shane Douglas', company: 'ECW', align: 'heel', pop: 50, work: 62, mic: 68, age: 30, ceiling: 72, wage: 25, contract: 80, finisher: 'Belly-to-Belly Suplex' },
++  { id: 'shane-douglas', name: 'Shane Douglas', company: 'ECW', align: 'heel', pop: 50, work: 62, mic: 68, age: 30, ceiling: 72, wage: 25, contract: 27, finisher: 'Belly-to-Belly Suplex', noRenew: true },
+   { id: 'taz', name: 'Taz', company: 'ECW', align: 'face', pop: 44, work: 70, mic: 48, age: 27, ceiling: 78, wage: 20, contract: 120, finisher: 'Tazmission' },
+   { id: 'cactus-jack', name: 'Cactus Jack', company: 'ECW', align: 'face', pop: 55, work: 72, mic: 70, age: 29, ceiling: 86, wage: 30, contract: 60, finisher: 'Double-Arm DDT', noRenew: true },
+   { id: 'mikey-whipwreck', name: 'Mikey Whipwreck', company: 'ECW', align: 'face', pop: 35, work: 60, mic: 35, age: 21, ceiling: 64, wage: 15, contract: 80, finisher: 'Whippersnapper' },
+   { id: 'two-cold-scorpio', name: '2 Cold Scorpio', company: 'ECW', align: 'face', pop: 40, work: 74, mic: 40, age: 29, ceiling: 66, wage: 20, contract: 40, finisher: '450 Splash' },
+   { id: 'terry-funk', name: 'Terry Funk', company: 'ECW', align: 'face', pop: 60, work: 70, mic: 72, age: 50, ceiling: 70, wage: 30, contract: 40, finisher: 'Spinning Toe Hold' },
+-  { id: 'rocco-rock', name: 'Rocco Rock', company: 'ECW', align: 'face', pop: 42, work: 52, mic: 50, age: 32, ceiling: 58, wage: 20, contract: 60, finisher: 'Drive-By' },
++  { id: 'rocco-rock', name: 'Rocco Rock', company: 'ECW', align: 'face', pop: 42, work: 52, mic: 50, age: 41, ceiling: 58, wage: 20, contract: 60, finisher: 'Drive-By' },
+   { id: 'johnny-grunge', name: 'Johnny Grunge', company: 'ECW', align: 'face', pop: 42, work: 50, mic: 52, age: 31, ceiling: 58, wage: 20, contract: 60, finisher: 'Grunge Plunge' },
+-  { id: 'chris-benoit', name: 'Chris Benoit', company: 'ECW', align: 'heel', pop: 42, work: 90, mic: 40, age: 27, ceiling: 86, wage: 25, contract: 28, finisher: 'Crippler Crossface' },
++  { id: 'chris-benoit', name: 'Chris Benoit', company: 'ECW', align: 'heel', pop: 42, work: 90, mic: 40, age: 27, ceiling: 86, wage: 25, contract: 34, finisher: 'Crippler Crossface' },
+   { id: 'dean-malenko', name: 'Dean Malenko', company: 'ECW', align: 'heel', pop: 40, work: 88, mic: 38, age: 34, ceiling: 78, wage: 25, contract: 32, finisher: 'Texas Cloverleaf' },
+-  { id: 'eddy-guerrero', name: 'Eddy Guerrero', company: 'ECW', align: 'face', pop: 42, work: 84, mic: 62, age: 27, ceiling: 90, wage: 25, contract: 36, finisher: 'Frog Splash' },
+ 
+   // ==================== JAPAN: NJPW (January 1995) ====================
+   { id: 'hashimoto', name: 'Shinya Hashimoto', company: 'NJPW', align: 'face', pop: 85, work: 88, mic: 45, age: 29, ceiling: 90, wage: 45, contract: 220, finisher: 'Dangerous K' },
+@@ -585,7 +583,7 @@ export const WRESTLERS = [
+   { id: 'liger', name: 'Jushin Thunder Liger', company: 'NJPW', align: 'face', pop: 78, work: 90, mic: 40, age: 30, ceiling: 84, wage: 32, contract: 180, finisher: 'Liger Bomb', cw: true, style: 'highflyer' },
+   { id: 'tenzan', name: 'Hiroyoshi Tenzan', company: 'NJPW', align: 'heel', pop: 55, work: 72, mic: 30, age: 23, ceiling: 82, wage: 18, contract: 160, finisher: 'Mongolian Chop' },
+   { id: 'kojima', name: 'Satoshi Kojima', company: 'NJPW', align: 'face', pop: 52, work: 74, mic: 32, age: 24, ceiling: 84, wage: 16, contract: 160, finisher: 'Lariat' },
+-  { id: 'nakanishi', name: 'Manabu Nakanishi', company: 'NJPW', align: 'face', pop: 48, work: 66, mic: 28, age: 26, ceiling: 76, wage: 14, contract: 140, finisher: 'Gorilla Press Slam' },
++  { id: 'nakanishi', name: 'Manabu Nakanishi', company: 'NJPW', align: 'face', pop: 48, work: 66, mic: 28, age: 27, ceiling: 76, wage: 14, contract: 140, finisher: 'Gorilla Press Slam' },
+   { id: 'koshinaka', name: 'Shiro Koshinaka', company: 'NJPW', align: 'heel', pop: 54, work: 72, mic: 34, age: 35, ceiling: 66, wage: 18, contract: 120, finisher: 'Butterfly Lock' },
+   { id: 'otani', name: 'Shinjiro Otani', company: 'NJPW', align: 'face', pop: 44, work: 80, mic: 30, age: 22, ceiling: 78, wage: 12, contract: 140, finisher: 'Spiral Bomb', cw: true, style: 'highflyer' },
+   { id: 'kanemoto', name: 'Koji Kanemoto', company: 'NJPW', align: 'heel', pop: 42, work: 78, mic: 28, age: 20, ceiling: 76, wage: 12, contract: 140, finisher: 'Tornado DDT', cw: true, style: 'highflyer' },
+@@ -640,7 +638,7 @@ export const WRESTLERS = [
+   { id: 'heavy-metal', name: 'Heavy Metal', company: 'AAA', align: 'face', pop: 44, work: 62, mic: 24, age: 26, ceiling: 66, wage: 12, contract: 80, finisher: 'Metal Slam' },
+   { id: 'latin-lover', name: 'Latin Lover', company: 'AAA', align: 'face', pop: 42, work: 56, mic: 30, age: 24, ceiling: 68, wage: 12, contract: 80, finisher: 'Latin Lover Stretch' },
+   { id: 'la-parka', name: 'La Parka', company: 'AAA', align: 'face', pop: 40, work: 68, mic: 24, age: 28, ceiling: 70, wage: 14, contract: 100, finisher: 'La Parka Driver', cw: true, style: 'highflyer', noRenew: true },
+-  { id: 'rey-mysterio', name: 'Rey Mysterio Jr.', company: 'AAA', align: 'face', pop: 35, work: 92, mic: 30, age: 21, ceiling: 90, wage: 14, contract: 80, finisher: 'Hurricanrana', cw: true, style: 'highflyer', noRenew: true },
++  { id: 'rey-mysterio', name: 'Rey Mysterio Jr.', company: 'AAA', align: 'face', pop: 35, work: 92, mic: 30, age: 20, ceiling: 90, wage: 14, contract: 80, finisher: 'Hurricanrana', cw: true, style: 'highflyer', noRenew: true },
+   { id: 'psicosis', name: 'Psicosis', company: 'AAA', align: 'heel', pop: 30, work: 84, mic: 28, age: 24, ceiling: 66, wage: 12, contract: 80, finisher: 'Guillotine Legdrop', cw: true, style: 'highflyer', noRenew: true },
+   { id: 'juventud', name: 'Juventud Guerrera', company: 'AAA', align: 'face', pop: 28, work: 80, mic: 28, age: 21, ceiling: 66, wage: 12, contract: 80, finisher: '450 Splash', cw: true, style: 'highflyer', noRenew: true },
+ 
+@@ -661,13 +659,13 @@ export const WRESTLERS = [
+   { id: 'ricky-morton', name: 'Ricky Morton', company: 'SMW', align: 'face', pop: 62, work: 70, mic: 56, age: 38, ceiling: 70, wage: 15, contract: 40, finisher: 'Flying Body Press', noRenew: true },
+   { id: 'robert-gibson', name: 'Robert Gibson', company: 'SMW', align: 'face', pop: 60, work: 68, mic: 48, age: 36, ceiling: 68, wage: 15, contract: 40, finisher: 'Flying Body Press', noRenew: true },
+   { id: 'tracy-smothers', name: 'Tracy Smothers', company: 'SMW', align: 'face', pop: 55, work: 64, mic: 62, age: 32, ceiling: 66, wage: 12, contract: 40, finisher: 'Spinning Heel Kick', noRenew: true },
+-  { id: 'bobby-eaton', name: 'Bobby Eaton', company: 'SMW', align: 'face', pop: 54, work: 70, mic: 50, age: 36, ceiling: 64, wage: 12, contract: 40, finisher: 'Alabama Jam', noRenew: true },
++  { id: 'bobby-eaton', name: 'Bobby Eaton', company: 'WCW', align: 'face', pop: 54, work: 70, mic: 50, age: 36, ceiling: 64, wage: 12, contract: 40, finisher: 'Alabama Jam', noRenew: true },
+   { id: 'dirty-white-boy', name: 'Dirty White Boy', company: 'SMW', align: 'heel', pop: 48, work: 56, mic: 44, age: 38, ceiling: 58, wage: 10, contract: 40, finisher: 'White Boy Driver', noRenew: true },
+   { id: 'brian-lee', name: 'Brian Lee', company: 'SMW', align: 'heel', pop: 50, work: 56, mic: 44, age: 29, ceiling: 62, wage: 12, contract: 40, finisher: 'Lee Driver', noRenew: true },
+   { id: 'tom-prichard', name: 'Tom Prichard', company: 'SMW', align: 'heel', pop: 46, work: 62, mic: 56, age: 35, ceiling: 60, wage: 10, contract: 40, finisher: 'Prichard Slam', noRenew: true },
+   { id: 'jimmy-del-ray', name: 'Jimmy Del Ray', company: 'SMW', align: 'heel', pop: 44, work: 60, mic: 48, age: 34, ceiling: 58, wage: 10, contract: 40, finisher: 'Flying Kneelift', noRenew: true },
+   { id: 'buddy-landel', name: 'Buddy Landel', company: 'SMW', align: 'heel', pop: 46, work: 54, mic: 64, age: 35, ceiling: 58, wage: 10, contract: 40, finisher: 'Figure-Four Leglock', noRenew: true },
+-  { id: 'chris-candido', name: 'Chris Candido', company: 'SMW', align: 'face', pop: 44, work: 66, mic: 50, age: 23, ceiling: 72, wage: 10, contract: 40, finisher: 'Blonde Bombshell', noRenew: true },
++  { id: 'chris-candido', name: 'Chris Candido', company: 'SMW', align: 'face', pop: 44, work: 66, mic: 50, age: 24, ceiling: 72, wage: 10, contract: 40, finisher: 'Blonde Bombshell', noRenew: true },
+ 
+   // ==================== EUROPE: CWA (January 1995) ====================
+   { id: 'otto-wanz', name: 'Otto Wanz', company: 'CWA', align: 'face', pop: 55, work: 44, mic: 40, age: 52, ceiling: 60, wage: 12, contract: 60, finisher: 'Wanz Driver' },
+@@ -703,8 +701,7 @@ export const WRESTLERS = [
+   { id: 'dan-severn', name: 'Dan Severn', company: 'NWA', align: 'face', pop: 52, work: 76, mic: 40, age: 37, ceiling: 70, wage: 12, contract: 80, finisher: 'Ankle Lock' },
+   { id: 'greg-valentine', name: 'Greg Valentine', company: 'NWA', align: 'heel', pop: 48, work: 56, mic: 52, age: 44, ceiling: 58, wage: 10, contract: 60, finisher: 'Figure-Four Leglock' },
+   { id: 'bob-armstrong', name: 'Bob Armstrong', company: 'NWA', align: 'face', pop: 42, work: 56, mic: 50, age: 56, ceiling: 54, wage: 8, contract: 60, finisher: 'Bionic Elbow' },
+-  { id: 'barbarian', name: 'The Barbarian', company: 'NWA', align: 'heel', pop: 40, work: 50, mic: 24, age: 37, ceiling: 54, wage: 8, contract: 60, finisher: 'Kongo Bomb' },
+-  { id: 'bobby-blaze', name: 'Bobby Blaze', company: 'NWA', align: 'face', pop: 34, work: 52, mic: 36, age: 24, ceiling: 60, wage: 6, contract: 60, finisher: 'Blaze Bomb' },
++  { id: 'bobby-blaze', name: 'Bobby Blaze', company: 'SMW', align: 'face', pop: 34, work: 52, mic: 36, age: 24, ceiling: 60, wage: 6, contract: 60, finisher: 'Blaze Bomb' },
+   { id: 'thunderbolt-patterson', name: 'Thunderbolt Patterson', company: 'NWA', align: 'face', pop: 38, work: 44, mic: 56, age: 54, ceiling: 50, wage: 7, contract: 40, finisher: 'Thunderbolt Slam' },
+ 
+   // ==================== USA: AWF (January 1995) ====================
+@@ -727,48 +724,33 @@ export const WRESTLERS = [
+ 
+   // ==================== WWF: v2.10 additions (toward the real 55-60) ====================
+   { id: 'brooklyn-brawler', name: 'The Brooklyn Brawler', company: 'WWF', align: 'heel', pop: 36, work: 44, mic: 44, age: 37, ceiling: 48, wage: 18, contract: 40, finisher: 'Brawler DDT' },
+-  { id: 'jean-pierre-lafitte', name: 'Jean-Pierre Lafitte', company: 'WWF', align: 'heel', pop: 38, work: 56, mic: 44, age: 26, ceiling: 58, wage: 20, contract: 40, finisher: 'La Bombe' },
+   { id: 'kwang', name: 'Kwang', company: 'WWF', align: 'heel', pop: 30, work: 42, mic: 26, age: 29, ceiling: 46, wage: 15, contract: 30, finisher: 'Ninja Chop' },
+-  { id: 'man-mountain-rock', name: 'Man Mountain Rock', company: 'WWF', align: 'face', pop: 34, work: 44, mic: 54, age: 36, ceiling: 50, wage: 18, contract: 30, finisher: 'Rock Dropper' },
+   { id: 'mantaur', name: 'Mantaur', company: 'WWF', align: 'heel', pop: 30, work: 40, mic: 26, age: 29, ceiling: 44, wage: 15, contract: 30, finisher: 'Gore Splash' },
+   { id: 'nikolai-volkoff', name: 'Nikolai Volkoff', company: 'WWF', align: 'heel', pop: 40, work: 40, mic: 50, age: 47, ceiling: 48, wage: 15, contract: 20, finisher: 'Russian Sickle' },
+-  { id: 'rad-radford', name: 'Rad Radford', company: 'WWF', align: 'heel', pop: 28, work: 44, mic: 36, age: 25, ceiling: 48, wage: 14, contract: 30, finisher: 'Splash' },
+-  { id: 'waylon-mercy', name: 'Waylon Mercy', company: 'WWF', align: 'heel', pop: 38, work: 50, mic: 60, age: 37, ceiling: 54, wage: 18, contract: 30, finisher: 'Sleeper Hold' },
+ 
+   // ==================== WWF: v2.13 additions (the real 1995 TV roster) ====================
+-  { id: 'goldust', name: 'Goldust', company: 'WWF', align: 'heel', pop: 32, work: 60, mic: 62, age: 26, ceiling: 80, wage: 25, contract: 120, finisher: 'Curtain Call', noRenew: true },
++  { id: 'dustin-rhodes', name: 'Dustin Rhodes', company: 'WCW', align: 'face', pop: 32, work: 60, mic: 62, age: 29, ceiling: 80, wage: 25, contract: 15, finisher: 'Curtain Call', noRenew: true },
+   { id: 'marty-jannetty', name: 'Marty Jannetty', company: 'WWF', align: 'face', pop: 52, work: 66, mic: 56, age: 35, ceiling: 68, wage: 25, contract: 60, finisher: 'Rocket Launcher' },
+-  { id: 'phineas-godwinn', name: 'Phineas I. Godwinn', company: 'WWF', align: 'face', pop: 36, work: 46, mic: 38, age: 34, ceiling: 52, wage: 20, contract: 80, finisher: 'Slop Drop' },
+   { id: 'steven-dunn', name: 'Steven Dunn', company: 'WWF', align: 'heel', pop: 34, work: 48, mic: 36, age: 32, ceiling: 50, wage: 18, contract: 60, finisher: 'Dunn Deal' },
+   { id: 'timothy-well', name: 'Timothy Well', company: 'WWF', align: 'heel', pop: 34, work: 48, mic: 36, age: 33, ceiling: 50, wage: 18, contract: 60, finisher: 'Well Drop' },
+-  { id: 'jacob-blu', name: 'Jacob Blu', company: 'WWF', align: 'heel', pop: 38, work: 52, mic: 30, age: 33, ceiling: 52, wage: 20, contract: 60, finisher: 'Blu Bomb' },
+-  { id: 'eli-blu', name: 'Eli Blu', company: 'WWF', align: 'heel', pop: 38, work: 52, mic: 30, age: 31, ceiling: 52, wage: 20, contract: 60, finisher: 'Blu Bomb' },
+   // 1995 WWF enhancement talent (the real local hands)
+   { id: 'jim-powers', name: 'Jim Powers', company: 'WWF', align: 'face', pop: 26, work: 42, mic: 30, age: 37, ceiling: 40, wage: 12, contract: 40, finisher: 'Powers Slam' },
+   { id: 'reno-riggins', name: 'Reno Riggins', company: 'WWF', align: 'face', pop: 24, work: 40, mic: 26, age: 36, ceiling: 38, wage: 12, contract: 40, finisher: 'Riggins Drop' },
+   { id: 'mike-bell', name: 'Mike Bell', company: 'WWF', align: 'face', pop: 22, work: 38, mic: 24, age: 31, ceiling: 36, wage: 10, contract: 40, finisher: 'Bell Bomb' },
+   { id: 'brian-walsh', name: 'Brian Walsh', company: 'WWF', align: 'heel', pop: 22, work: 40, mic: 26, age: 27, ceiling: 38, wage: 10, contract: 40, finisher: 'Walsh Driver' },
+-  { id: 'tom-brandi', name: 'Tom Brandi', company: 'WWF', align: 'face', pop: 24, work: 40, mic: 34, age: 27, ceiling: 40, wage: 10, contract: 40, finisher: 'Brandi Bomb' },
+ 
+   // ==================== WCW: v2.10 additions (toward the real 50-65) ====================
+   { id: 'big-bubba-rogers', name: 'Big Bubba Rogers', company: 'WCW', align: 'heel', pop: 44, work: 44, mic: 46, age: 34, ceiling: 56, wage: 22, contract: 60, finisher: 'Bubba Bomb' },
+   { id: 'blacktop-bully', name: 'Blacktop Bully', company: 'WCW', align: 'heel', pop: 42, work: 50, mic: 50, age: 36, ceiling: 54, wage: 20, contract: 60, finisher: 'Bully Bomb' },
+   { id: 'craig-pittman', name: 'Sgt. Craig Pittman', company: 'WCW', align: 'heel', pop: 38, work: 46, mic: 44, age: 33, ceiling: 54, wage: 18, contract: 60, finisher: 'Code Red' },
+-  { id: 'disco-inferno', name: 'Disco Inferno', company: 'WCW', align: 'heel', pop: 34, work: 48, mic: 60, age: 28, ceiling: 56, wage: 16, contract: 80, finisher: 'Chartbuster' },
+-  { id: 'mr-jl', name: 'Mr. JL', company: 'WCW', align: 'face', pop: 36, work: 62, mic: 44, age: 32, ceiling: 54, wage: 16, contract: 60, finisher: 'Cradle Piledriver' },
+   { id: 'paul-orndorff', name: 'Paul Orndorff', company: 'WCW', align: 'face', pop: 50, work: 56, mic: 60, age: 45, ceiling: 58, wage: 25, contract: 60, finisher: 'Piledriver' },
+-  { id: 'the-renegade', name: 'The Renegade', company: 'WCW', align: 'face', pop: 40, work: 46, mic: 34, age: 28, ceiling: 58, wage: 18, contract: 40, finisher: 'Flying Shoulderblock' },
+-  { id: 'the-shark', name: 'The Shark', company: 'WCW', align: 'heel', pop: 38, work: 46, mic: 34, age: 36, ceiling: 52, wage: 18, contract: 60, finisher: 'Shark Drop' },
+   { id: 'super-assassin', name: 'Super Assassin', company: 'WCW', align: 'heel', pop: 34, work: 48, mic: 26, age: 35, ceiling: 48, wage: 16, contract: 40, finisher: 'Assassin Bomb' },
+ 
+   // ==================== WCW: v2.13 additions (the real 1995 TV roster) ====================
+-  { id: 'barry-windham', name: 'Barry Windham', company: 'WCW', align: 'heel', pop: 62, work: 68, mic: 58, age: 34, ceiling: 72, wage: 40, contract: 40, finisher: 'Running Bulldog' },
+   { id: 'kendall-windham', name: 'Kendall Windham', company: 'WCW', align: 'heel', pop: 40, work: 50, mic: 38, age: 27, ceiling: 56, wage: 20, contract: 60, finisher: 'Windham Bomb' },
+   { id: 'joey-maggs', name: 'Joey Maggs', company: 'WCW', align: 'face', pop: 30, work: 48, mic: 28, age: 27, ceiling: 46, wage: 14, contract: 40, finisher: 'Maggs Bomb' },
+-  { id: 'kurasawa', name: 'Kurasawa', company: 'WCW', align: 'heel', pop: 32, work: 48, mic: 24, age: 29, ceiling: 46, wage: 14, contract: 40, finisher: 'Kurasawa Bomb' },
+   { id: 'buddy-lee-parker', name: 'Sgt. Buddy Lee Parker', company: 'WCW', align: 'heel', pop: 28, work: 44, mic: 34, age: 35, ceiling: 42, wage: 12, contract: 40, finisher: 'Patrol Bomb' },
+   { id: 'james-earl-wright', name: 'Lt. James Earl Wright', company: 'WCW', align: 'heel', pop: 28, work: 44, mic: 32, age: 37, ceiling: 42, wage: 12, contract: 40, finisher: 'Patrol Drop' },
+-  { id: 'mike-awesome', name: 'Mike Awesome', company: 'WCW', align: 'heel', pop: 28, work: 50, mic: 26, age: 30, ceiling: 70, wage: 14, contract: 40, finisher: 'Awesome Bomb', noRenew: true },
+   { id: 'the-gambler', name: 'The Gambler', company: 'WCW', align: 'heel', pop: 26, work: 44, mic: 40, age: 31, ceiling: 40, wage: 12, contract: 40, finisher: 'Lucky Seven' },
+   { id: 'mark-starr', name: 'Mark Starr', company: 'WCW', align: 'face', pop: 24, work: 44, mic: 24, age: 31, ceiling: 38, wage: 10, contract: 40, finisher: 'Starr Bomb' },
+   { id: 'ricky-santana', name: 'Ricky Santana', company: 'WCW', align: 'face', pop: 26, work: 48, mic: 24, age: 34, ceiling: 40, wage: 10, contract: 40, finisher: 'Santana Bomb' },
+@@ -790,7 +772,6 @@ export const WRESTLERS = [
+   { id: 'headhunter-1', name: 'Headhunter #1', company: 'ECW', align: 'heel', pop: 30, work: 44, mic: 20, age: 32, ceiling: 44, wage: 10, contract: 60, finisher: 'Headhunter Bomb' },
+   { id: 'headhunter-2', name: 'Headhunter #2', company: 'ECW', align: 'heel', pop: 30, work: 44, mic: 20, age: 31, ceiling: 44, wage: 10, contract: 60, finisher: 'Headhunter Bomb' },
+   { id: 'super-nova', name: 'Super Nova', company: 'ECW', align: 'face', pop: 30, work: 52, mic: 34, age: 26, ceiling: 50, wage: 10, contract: 60, finisher: 'Nova Drop' },
+-  { id: 'louie-spicolli', name: 'Louie Spicolli', company: 'ECW', align: 'heel', pop: 32, work: 50, mic: 44, age: 24, ceiling: 54, wage: 10, contract: 60, finisher: 'Spicolli Driver' },
+   { id: 'don-e-allen', name: 'Don E. Allen', company: 'ECW', align: 'heel', pop: 26, work: 44, mic: 26, age: 34, ceiling: 40, wage: 8, contract: 40, finisher: 'Allen Bomb' },
+   { id: 'tommy-cairo', name: 'Tommy Cairo', company: 'ECW', align: 'face', pop: 28, work: 46, mic: 34, age: 27, ceiling: 44, wage: 8, contract: 40, finisher: 'Cairo Bomb' },
+   { id: 'chad-austin', name: 'Chad Austin', company: 'ECW', align: 'face', pop: 24, work: 44, mic: 26, age: 23, ceiling: 44, wage: 8, contract: 40, finisher: 'Austin Drop' },
+@@ -822,7 +803,6 @@ export const WRESTLERS = [
+   { id: 'bronco-2', name: 'Bronco #2', company: 'WWC', align: 'heel', pop: 36, work: 50, mic: 22, age: 28, ceiling: 48, wage: 8, contract: 60, finisher: 'Bronco Bomb' },
+   { id: 'jimmy-valiant', name: 'Jimmy Valiant', company: 'USWA', align: 'face', pop: 48, work: 48, mic: 66, age: 53, ceiling: 54, wage: 10, contract: 40, finisher: 'Elbow Drop' },
+   { id: 'koko-b-ware', name: 'Koko B. Ware', company: 'USWA', align: 'face', pop: 44, work: 52, mic: 54, age: 38, ceiling: 56, wage: 10, contract: 40, finisher: 'Ghostbuster' },
+-  { id: 'jim-neidhart', name: 'Jim Neidhart', company: 'NWA', align: 'heel', pop: 50, work: 56, mic: 48, age: 39, ceiling: 62, wage: 15, contract: 40, finisher: 'Anvil Flattening' },
+   { id: 'daryl-van-horne', name: 'Big Daryl', company: 'SMW', align: 'heel', pop: 40, work: 46, mic: 26, age: 34, ceiling: 54, wage: 9, contract: 40, finisher: 'Daryl Driver' },
+   { id: 'rex-king', name: 'Rex King', company: 'SMW', align: 'heel', pop: 36, work: 50, mic: 30, age: 31, ceiling: 48, wage: 8, contract: 40, finisher: 'King Bomb' },
+ 
+@@ -853,7 +833,6 @@ export const WRESTLERS = [
+   { id: 'harvey-wippleman', name: 'Harvey Wippleman', company: 'WWF', align: 'heel', pop: 34, work: 0, mic: 56, age: 49, ceiling: 46, wage: 15, contract: 60, finisher: '—', isManager: true },
+   { id: 'mr-fuji', name: 'Mr. Fuji', company: 'WWF', align: 'heel', pop: 40, work: 0, mic: 60, age: 60, ceiling: 48, wage: 15, contract: 60, finisher: '—', isManager: true },
+   { id: 'sonny-onoo', name: 'Sonny Onoo', company: 'WCW', align: 'heel', pop: 32, work: 0, mic: 58, age: 35, ceiling: 44, wage: 14, contract: 80, finisher: '—', isManager: true },
+-  { id: 'missy-hyatt', name: 'Missy Hyatt', company: 'WCW', align: 'face', pop: 38, work: 0, mic: 62, age: 31, ceiling: 48, wage: 16, contract: 60, finisher: '—', isManager: true, gender: 'f' },
+ ];
+ 
+ // Tag teams (booked as units)
+@@ -933,30 +912,50 @@ export const INITIAL_TITLES = [
+ // Free agents that appear at a given turn (0 = Jan 1995 week 1, 4/week).
+ // interest: which company's AI will chase them aggressively
+ export const FA_ARRIVALS = [
+-  { turn: 52, id: 'ahmed-johnson', name: 'Ahmed Johnson', align: 'face', pop: 30, work: 70, mic: 45, age: 32, ceiling: 78, wage: 25, finisher: 'Pearl River Plunge', interest: 'WWF', note: 'a powerhouse prospect' },
+-  { turn: 52, id: 'road-warrior-hawk', name: 'Road Warrior Hawk', align: 'face', pop: 60, work: 52, mic: 62, age: 38, ceiling: 78, wage: 60, finisher: 'Doomsday Device', interest: 'WCW', note: 'one half of the legendary Road Warriors' },
+-  { turn: 52, id: 'road-warrior-animal', name: 'Road Warrior Animal', align: 'face', pop: 60, work: 52, mic: 50, age: 35, ceiling: 78, wage: 60, finisher: 'Doomsday Device', interest: 'WCW', note: 'one half of the legendary Road Warriors' },
+-  { turn: 60, id: 'scott-steiner', name: 'Scott Steiner', align: 'face', pop: 55, work: 75, mic: 55, age: 33, ceiling: 84, wage: 55, finisher: 'Frankensteiner', interest: 'WCW', note: 'returning from a run in the independents' },
+-  { turn: 60, id: 'rick-steiner', name: 'Rick Steiner', align: 'face', pop: 52, work: 60, mic: 45, age: 34, ceiling: 70, wage: 50, finisher: 'Steiner Bulldog', interest: 'WCW', note: 'the Dog-Faced Gremlin himself' },
+-  { turn: 72, id: 'chris-jericho', name: 'Chris Jericho', align: 'heel', pop: 30, work: 78, mic: 72, age: 25, ceiling: 90, wage: 30, finisher: 'Liontamer', interest: 'ANY', note: 'a loudmouth with all the tools' },
+-  { turn: 72, id: 'rob-van-dam', name: 'Rob Van Dam', align: 'face', pop: 32, work: 82, mic: 55, age: 25, ceiling: 86, wage: 30, finisher: 'Five-Star Frog Splash', interest: 'ANY', note: 'the Whole F\'n Show' },
+-  { turn: 88, id: 'the-rock', name: 'Rocky Maivia', align: 'face', pop: 24, work: 55, mic: 80, age: 24, ceiling: 95, wage: 25, finisher: 'Shoulderbreaker', interest: 'WWF', note: 'a third-generation blue-chipper' },
+-  { turn: 116, id: 'ken-shamrock', name: 'Ken Shamrock', align: 'face', pop: 35, work: 82, mic: 40, age: 33, ceiling: 78, wage: 35, finisher: 'Ankle Lock', interest: 'WWF', note: 'the World\'s Most Dangerous Man' },
+-  { turn: 132, id: 'val-venis', name: 'Val Venis', align: 'heel', pop: 30, work: 62, mic: 58, age: 26, ceiling: 72, wage: 30, finisher: 'Money Shot', interest: 'WWF', note: 'a... plumber? Hollywood producer? Nobody is sure' },
+-  { turn: 140, id: 'kane', name: 'Kane', align: 'heel', pop: 40, work: 58, mic: 30, age: 30, ceiling: 86, wage: 45, finisher: 'Chokeslam', interest: 'WWF', note: 'a monster in a mask — and a score to settle' },
+-  { turn: 160, id: 'bill-goldberg', name: 'Bill Goldberg', align: 'face', pop: 28, work: 38, mic: 35, age: 31, ceiling: 90, wage: 35, finisher: 'Jackhammer', interest: 'WCW', note: 'a former NFL lineman training at the Power Plant' },
++
++  // ==================== WOMEN ARRIVING ON THE REAL TIMELINE ====================
++  { turn: 4, id: 'man-mountain-rock', name: 'Man Mountain Rock', align: 'face', pop: 34, work: 44, mic: 54, age: 36, ceiling: 50, wage: 18, finisher: 'Rock Dropper', interest: 'WWF', note: 'WWF undercard from February 1995' },
++  { turn: 8, id: 'jacob-blu', name: 'Jacob Blu', align: 'heel', pop: 38, work: 52, mic: 30, age: 33, ceiling: 52, wage: 20, finisher: 'Blu Bomb', interest: 'WWF', note: 'the Blu Brothers hit WWF TV, spring 1995' },
++  { turn: 8, id: 'eli-blu', name: 'Eli Blu', align: 'heel', pop: 38, work: 52, mic: 30, age: 31, ceiling: 52, wage: 20, finisher: 'Blu Bomb', interest: 'WWF', note: 'the Blu Brothers hit WWF TV, spring 1995' },
++  { turn: 10, id: 'the-renegade', name: 'The Renegade', align: 'face', pop: 40, work: 46, mic: 34, age: 28, ceiling: 58, wage: 18, finisher: 'Flying Shoulderblock', interest: 'WCW', note: 'WCW debut at Uncensored, March 19, 1995' },
++  { turn: 13, id: 'jean-pierre-lafitte', name: 'Jean-Pierre Lafitte', align: 'heel', pop: 38, work: 56, mic: 44, age: 26, ceiling: 58, wage: 20, finisher: 'La Bombe', interest: 'WWF', note: 'the pirate back in the WWF, spring 1995' },
++  { turn: 13, id: 'eddy-guerrero', name: 'Eddy Guerrero', align: 'face', pop: 42, work: 84, mic: 62, age: 27, ceiling: 90, wage: 25, finisher: 'Frog Splash', interest: 'ECW', note: 'NJPW Black Tiger II and AAA star; ECW debut April 8, 1995' },
++  { turn: 16, id: 'road-warrior-hawk', name: 'Road Warrior Hawk', align: 'face', pop: 60, work: 52, mic: 62, age: 38, ceiling: 78, wage: 60, finisher: 'Doomsday Device', interest: 'WCW', note: 'one half of the legendary Road Warriors' },
+   { turn: 16, id: 'scotty-riggs', name: 'Scotty Riggs', align: 'face', pop: 35, work: 48, mic: 45, age: 27, ceiling: 60, wage: 20, finisher: 'Forearm Smash', interest: 'ANY', note: 'solid hand, great tan' },
++  { turn: 18, id: 'rad-radford', name: 'Rad Radford', align: 'heel', pop: 28, work: 44, mic: 36, age: 25, ceiling: 48, wage: 14, finisher: 'Splash', interest: 'WWF', note: 'WWF debut May 13, 1995' },
++  { turn: 24, id: 'waylon-mercy', name: 'Waylon Mercy', align: 'heel', pop: 38, work: 50, mic: 60, age: 42, ceiling: 54, wage: 18, finisher: 'Sleeper Hold', interest: 'WWF', note: 'the sinister drifter; Raw debut July 3, 1995' },
+   { turn: 24, id: 'isaac-yankem', name: 'Isaac Yankem, DDS', align: 'heel', pop: 30, work: 52, mic: 34, age: 27, ceiling: 68, wage: 30, finisher: 'Yankem Driver', interest: 'WWF', note: 'a dentist with a mean streak — Jerry Lawler\'s man' },
++  { turn: 27, id: 'dean-douglas', name: 'Dean Douglas', align: 'heel', pop: 34, work: 56, mic: 66, age: 31, ceiling: 58, wage: 25, finisher: 'Douglas Driver', interest: 'WWF', note: 'a smug former TV teacher with all the answers' },
++  { turn: 30, id: 'phineas-godwinn', name: 'Phineas I. Godwinn', align: 'face', pop: 36, work: 46, mic: 38, age: 26, ceiling: 52, wage: 20, finisher: 'Slop Drop', interest: 'WWF', note: 'the Godwinns hit WWF TV, August 1995' },
+   { turn: 32, id: 'bertha-faye', name: 'Bertha Faye', align: 'heel', pop: 30, work: 44, mic: 40, age: 27, ceiling: 52, wage: 18, finisher: 'Faye Bomb', gender: 'f', interest: 'WWF', note: 'the biggest, baddest woman in the division' },
+-  { turn: 40, id: 'dean-douglas', name: 'Dean Douglas', align: 'heel', pop: 34, work: 56, mic: 66, age: 36, ceiling: 58, wage: 25, finisher: 'Douglas Driver', interest: 'WWF', note: 'a smug former TV teacher with all the answers' },
++  { turn: 34, id: 'disco-inferno', name: 'Disco Inferno', align: 'heel', pop: 34, work: 48, mic: 60, age: 28, ceiling: 56, wage: 16, finisher: 'Chartbuster', interest: 'WCW', note: 'WCW TV debut, September 1995' },
++  { turn: 34, id: 'mr-jl', name: 'Mr. JL', align: 'face', pop: 36, work: 62, mic: 44, age: 32, ceiling: 54, wage: 16, finisher: 'Cradle Piledriver', interest: 'WCW', note: 'Jerry Lynn under a mask; WCW, September 1995' },
++  { turn: 36, id: 'kurasawa', name: 'Kurasawa', align: 'heel', pop: 32, work: 48, mic: 24, age: 29, ceiling: 46, wage: 14, finisher: 'Kurasawa Bomb', interest: 'WCW', note: 'Nakanishi under a mask; joins WCW October 1995' },
+   { turn: 40, id: 'the-giant', name: 'The Giant', align: 'heel', pop: 50, work: 56, mic: 46, age: 23, ceiling: 84, wage: 50, finisher: 'Chokeslam', interest: 'WCW', note: 'a seven-foot monster arrives at World War 3' },
+   { turn: 40, id: 'dances-with-dudley', name: 'Dances With Dudley', align: 'face', pop: 30, work: 48, mic: 30, age: 26, ceiling: 54, wage: 14, finisher: 'Dudley Driver', interest: 'ECW', note: 'the first of the Dudley family to hit the bingo hall' },
+-
+-  // ==================== WOMEN ARRIVING ON THE REAL TIMELINE ====================
+-  { turn: 84, id: 'sable', name: 'Sable', align: 'face', pop: 32, work: 25, mic: 48, age: 29, ceiling: 72, wage: 25, finisher: 'Sable Bomb', gender: 'f', interest: 'WWF', note: 'a model with star potential written all over her' },
+-  { turn: 96, id: 'jacqueline', name: 'Jacqueline', align: 'heel', pop: 30, work: 55, mic: 42, age: 33, ceiling: 62, wage: 25, finisher: 'Tornado DDT', gender: 'f', interest: 'ANY', note: 'a tough-as-nails Texas veteran' },
++  { turn: 48, id: 'rob-van-dam', name: 'Rob Van Dam', align: 'face', pop: 32, work: 82, mic: 55, age: 25, ceiling: 86, wage: 30, finisher: 'Five-Star Frog Splash', interest: 'ANY', note: 'the Whole F\'n Show' },
++  { turn: 52, id: 'ahmed-johnson', name: 'Ahmed Johnson', align: 'face', pop: 30, work: 70, mic: 45, age: 32, ceiling: 78, wage: 25, finisher: 'Pearl River Plunge', interest: 'WWF', note: 'a powerhouse prospect' },
++  { turn: 52, id: 'road-warrior-animal', name: 'Road Warrior Animal', align: 'face', pop: 60, work: 52, mic: 50, age: 35, ceiling: 78, wage: 60, finisher: 'Doomsday Device', interest: 'WCW', note: 'one half of the legendary Road Warriors' },
++  { turn: 52, id: 'scott-steiner', name: 'Scott Steiner', align: 'face', pop: 55, work: 75, mic: 55, age: 33, ceiling: 84, wage: 55, finisher: 'Frankensteiner', interest: 'WCW', note: 'returning from a run in the independents' },
++  { turn: 52, id: 'rick-steiner', name: 'Rick Steiner', align: 'face', pop: 52, work: 60, mic: 45, age: 35, ceiling: 70, wage: 50, finisher: 'Steiner Bulldog', interest: 'WCW', note: 'the Dog-Faced Gremlin himself' },
++  { turn: 52, id: 'chris-jericho', name: 'Chris Jericho', align: 'heel', pop: 30, work: 78, mic: 72, age: 25, ceiling: 90, wage: 30, finisher: 'Liontamer', interest: 'ANY', note: 'a loudmouth with all the tools' },
++  { turn: 57, id: 'mark-henry', name: 'Mark Henry', align: 'face', pop: 30, work: 55, mic: 50, age: 24, ceiling: 88, wage: 20, finisher: 'Press Slam', interest: 'WWF', note: 'Olympic weightlifter; first Raw appearance March 11, 1996' },
++  { turn: 59, id: 'sable', name: 'Sable', align: 'face', pop: 32, work: 25, mic: 48, age: 29, ceiling: 72, wage: 25, finisher: 'Sable Bomb', gender: 'f', interest: 'WWF', note: 'a model with star potential written all over her' },
++  { turn: 61, id: 'd-von-dudley', name: 'D-Von Dudley', align: 'heel', pop: 25, work: 58, mic: 62, age: 23, ceiling: 80, wage: 12, finisher: 'Diving Headbutt', interest: 'ECW', note: 'the preacher of the Dudley family; ECW debut April 13, 1996' },
++  { turn: 88, id: 'the-rock', name: 'Rocky Maivia', align: 'face', pop: 24, work: 55, mic: 80, age: 24, ceiling: 95, wage: 25, finisher: 'Shoulderbreaker', interest: 'WWF', note: 'a third-generation blue-chipper' },
++  { turn: 90, id: 'rick-rude', name: '"Ravishing" Rick Rude', align: 'heel', pop: 62, work: 72, mic: 82, age: 37, ceiling: 76, wage: 60, finisher: 'Rude Awakening', interest: 'ECW', note: 'back from forced retirement; ECW, November 1996' },
+   { turn: 100, id: 'chyna', name: 'Chyna', align: 'heel', pop: 28, work: 40, mic: 35, age: 27, ceiling: 78, wage: 30, finisher: 'Powerbomb', gender: 'f', interest: 'WWF', note: 'a bodybuilder with a look nobody can ignore' },
+-  { turn: 200, id: 'lita', name: 'Lita', align: 'face', pop: 30, work: 70, mic: 42, age: 24, ceiling: 82, wage: 28, finisher: 'Moonsault', gender: 'f', interest: 'ANY', note: 'a high-flying daredevil' },
++  { turn: 102, id: 'ken-shamrock', name: 'Ken Shamrock', align: 'face', pop: 35, work: 82, mic: 40, age: 33, ceiling: 78, wage: 35, finisher: 'Ankle Lock', interest: 'WWF', note: 'the World\'s Most Dangerous Man' },
++  { turn: 131, id: 'bill-goldberg', name: 'Bill Goldberg', align: 'face', pop: 28, work: 38, mic: 35, age: 31, ceiling: 90, wage: 35, finisher: 'Jackhammer', interest: 'WCW', note: 'a former NFL lineman training at the Power Plant' },
++  { turn: 132, id: 'kane', name: 'Kane', align: 'heel', pop: 40, work: 58, mic: 30, age: 30, ceiling: 86, wage: 45, finisher: 'Chokeslam', interest: 'WWF', note: 'a monster in a mask — and a score to settle' },
++  { turn: 144, id: 'jeff-hardy', name: 'Jeff Hardy', align: 'face', pop: 8, work: 65, mic: 30, age: 20, ceiling: 90, wage: 12, finisher: 'Swanton Bomb', interest: 'WWF', note: 'OMEGA standout; WWF enhancement talent from 1994, signed 1998' },
++  { turn: 144, id: 'matt-hardy', name: 'Matt Hardy', align: 'face', pop: 8, work: 62, mic: 35, age: 23, ceiling: 84, wage: 12, finisher: 'Twist of Fate', interest: 'WWF', note: 'OMEGA standout; WWF enhancement talent from 1994, signed 1998' },
++  { turn: 163, id: 'val-venis', name: 'Val Venis', align: 'heel', pop: 30, work: 62, mic: 58, age: 26, ceiling: 72, wage: 30, finisher: 'Money Shot', interest: 'WWF', note: 'a... plumber? Hollywood producer? Nobody is sure' },
++  { turn: 164, id: 'jacqueline', name: 'Jacqueline', align: 'heel', pop: 30, work: 55, mic: 42, age: 33, ceiling: 62, wage: 25, finisher: 'Tornado DDT', gender: 'f', interest: 'ANY', note: 'a tough-as-nails Texas veteran' },
++  { turn: 167, id: 'edge', name: 'Edge', align: 'face', pop: 30, work: 78, mic: 60, age: 24, ceiling: 92, wage: 20, finisher: 'Downward Spiral', interest: 'WWF', note: 'through the crowd on Raw, June 22, 1998' },
++  { turn: 179, id: 'christian', name: 'Christian', align: 'heel', pop: 25, work: 74, mic: 62, age: 24, ceiling: 88, wage: 15, finisher: 'Impaler', interest: 'WWF', note: 'Light Heavyweight champion in his debut, September 27, 1998' },
++  { turn: 233, id: 'kurt-angle', name: 'Kurt Angle', align: 'heel', pop: 40, work: 88, mic: 70, age: 30, ceiling: 94, wage: 40, finisher: 'Ankle Lock', interest: 'WWF', note: 'Olympic gold medallist; televised debut at Survivor Series, November 14, 1999' },
++  { turn: 245, id: 'lita', name: 'Lita', align: 'face', pop: 30, work: 70, mic: 42, age: 21, ceiling: 82, wage: 28, finisher: 'Moonsault', gender: 'f', interest: 'ANY', note: 'a high-flying daredevil' },
+   { turn: 260, id: 'trish-stratus', name: 'Trish Stratus', align: 'face', pop: 32, work: 55, mic: 58, age: 24, ceiling: 84, wage: 30, finisher: 'Stratusfaction', gender: 'f', interest: 'WWF', note: 'a fitness model who might just be the total package' },
+ ];
+ 
+diff --git a/test/sim.js b/test/sim.js
+index 3976866..4598614 100644
+--- a/test/sim.js
++++ b/test/sim.js
+@@ -278,8 +278,9 @@ const asg = assignManager(stM, 'jimmy-hart', 'vader');
+ if (!asg.ok) { console.log('FAIL manager assign:', asg.reason); ok = false; }
+ else {
+   const hogan = wrestler(stM, 'hulk-hogan');
++  const hoganAlignBefore = hogan.align; // corrected data: Hogan starts face until the nWo turn
+   const betray = betrayClient(stM, 'jimmy-hart');
+-  const flipped = hogan.align === 'face'; // Hogan starts heel; the betrayal targets the top client
++  const flipped = hogan.align !== hoganAlignBefore; // the betrayal flips the top client either way
+   console.log(`manager assign ✓ (betrayal line: ${betray.lines && betray.lines[0] ? betray.lines[0].text : 'flop'}) hogan flipped=${flipped}`);
+   if (!flipped && betray.lines && betray.lines[0].text.includes('BETRAYAL')) { console.log('FAIL betrayal flip'); ok = false; }
+ }
+@@ -421,7 +422,7 @@ const stCu = createCustomGame({
+   name: 'Iron Ring Wrestling', tvName: 'Iron Ring TV', ppvName: 'Supershow',
+   titleName: 'Iron Ring World Title', color: '#e67e22', dim: '#7a4a12',
+   budget: 4, difficulty: 'normal',
+-  picks: ['sting', 'brian-pillman', 'dean-malenko', 'eddy-guerrero', 'sabu', 'tommy-dreamer', 'booker-t', 'the-patriot'],
++  picks: ['sting', 'brian-pillman', 'dean-malenko', 'chris-benoit', 'sabu', 'tommy-dreamer', 'booker-t', 'the-patriot'], // eddy-guerrero now an FA arrival (audit correction)
+ });
+ const custRoster = stCu.wrestlers.filter((w) => w.company === 'CUSTOM');
+ if (custRoster.length !== 8) { console.log('FAIL custom roster size:', custRoster.length); ok = false; }
+-- 
+2.39.5
+
