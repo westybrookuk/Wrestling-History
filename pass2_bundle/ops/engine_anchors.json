@@ -1,0 +1,75 @@
+{
+ "schema": "cwvwwf-pass2-engine-anchors/1",
+ "file": "js/engine.js",
+ "source_audit": "audit/cwvwwf_data_audit_v7.json :: new9_fix + fa_eng_decisions",
+ "automated": [
+  {
+   "ref": "NEW-9",
+   "title": "Female generated workers receive male first names",
+   "status": "READY — exact anchor, safe to automate",
+   "problem": "makeName() draws a female first name and then unconditionally overwrites it in the else branch ('first = pick(ROOKIE_FIRST_NAMES)'). Observed 0/12 female indies named, 0 female-named AI recruits across four 300-week runs. Female INTL workers are separately exempt (INTL name pools) — that is intended, leave alone.",
+   "find_regex": "(\\})\\s*else\\s*\\{\\s*\\n(\\s*)first\\s*=\\s*pick\\(ROOKIE_FIRST_NAMES\\)",
+   "replace_with": "$1 else if (!first) {\n$2first = pick(ROOKIE_FIRST_NAMES)",
+   "why_this_anchor": "The audit specifies the branch immediately following `if (!first && flavor && INDY_INTL_NAMES[flavor]) { ... }`. Anchoring on `else {` directly followed by `first = pick(ROOKIE_FIRST_NAMES)` is that branch without needing the surrounding INTL block text, so it survives refactors of the INTL branch.",
+   "must_match": "exactly once",
+   "leaves_intact": "last = pick(ROOKIE_LAST_NAMES) stays inside the branch",
+   "determinism_caveat": "The fix REMOVES a wasted rng call, so new games diverge from pre-fix seeds for the same seed. Expected and accepted (same class of change as commit 3c43e7b). Old saves keep their state; do not attempt to re-seed old saves.",
+   "verify": [
+    "node --input-type=module -e \"import {newGame, mulberry32} from './js/engine.js'; const s=newGame('WWF','normal',{rng:mulberry32(1234)}); const F=['Amy','Angela','April','Ashley','Beth','Brenda','Carla','Cathy','Christina','Dawn','Heather','Jennifer','Jessica','Julie','Kelly','Laura','Lisa','Michelle','Nicole','Rachel','Rebecca','Sara','Shannon','Stephanie','Tara','Tracy']; const f=s.wrestlers.filter(w=>w.isIndy&&!w.company&&w.gender==='f'); console.log(f.map(w=>w.name)); console.log('female-named:', f.filter(w=>F.includes(w.name.split(' ')[0])).length, '/', f.length);\"",
+    "node test/sim.js",
+    "node test/ai-stress.js"
+   ],
+   "expect": "non-zero female-named count (roughly all non-international female indies); sim + ai-stress green"
+  }
+ ],
+ "manual": [
+  {
+   "ref": "FA-ENG-6",
+   "title": "Complete the talentIntake ledger with rookie-class counts",
+   "decision": "YES — the double January intake is intended (15 indy graduates + 4-6 training-camp rookies = 19-21 generated workers/year). Keep both, document, complete the ledger.",
+   "why_manual": "The exact current source line is not in this repo (game repo was never readable from this workspace). Guessing the literal would risk a silent no-op.",
+   "where": "the training-class block in js/engine.js",
+   "change": "state.game.talentIntake.rookieClasses.push({ year: d.year, count }) — replace the year-only entry. Keep the existing key/shape otherwise.",
+   "also": "Update the block comment above the two intakes to state the combined model: '15 independent graduates + 4-6 training-camp rookies (19-21 generated workers) every January 1996-2001; rookies only thereafter'.",
+   "verify": [
+    "one spectate run: ledger shows 6x {indy 15} + rookie counts",
+    "world totals unchanged vs the v6 baseline"
+   ],
+   "baseline_note": "v6 baseline is the authority for world totals; 150 total indies by 2001 must hold."
+  },
+  {
+   "ref": "FA-ENG-7",
+   "title": "Indy classes stop with the historical window (2001)",
+   "decision": "NO CHANGE to behaviour — the 2001 cap is intentional; document it.",
+   "why_manual": "Comment-only; anchor text unknown.",
+   "where": "the January indy-class hook in js/engine.js",
+   "change": "Add one-line comment: 'classes stop with the historical window (2001); the 2002-2007 tail is fed by the training camp only'",
+   "rationale": "The curated spine ends with the Monday Night Wars era (final Nitro t299, ECW closure t288-291); every curated dataset stops there. The rookie class already covers tail supply.",
+   "not_recommended": "A reduced 5/year tail for 2002-2007 would need the hook condition loosened to d.year <= 2007 plus a rate split, and would change the verified 150-indy baseline. Only if the owner explicitly wants a livelier tail."
+  }
+ ],
+ "open_design_questions": [
+  {
+   "ref": "PASS1-OPEN-8",
+   "status": "OWNER DECISION REQUIRED — not an agent decision",
+   "question": "dynamite-kansai & mayumi-ozaki: JWP is not a game company.",
+   "options": [
+    "(recommended) keep both in AJW as interpromotional guests — no change needed",
+    "add JWP to COMPANY_DEFS"
+   ]
+  },
+  {
+   "ref": "PASS1-OPEN-9",
+   "status": "OWNER DECISION REQUIRED — optional comeback arcs, none needed for correctness",
+   "items": [
+    "barbarian WCW t44-47",
+    "windham Stalker t72",
+    "neidhart ECW t12-15",
+    "brandi t76",
+    "missy-hyatt t47",
+    "the-shark/savio rename events",
+    "spicolli ECW t73"
+   ]
+  }
+ ]
+}

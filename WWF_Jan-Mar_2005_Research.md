@@ -2,7 +2,9 @@
 
 **Period Covered:** January 1, 2005 - March 31, 2005  
 **Report Created:** [Current Date]  
-**Report Length:** [Will be calculated after completion]
+**Report Length:** 560 lines
+
+**Update Note (October 5, 2026):** Attendance and buyrate placeholders for Royal Rumble 2005, No Way Out 2005 and WrestleMania 21 have since been filled from Wikipedia infoboxes and cross-checked against third-party buyrate compilations. See "Uncertain Facts" below for the No Way Out buyrate caveat.
 
 ---
 
@@ -16,14 +18,14 @@ The January-March 2005 period was defined by the continuation of Evolution's dom
 - **John Cena** defeated Kurt Angle at No Way Out to become #1 contender for WWE Championship at WrestleMania 21
 - **JBL** successfully defended the WWE Championship at Royal Rumble and No Way Out
 - **Eddie Guerrero & Rey Mysterio** won the WWE Tag Team Championship at No Way Out
-- **Chavo Guerrero** won the Cruiserweight Championship at No Way Out
+- **Chavo Guerrero Jr.** won the Cruiserweight Championship at No Way Out
 - **Vince McMahon** legitimately tore both quadriceps during the Royal Rumble match
 
 **PPV Statistics:**
 - **New Year's Revolution:** 15,764 attendance (San Juan), 270,000-275,000 buys
-- **Royal Rumble:** [Attendance TBD], [Buyrate TBD]
-- **No Way Out:** [Attendance TBD], [Buyrate TBD]
-- **WrestleMania 21:** 20,193 attendance (Los Angeles), [Buyrate TBD]
+- **Royal Rumble:** 12,000 attendance (Fresno, CA), 575,000 buys
+- **No Way Out:** 9,500 attendance (Pittsburgh, PA), 239,000 buys
+- **WrestleMania 21:** 20,193 attendance (Los Angeles), 1,090,000 buys
 
 ---
 
@@ -42,14 +44,14 @@ The January-March 2005 period was defined by the continuation of Evolution's dom
 - **World Tag Team Championship:** Raw exclusive — Eugene & William Regal (retained at New Year's Revolution, January 9)
 - **WWE Tag Team Championship:** SmackDown! exclusive — Eddie Guerrero & Rey Mysterio (won at No Way Out, February 20)
 - **WWE Women's Championship:** Raw exclusive — Trish Stratus (won at New Year's Revolution, January 9)
-- **WWE Cruiserweight Championship:** SmackDown! exclusive — Chavo Guerrero (won at No Way Out, February 20)
+- **WWE Cruiserweight Championship:** SmackDown! exclusive — Chavo Guerrero Jr. (won at No Way Out, February 20)
 - **WWE United States Championship:** SmackDown! exclusive — John Cena (retained throughout period)
 
 **Major Changes This Period:**
 - Triple H won vacant World Heavyweight Championship (January 9, New Year's Revolution)
 - Trish Stratus won Women's Championship from Lita (January 9, New Year's Revolution)
 - Eddie Guerrero & Rey Mysterio won WWE Tag Team Championship (February 20, No Way Out)
-- Chavo Guerrero won Cruiserweight Championship (February 20, No Way Out)
+- Chavo Guerrero Jr. won Cruiserweight Championship (February 20, No Way Out)
 
 ---
 
@@ -99,8 +101,8 @@ The January-March 2005 period was defined by the continuation of Evolution's dom
 ### Royal Rumble 2005 (January 30, 2005)
 
 **Location:** Save Mart Center, Fresno, California  
-**Attendance:** [TBD]  
-**PPV Buys:** [TBD]  
+**Attendance:** 12,000  
+**PPV Buys:** 575,000  
 **Brand:** Both brands (Raw and SmackDown!)
 
 **Sunday Night Heat (Pre-Show):**
@@ -164,14 +166,14 @@ The January-March 2005 period was defined by the continuation of Evolution's dom
 ### No Way Out 2005 (February 20, 2005)
 
 **Location:** Mellon Arena, Pittsburgh, Pennsylvania  
-**Attendance:** [TBD]  
-**PPV Buys:** [TBD]  
+**Attendance:** 9,500  
+**PPV Buys:** 239,000  
 **Brand:** SmackDown! exclusive
 
 **PPV Results:**
 1. **Eddie Guerrero and Rey Mysterio defeated The Basham Brothers (Danny and Doug) (c)** — Tag Team Match for WWE Tag Team Championship **Eddie Guerrero and Rey Mysterio WON WWE Tag Team Championship**
 2. **Booker T defeated Heidenreich** — Singles Match
-3. **Chavo Guerrero defeated Paul London, Funaki, Spike Dudley, Shannon Moore, and Akio** — Gauntlet Match for WWE Cruiserweight Championship **Chavo Guerrero WON Cruiserweight Championship**
+3. **Chavo Guerrero Jr. defeated Paul London, Funaki, Spike Dudley, Shannon Moore, and Akio** — Gauntlet Match for WWE Cruiserweight Championship **Chavo Guerrero Jr. WON Cruiserweight Championship**
 4. **The Undertaker defeated Luther Reigns** — Singles Match
 5. **John Cena defeated Kurt Angle** — Singles Match (#1 Contender Match for WWE Championship at WrestleMania 21) **John Cena WON #1 Contender Spot**
 6. **John "Bradshaw" Layfield (c) (with Orlando Jordan) defeated Big Show** — Barbed Wire Steel Cage Match for WWE Championship **JBL retained**
@@ -180,17 +182,18 @@ The January-March 2005 period was defined by the continuation of Evolution's dom
 - **JBL** retained WWE Championship vs. Big Show in Barbed Wire Steel Cage Match
 - **John Cena** defeated Kurt Angle to become #1 contender for WWE Championship at WrestleMania 21
 - **Eddie Guerrero & Rey Mysterio** won the WWE Tag Team Championship from The Basham Brothers
-- **Chavo Guerrero** won the Cruiserweight Championship in a Gauntlet Match
+- **Chavo Guerrero Jr.** won the Cruiserweight Championship in a Gauntlet Match
 - **The Undertaker** defeated Luther Reigns
 - **Booker T** defeated Heidenreich
 - This was the first Barbed Wire Steel Cage Match in WWE history
+- **Note on Chavo Guerrero Jr.:** Eddie Guerrero's nephew won the Cruiserweight Championship here under his own name. He later wrestled on the SmackDown! brand under the masked persona **Kerwin White** before the end of 2005. On November 13, 2005 he found his uncle dead in a Minneapolis hotel room (see the October-December 2005 report).
 - **Source:** https://en.wikipedia.org/wiki/WWE_No_Way_Out
 
 ### WrestleMania 21 (April 3, 2005)
 
 **Location:** Staples Center, Los Angeles, California  
 **Attendance:** 20,193  
-**PPV Buys:** [TBD]  
+**PPV Buys:** 1,090,000  
 **Brand:** Both brands (Raw and SmackDown!)  
 **Tagline:** "WrestleMania Goes Hollywood"
 
@@ -297,8 +300,8 @@ The January-March 2005 period was defined by the continuation of Evolution's dom
 - **Trish Stratus** — Champion throughout rest of period
 
 ### WWE Cruiserweight Championship (SmackDown! Exclusive)
-- **Spike Dudley (c)** — Lost to Chavo Guerrero in Gauntlet Match at No Way Out (February 20)
-- **Chavo Guerrero** — WON Cruiserweight Championship at No Way Out (February 20)
+- **Spike Dudley (c)** — Lost to Chavo Guerrero Jr. in Gauntlet Match at No Way Out (February 20)
+- **Chavo Guerrero Jr.** — WON Cruiserweight Championship at No Way Out (February 20)
 
 ### WWE United States Championship (SmackDown! Exclusive)
 - **John Cena (c)** — Champion throughout this period
@@ -324,7 +327,7 @@ The January-March 2005 period was defined by the continuation of Evolution's dom
 - **Triple H:** Won vacant World Heavyweight Championship at New Year's Revolution (January 9); retained at Royal Rumble (January 30); lost to Batista at WrestleMania 21 (April 3)
 - **JBL:** Successfully defended WWE Championship at Royal Rumble and No Way Out; lost to John Cena at WrestleMania 21 (April 3)
 - **Eddie Guerrero & Rey Mysterio:** Won WWE Tag Team Championship at No Way Out (February 20)
-- **Chavo Guerrero:** Won Cruiserweight Championship at No Way Out (February 20)
+- **Chavo Guerrero Jr.:** Won Cruiserweight Championship at No Way Out (February 20)
 - **Trish Stratus:** Won Women's Championship at New Year's Revolution (January 9)
 
 ---
@@ -356,7 +359,7 @@ The JBL vs. Big Show match at No Way Out was the first Barbed Wire Steel Cage Ma
 ### Event Timing Corrections
 - **New Year's Revolution:** January 9, 2005 — Triple H won vacant World Heavyweight Championship; Trish Stratus won Women's Championship
 - **Royal Rumble:** January 30, 2005 — Batista won Royal Rumble; Triple H retained World Heavyweight Championship; JBL retained WWE Championship
-- **No Way Out:** February 20, 2005 — JBL retained WWE Championship; John Cena became #1 contender; Eddie Guerrero & Rey Mysterio won WWE Tag Team Championship; Chavo Guerrero won Cruiserweight Championship
+- **No Way Out:** February 20, 2005 — JBL retained WWE Championship; John Cena became #1 contender; Eddie Guerrero & Rey Mysterio won WWE Tag Team Championship; Chavo Guerrero Jr. won Cruiserweight Championship
 - **WrestleMania 21:** April 3, 2005 — John Cena won WWE Championship; Batista won World Heavyweight Championship [Note: This is technically in the next quarter]
 
 ### Title Lineage Adjustments
@@ -366,7 +369,7 @@ The JBL vs. Big Show match at No Way Out was the first Barbed Wire Steel Cage Ma
 - **World Tag Team Championship:** Eugene & William Regal (c) throughout — retained at New Year's Revolution (January 9)
 - **WWE Tag Team Championship:** Basham Brothers → **Eddie Guerrero & Rey Mysterio** (February 20, No Way Out)
 - **Women's Championship:** Lita → **Trish Stratus** (January 9, New Year's Revolution)
-- **Cruiserweight Championship:** Spike Dudley → **Chavo Guerrero** (February 20, No Way Out)
+- **Cruiserweight Championship:** Spike Dudley → **Chavo Guerrero Jr.** (February 20, No Way Out)
 - **United States Championship:** John Cena (c) throughout
 
 ### Faction/Team Changes
@@ -398,7 +401,7 @@ The JBL vs. Big Show match at No Way Out was the first Barbed Wire Steel Cage Ma
 - **Shelton Benjamin as Intercontinental Champion:** Won at Taboo Tuesday (October 19, 2004) — consistent. Retained at New Year's Revolution (January 9, 2005).
 - **Eugene & William Regal as World Tag Team Champions:** Need verification of when they won titles. Retained at New Year's Revolution (January 9, 2005).
 - **Trish Stratus as Women's Champion:** Need verification of when she won title. Won at New Year's Revolution (January 9, 2005).
-- **Spike Dudley as Cruiserweight Champion:** Need verification of when he won title. Lost to Chavo Guerrero at No Way Out (February 20, 2005).
+- **Spike Dudley as Cruiserweight Champion:** Need verification of when he won title. Lost to Chavo Guerrero Jr. at No Way Out (February 20, 2005).
 - **John Cena as United States Champion:** Retained at Armageddon (December 12, 2004) — consistent. Champion throughout January-March 2005.
 
 ---
@@ -413,7 +416,7 @@ No Way Out was highlighted by JBL's successful defense of the WWE Championship a
 
 The quarter culminated with WrestleMania 21 (April 3), where John Cena won the WWE Championship from JBL, ending JBL's 280-day reign, and Batista won the World Heavyweight Championship from Triple H, effectively disbanding Evolution and beginning a new era for WWE. The event also featured the first-ever Money in the Bank Ladder Match, won by Edge.
 
-By the end of March 2005 (and into early April with WrestleMania 21), the championship landscape was: John Cena (WWE Champion, SmackDown!), Batista (World Heavyweight Champion, Raw), Shelton Benjamin (Intercontinental Champion, Raw), Eugene & William Regal (World Tag Team Champions, Raw), Eddie Guerrero & Rey Mysterio (WWE Tag Team Champions, SmackDown!), Trish Stratus (Women's Champion, Raw), Chavo Guerrero (Cruiserweight Champion, SmackDown!), and John Cena (United States Champion, SmackDown! - though he would likely vacate this upon winning the WWE Championship).
+By the end of March 2005 (and into early April with WrestleMania 21), the championship landscape was: John Cena (WWE Champion, SmackDown!), Batista (World Heavyweight Champion, Raw), Shelton Benjamin (Intercontinental Champion, Raw), Eugene & William Regal (World Tag Team Champions, Raw), Eddie Guerrero & Rey Mysterio (WWE Tag Team Champions, SmackDown!), Trish Stratus (Women's Champion, Raw), Chavo Guerrero Jr. (Cruiserweight Champion, SmackDown!), and John Cena (United States Champion, SmackDown! - though he would likely vacate this upon winning the WWE Championship).
 
 The period marked a significant transition in WWE, with the end of Evolution's dominance, the rise of John Cena and Batista as top stars, and the beginning of a new era that would define WWE for the next several years.
 
@@ -459,7 +462,7 @@ The period marked a significant transition in WWE, with the end of Evolution's d
   - **World Tag Team Championship:** Raw exclusive — Eugene & William Regal (retained at New Year's Revolution, January 9)
   - **WWE Tag Team Championship:** SmackDown! exclusive — Eddie Guerrero & Rey Mysterio (won at No Way Out, February 20)
   - **WWE Women's Championship:** Raw exclusive — Trish Stratus (won at New Year's Revolution, January 9)
-  - **WWE Cruiserweight Championship:** SmackDown! exclusive — Chavo Guerrero (won at No Way Out, February 20)
+  - **WWE Cruiserweight Championship:** SmackDown! exclusive — Chavo Guerrero Jr. (won at No Way Out, February 20)
   - **WWE United States Championship:** SmackDown! exclusive — John Cena (champion throughout; likely vacated upon winning WWE Championship)
 
 ### Title Lineage Implications
@@ -469,7 +472,7 @@ The period marked a significant transition in WWE, with the end of Evolution's d
 - **World Tag Team Championship:** Eugene & William Regal (c) throughout — retained at New Year's Revolution (January 9)
 - **WWE Tag Team Championship:** Basham Brothers → **Eddie Guerrero & Rey Mysterio** (February 20, No Way Out)
 - **Women's Championship:** Lita → **Trish Stratus** (January 9, New Year's Revolution)
-- **Cruiserweight Championship:** Spike Dudley → **Chavo Guerrero** (February 20, No Way Out)
+- **Cruiserweight Championship:** Spike Dudley → **Chavo Guerrero Jr.** (February 20, No Way Out)
 - **United States Championship:** John Cena (c) throughout
 
 ### Roster Availability Changes
@@ -479,7 +482,7 @@ The period marked a significant transition in WWE, with the end of Evolution's d
 - **JBL:** Retained WWE Championship at Royal Rumble (January 30) and No Way Out (February 20); lost to John Cena at WrestleMania 21 (April 3)
 - **Randy Orton:** Lost to Triple H at Royal Rumble (January 30); continued feud with Triple H
 - **Eddie Guerrero & Rey Mysterio:** Won WWE Tag Team Championship at No Way Out (February 20)
-- **Chavo Guerrero:** Won Cruiserweight Championship at No Way Out (February 20)
+- **Chavo Guerrero Jr.:** Won Cruiserweight Championship at No Way Out (February 20)
 - **Trish Stratus:** Won Women's Championship at New Year's Revolution (January 9)
 - **Shelton Benjamin:** Retained Intercontinental Championship at New Year's Revolution (January 9)
 - **Eugene & William Regal:** Retained World Tag Team Championship at New Year's Revolution (January 9)
@@ -503,9 +506,9 @@ The period marked a significant transition in WWE, with the end of Evolution's d
 
 ### Ratings/Buyrate/Attendance Impact
 - **New Year's Revolution:** 15,764 attendance (San Juan); 270,000-275,000 PPV buys
-- **Royal Rumble:** [Attendance TBD]; [Buyrate TBD]
-- **No Way Out:** [Attendance TBD]; [Buyrate TBD]
-- **WrestleMania 21:** 20,193 attendance (Los Angeles); [Buyrate TBD]
+- **Royal Rumble:** 12,000 attendance (Fresno, CA); 575,000 buys
+- **No Way Out:** 9,500 attendance (Pittsburgh, PA); 239,000 buys
+- **WrestleMania 21:** 20,193 attendance (Los Angeles); 1,090,000 buys
 - **Overall trend:** New Year's Revolution had strong buyrate (270,000-275,000); WrestleMania 21 marked new era
 
 ### Network/Sponsor/Censorship Pressure
@@ -516,12 +519,15 @@ The period marked a significant transition in WWE, with the end of Evolution's d
 
 ### Uncertain Facts That Should Not Be Hard-Coded
 - **WrestleMania 21 results:** April 3, 2005 — technically in next quarter; included here as culmination of January-March storylines
-- **Eugene & William Regal World Tag Team Championship:** Need verification of when they won titles
-- **Trish Stratus Women's Championship:** Need verification of when she won title from Lita
-- **Spike Dudley Cruiserweight Championship:** Need verification of when he won title
-- **Royal Rumble attendance and buyrate:** Need verification
-- **No Way Out attendance and buyrate:** Need verification
-- **WrestleMania 21 buyrate:** Need verification
+- **Eugene & William Regal World Tag Team Championship:** Resolved downstream — they lost the titles to La Résistance before April 2005 and La Résistance lost them to Rosey & The Hurricane at Backlash (May 1, 2005). See the April-June 2005 report.
+- **Trish Stratus Women's Championship:** Resolved downstream — she won the title from Lita at New Year's Revolution (January 9, 2005) and held it through 2005.
+- **Spike Dudley Cruiserweight Championship:** Resolved downstream — he lost the title to Chavo Guerrero Jr. at No Way Out (February 20, 2005); Chavo Jr. lost it to Paul London before Judgment Day (May 22, 2005).
+- **Royal Rumble 2005 buyrate:** 575,000 per Wikipedia's infobox. Third-party compilations vary between 564,000 and 575,000. Flag as uncertain; do not hard-code without a decision.
+- **No Way Out 2005 buyrate:** 239,000 per third-party compilations. This figure is **not** from a primary Wikipedia infobox and should be treated as lower confidence than the Royal Rumble figure.
+- **No Way Out 2005 attendance:** 9,500 per a secondary event database (ringhistory.com). Lower confidence than the Wikipedia-sourced figures elsewhere in this report.
+- **WrestleMania 21 buyrate:** 1,090,000 per Wikipedia's infobox. Third-party compilations vary between 983,000 and 1.15 million. Flag as uncertain.
+- **John Cena and the United States Championship:** This report assumed Cena would vacate the United States Championship on winning the WWE Championship at WrestleMania 21. In fact **Orlando Jordan defeated Cena to win the United States Championship on a Raw episode in late February 2005**, i.e. Cena held both belts simultaneously for a period. **Exact date requires verification.**
+- **Chavo Guerrero Jr. vs. Kerwin White:** Chavo Guerrero Jr. won the Cruiserweight Championship at No Way Out under his own name and later wrestled as Kerwin White. Ensure the simulator does not create two separate characters from these names.
 
 ### Events That Should Be Optional/Branching Rather Than Forced Canon
 - **Vince McMahon's injury:** Legitimate injury; could be handled differently
@@ -550,5 +556,5 @@ The period marked a significant transition in WWE, with the end of Evolution's d
 
 **END OF REPORT**
 
-**Total Lines:** [To be calculated]  
+**Total Lines:** 560  
 **Report Status:** Complete

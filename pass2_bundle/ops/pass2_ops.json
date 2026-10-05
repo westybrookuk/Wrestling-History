@@ -1,0 +1,845 @@
+{
+ "schema": "cwvwwf-pass2-ops/2",
+ "source_audit": "audit/cwvwwf_data_audit_v7.json (PR #2, merged 2026-08-29)",
+ "target_repo": "westybrookuk/WCW-vs-WWF",
+ "baseline": "pass-1 patch (audit/cwvwwf_high_confidence_corrections.patch) applies to 3c43e7b",
+ "target_format": "flat arrays, unquoted keys, single quotes (WRESTLERS carries a `company` field; FA_ARRIVALS has `turn` first and `interest`, no `company`)",
+ "counts": {
+  "wrestler_medium": 21,
+  "titles": 17,
+  "factions": 3,
+  "announcers": 6,
+  "timeline_dates": 9,
+  "timeline_deaths": 8
+ },
+ "total_ops": 64,
+ "order": [
+  "titles",
+  "factions",
+  "announcers",
+  "timeline_dates",
+  "timeline_deaths",
+  "wrestler_medium"
+ ],
+ "ops": [
+  {
+   "ref": "titles/wwf-women",
+   "op": "modify",
+   "id": "wwf-women",
+   "file": "js/data.js",
+   "collection": "INITIAL_TITLES",
+   "confidence": "High",
+   "changes": {
+    "holder": "bull-nakano"
+   },
+   "audit_note": "Bull Nakano champion since Nov 20, 1994; Blayze regained Apr 3, 1995"
+  },
+  {
+   "ref": "titles/wwf-tag",
+   "op": "modify",
+   "id": "wwf-tag",
+   "file": "js/data.js",
+   "collection": "INITIAL_TITLES",
+   "confidence": "High",
+   "changes": {
+    "holder": "VACANT"
+   },
+   "audit_note": "Vacant at start; 1-2-3 Kid & Bob Holly won at the Jan 22, 1995 Royal Rumble",
+   "precondition": "check the engine's VACANT/null holder handling before applying 'VACANT'"
+  },
+  {
+   "ref": "titles/nwa-world",
+   "op": "modify",
+   "id": "nwa-world",
+   "file": "js/data.js",
+   "collection": "INITIAL_TITLES",
+   "confidence": "High",
+   "changes": {
+    "holder": "chris-candido"
+   },
+   "audit_note": "Champion Nov 19, 1994 - Feb 24, 1995 (Severn wins Feb 24)",
+   "precondition": "verify roster(state,\"NWA\") semantics - candido may need to be a floating champion"
+  },
+  {
+   "ref": "titles/njpw-junior",
+   "op": "modify",
+   "id": "njpw-junior",
+   "file": "js/data.js",
+   "collection": "INITIAL_TITLES",
+   "confidence": "High",
+   "changes": {
+    "holder": "norio-honaga"
+   },
+   "audit_note": "Retained vs Sasuke at Battle 7, Jan 4, 1995 (requires adding honaga)",
+   "precondition": "add norio-honaga as a worker first (flagged unverified in the audit)"
+  },
+  {
+   "ref": "titles/njpw-tag",
+   "op": "modify",
+   "id": "njpw-tag",
+   "file": "js/data.js",
+   "collection": "INITIAL_TITLES",
+   "confidence": "High",
+   "changes": {
+    "holder": "hase-muto"
+   },
+   "audit_note": "Hase & Muto held the IWGP tag belts Nov 25, 1994 - May 6, 1995 (requires adding hase + team)",
+   "precondition": "add hase + the hase-muto team first"
+  },
+  {
+   "ref": "titles/ajpw-triple",
+   "op": "modify",
+   "id": "ajpw-triple",
+   "file": "js/data.js",
+   "collection": "INITIAL_TITLES",
+   "confidence": "High",
+   "changes": {
+    "holder": "kawada"
+   },
+   "audit_note": "Kawada Oct 22, 1994 - Mar 4, 1995 (Hansen)"
+  },
+  {
+   "ref": "titles/ajpw-tag",
+   "op": "modify",
+   "id": "ajpw-tag",
+   "file": "js/data.js",
+   "collection": "INITIAL_TITLES",
+   "confidence": "High",
+   "changes": {
+    "holder": "misawa-kobashi"
+   },
+   "audit_note": "Misawa & Kobashi were the World Tag champions (HDA won the belts June 9, 1995)"
+  },
+  {
+   "ref": "titles/cmll-world",
+   "op": "modify",
+   "id": "cmll-world",
+   "file": "js/data.js",
+   "collection": "INITIAL_TITLES",
+   "confidence": "High",
+   "changes": {
+    "holder": "silver-king"
+   },
+   "audit_note": "Silver King July 28, 1994 - 1995; Santo never held this title"
+  },
+  {
+   "ref": "titles/smw-world",
+   "op": "modify",
+   "id": "smw-world",
+   "file": "js/data.js",
+   "collection": "INITIAL_TITLES",
+   "confidence": "High",
+   "changes": {
+    "holder": "dirty-white-boy"
+   },
+   "audit_note": "SMW champion since July 1994"
+  },
+  {
+   "ref": "titles/smw-tv",
+   "op": "modify",
+   "id": "smw-tv",
+   "file": "js/data.js",
+   "collection": "INITIAL_TITLES",
+   "confidence": "High",
+   "changes": {
+    "holder": "buddy-landel"
+   },
+   "audit_note": "Beat the Champ TV winner from Lee, Dec 5, 1994"
+  },
+  {
+   "ref": "titles/uswa-world",
+   "op": "modify",
+   "id": "uswa-world",
+   "file": "js/data.js",
+   "collection": "INITIAL_TITLES",
+   "confidence": "High",
+   "changes": {
+    "holder": "sid"
+   },
+   "audit_note": "Reigning USWA Unified champion (lost to Lawler Feb 6, 1995)"
+  },
+  {
+   "ref": "titles/ajw-tag",
+   "op": "modify",
+   "id": "ajw-tag",
+   "file": "js/data.js",
+   "collection": "INITIAL_TITLES",
+   "confidence": "High",
+   "changes": {
+    "holder": "kyoko-takako"
+   },
+   "audit_note": "Kyoko & Takako Inoue WWWA tag champions from Oct 9, 1994 (requires the corrected team)",
+   "precondition": "add the corrected kyoko-takako team first"
+  },
+  {
+   "ref": "titles/ecw-hardcore",
+   "op": "remove",
+   "id": "ecw-hardcore",
+   "file": "js/data.js",
+   "collection": "INITIAL_TITLES",
+   "confidence": "High",
+   "changes": null,
+   "audit_note": "The ECW Hardcore title did not exist in 1995"
+  },
+  {
+   "ref": "titles/aaa-world",
+   "op": "remove",
+   "id": "aaa-world",
+   "file": "js/data.js",
+   "collection": "INITIAL_TITLES",
+   "confidence": "High",
+   "changes": null,
+   "audit_note": "AAA had no World Heavyweight title until 1996+ (Americas HW began Feb 2, 1996)"
+  },
+  {
+   "ref": "titles/aaa-cruiser",
+   "op": "remove",
+   "id": "aaa-cruiser",
+   "file": "js/data.js",
+   "collection": "INITIAL_TITLES",
+   "confidence": "High",
+   "changes": null,
+   "audit_note": "AAA had no Cruiserweight title in Jan 1995; Rey held no title"
+  },
+  {
+   "ref": "titles/ecw-tag",
+   "op": "add",
+   "id": "ecw-tag",
+   "file": "js/data.js",
+   "collection": "INITIAL_TITLES",
+   "confidence": "High",
+   "changes": {
+    "name": "ECW World Tag Team",
+    "company": "ECW",
+    "kind": "tag",
+    "holder": "public-enemy",
+    "prestige": 48
+   },
+   "audit_note": "Public Enemy were the champions at the start",
+   "precondition": "a TEAMS entry for public-enemy must exist"
+  },
+  {
+   "ref": "titles/smw-tag",
+   "op": "add",
+   "id": "smw-tag",
+   "file": "js/data.js",
+   "collection": "INITIAL_TITLES",
+   "confidence": "High",
+   "changes": {
+    "name": "SMW United States Tag Team",
+    "company": "SMW",
+    "kind": "tag",
+    "holder": "rock-n-roll-express",
+    "prestige": 40
+   },
+   "audit_note": "R&R Express won the belts at Christmas Chaos, Dec 25, 1994",
+   "precondition": "a TEAMS entry for rock-n-roll-express must exist"
+  },
+  {
+   "ref": "factions/four-horsemen",
+   "op": "modify",
+   "id": "four-horsemen",
+   "file": "js/data.js",
+   "collection": "INITIAL_FACTIONS",
+   "confidence": "High",
+   "changes": null,
+   "audit_note": "Do not seed at start; formation event ~turn 39 (Oct 29, 1995: Flair/Arn/Pillman, +Benoit by year end)"
+  },
+  {
+   "ref": "factions/dungeon-of-doom",
+   "op": "modify",
+   "id": "dungeon-of-doom",
+   "file": "js/data.js",
+   "collection": "INITIAL_FACTIONS",
+   "confidence": "High",
+   "changes": {
+    "id": "three-faces-of-fear",
+    "name": "The Three Faces of Fear",
+    "members": [
+     "kevin-sullivan",
+     "the-butcher",
+     "avalanche"
+    ]
+   },
+   "audit_note": "Rename at start; Dungeon of Doom forms mid-1995 and absorbs Meng (~turn 24-28)"
+  },
+  {
+   "ref": "factions/million-dollar-corp",
+   "op": "modify",
+   "id": "million-dollar-corp",
+   "file": "js/data.js",
+   "collection": "INITIAL_FACTIONS",
+   "confidence": "High",
+   "changes": {
+    "leader": "ted-dibiase"
+   },
+   "audit_note": "Leader should be DiBiase; Tatanka joins ~turn 5-6 (heel turn Feb 20, 1995); Bigelow exits ~turn 13; consider adding volkoff/kama"
+  },
+  {
+   "ref": "announcers/mike-tenay",
+   "op": "remove",
+   "id": "mike-tenay",
+   "file": "js/data.js",
+   "collection": "ANN_ARRIVALS",
+   "confidence": "High",
+   "changes": null,
+   "audit_note": "Move from ANN_ARRIVALS (turn 48) to ANN_STARTERS.WCW - Tenay called When Worlds Collide Nov 6, 1994",
+   "guidance": "two-step by hand: remove from ANN_ARRIVALS then add to ANN_STARTERS.WCW"
+  },
+  {
+   "ref": "announcers/larry-zbyszko",
+   "op": "modify",
+   "id": "larry-zbyszko",
+   "file": "js/data.js",
+   "collection": "ANN_ARRIVALS",
+   "confidence": "High",
+   "changes": {
+    "turn": 67
+   },
+   "audit_note": "Nitro commentary from May 27, 1996"
+  },
+  {
+   "ref": "announcers/michael-cole",
+   "op": "modify",
+   "id": "michael-cole",
+   "file": "js/data.js",
+   "collection": "ANN_ARRIVALS",
+   "confidence": "High",
+   "changes": {
+    "turn": 119
+   },
+   "audit_note": "First on-screen June 30, 1997"
+  },
+  {
+   "ref": "announcers/tazz",
+   "op": "modify",
+   "id": "tazz",
+   "file": "js/data.js",
+   "collection": "ANN_ARRIVALS",
+   "confidence": "High",
+   "changes": {
+    "turn": 243
+   },
+   "audit_note": "Signs Jan 2000 as an active wrestler (ECW champion at the Royal Rumble, Jan 23); commentary role later"
+  },
+  {
+   "ref": "announcers/kent-walton",
+   "op": "remove",
+   "id": "kent-walton",
+   "file": "js/data.js",
+   "collection": "ANN_STARTERS",
+   "confidence": "High",
+   "changes": null,
+   "audit_note": "Remove - Walton retired from ITV commentary in 1988",
+   "guidance": "lives in ANN_STARTERS.CMLL, not ANN_ARRIVALS - confirm the group"
+  },
+  {
+   "ref": "announcers/tirantes",
+   "op": "remove",
+   "id": "tirantes",
+   "file": "js/data.js",
+   "collection": "ANN_STARTERS",
+   "confidence": "High",
+   "changes": null,
+   "audit_note": "Remove from the CMLL booth - Tirantes is a referee",
+   "guidance": "lives in the CMLL booth in ANN_STARTERS - confirm the group"
+  },
+  {
+   "ref": "timeline_dates/austin-316",
+   "op": "modify",
+   "id": "austin-316",
+   "file": "js/timeline.js",
+   "collection": "TIMELINE",
+   "confidence": "High",
+   "changes": {
+    "turn": 71
+   },
+   "audit_note": "King of the Ring speech June 23, 1996"
+  },
+  {
+   "ref": "timeline_dates/dx",
+   "op": "modify",
+   "id": "dx",
+   "file": "js/timeline.js",
+   "collection": "TIMELINE",
+   "confidence": "High",
+   "changes": {
+    "turn": 129
+   },
+   "audit_note": "DX formed Sept-Oct 1997"
+  },
+  {
+   "ref": "timeline_dates/ecw-raven-title-96",
+   "op": "modify",
+   "id": "ecw-raven-title-96",
+   "file": "js/timeline.js",
+   "collection": "TIMELINE",
+   "confidence": "High",
+   "changes": {
+    "turn": 51
+   },
+   "audit_note": "Raven won the ECW title Jan 27, 1996"
+  },
+  {
+   "ref": "timeline_dates/wcw-flair-returns-99",
+   "op": "modify",
+   "id": "wcw-flair-returns-99",
+   "file": "js/timeline.js",
+   "collection": "TIMELINE",
+   "confidence": "High",
+   "changes": {
+    "turn": 177
+   },
+   "audit_note": "Flair's WCW return Sept 14, 1998"
+  },
+  {
+   "ref": "timeline_dates/wcw-final-nitro-2001",
+   "op": "modify",
+   "id": "wcw-final-nitro-2001",
+   "file": "js/timeline.js",
+   "collection": "TIMELINE",
+   "confidence": "High",
+   "changes": {
+    "turn": 299
+   },
+   "audit_note": "Final Nitro Mar 26, 2001"
+  },
+  {
+   "ref": "timeline_dates/ecw-final-show-2001",
+   "op": "modify",
+   "id": "ecw-final-show-2001",
+   "file": "js/timeline.js",
+   "collection": "TIMELINE",
+   "confidence": "Medium",
+   "changes": {
+    "turn": 290
+   },
+   "audit_note": "ECW's final weekly show early Jan 2001"
+  },
+  {
+   "ref": "timeline_dates/womens-revival",
+   "op": "modify",
+   "id": "womens-revival",
+   "file": "js/timeline.js",
+   "collection": "TIMELINE",
+   "confidence": "Medium",
+   "changes": {
+    "turn": 178
+   },
+   "audit_note": "WWF women's division revival Sept 1998 (Sable/Jacqueline programme)"
+  },
+  {
+   "ref": "timeline_dates/ecw-raven-debuts-95",
+   "op": "remove",
+   "id": "ecw-raven-debuts-95",
+   "file": "js/timeline.js",
+   "collection": "TIMELINE",
+   "confidence": "High",
+   "changes": null,
+   "audit_note": "Remove - Raven debuted Jan 10, 1995 and is already on the starting roster"
+  },
+  {
+   "ref": "timeline_dates/ecw-taz-rises-95",
+   "op": "remove",
+   "id": "ecw-taz-rises-95",
+   "file": "js/timeline.js",
+   "collection": "TIMELINE",
+   "confidence": "Medium",
+   "changes": null,
+   "audit_note": "Re-date: Taz's rise came after his July 1995 neck injury; singles push from late 1995"
+  },
+  {
+   "ref": "timeline_deaths/brian-pillman-death",
+   "op": "add",
+   "id": "brian-pillman-death",
+   "file": "js/timeline.js",
+   "collection": "TIMELINE",
+   "confidence": "High",
+   "changes": {
+    "turn": 132
+   },
+   "audit_note": "Pillman died Oct 5, 1997",
+   "body_required": true,
+   "review": "desc/news body must match the existing TIMELINE idiom - scaffold is generated with REVIEW-ME markers, EDIT BEFORE COMMIT"
+  },
+  {
+   "ref": "timeline_deaths/yokozuna-death",
+   "op": "add",
+   "id": "yokozuna-death",
+   "file": "js/timeline.js",
+   "collection": "TIMELINE",
+   "confidence": "High",
+   "changes": {
+    "turn": 279
+   },
+   "audit_note": "Yokozuna died Oct 23, 2000",
+   "body_required": true,
+   "review": "desc/news body must match the existing TIMELINE idiom - scaffold is generated with REVIEW-ME markers, EDIT BEFORE COMMIT"
+  },
+  {
+   "ref": "timeline_deaths/giant-baba-death",
+   "op": "add",
+   "id": "giant-baba-death",
+   "file": "js/timeline.js",
+   "collection": "TIMELINE",
+   "confidence": "High",
+   "changes": {
+    "turn": 195
+   },
+   "audit_note": "Baba died Jan 31, 1999",
+   "body_required": true,
+   "review": "desc/news body must match the existing TIMELINE idiom - scaffold is generated with REVIEW-ME markers, EDIT BEFORE COMMIT"
+  },
+  {
+   "ref": "timeline_deaths/jumbo-tsuruta-death",
+   "op": "add",
+   "id": "jumbo-tsuruta-death",
+   "file": "js/timeline.js",
+   "collection": "TIMELINE",
+   "confidence": "Medium",
+   "changes": {
+    "turn": 257
+   },
+   "audit_note": "Jumbo died May 13, 2000",
+   "body_required": true,
+   "review": "desc/news body must match the existing TIMELINE idiom - scaffold is generated with REVIEW-ME markers, EDIT BEFORE COMMIT"
+  },
+  {
+   "ref": "timeline_deaths/onita-retirement",
+   "op": "add",
+   "id": "onita-retirement",
+   "file": "js/timeline.js",
+   "collection": "TIMELINE",
+   "confidence": "High",
+   "changes": {
+    "turn": 16
+   },
+   "audit_note": "Kawasaki retirement show May 5, 1995",
+   "body_required": true,
+   "review": "desc/news body must match the existing TIMELINE idiom - scaffold is generated with REVIEW-ME markers, EDIT BEFORE COMMIT"
+  },
+  {
+   "ref": "timeline_deaths/louie-spicolli-death",
+   "op": "add",
+   "id": "louie-spicolli-death",
+   "file": "js/timeline.js",
+   "collection": "TIMELINE",
+   "confidence": "High",
+   "changes": {
+    "turn": 150
+   },
+   "audit_note": "Spicolli died Feb 15, 1998 (conditional on the rad-radford chain)",
+   "precondition": "conditional on the rad-radford chain landing",
+   "body_required": true,
+   "review": "desc/news body must match the existing TIMELINE idiom - scaffold is generated with REVIEW-ME markers, EDIT BEFORE COMMIT"
+  },
+  {
+   "ref": "timeline_deaths/rick-rude-death",
+   "op": "add",
+   "id": "rick-rude-death",
+   "file": "js/timeline.js",
+   "collection": "TIMELINE",
+   "confidence": "High",
+   "changes": {
+    "turn": 206
+   },
+   "audit_note": "Rude died Apr 20, 1999 (conditional on his arrival chain)",
+   "precondition": "conditional on the Rude arrival chain landing",
+   "body_required": true,
+   "review": "desc/news body must match the existing TIMELINE idiom - scaffold is generated with REVIEW-ME markers, EDIT BEFORE COMMIT"
+  },
+  {
+   "ref": "timeline_deaths/wwf-in-your-house-8-add",
+   "op": "add",
+   "id": "wwf-in-your-house-8-add",
+   "file": "js/timeline.js",
+   "collection": "TIMELINE",
+   "confidence": "High",
+   "changes": {
+    "turn": 67
+   },
+   "audit_note": "Add the missing IYH 8 \"Beware of Dog\" (May 26, 1996) and move International Incident to turn 71 (July 21, 1996)",
+   "body_required": true,
+   "review": "desc/news body must match the existing TIMELINE idiom - scaffold is generated with REVIEW-ME markers, EDIT BEFORE COMMIT"
+  },
+  {
+   "ref": "wrestler_medium/craig-pittman",
+   "op": "convert_to_fa_arrival",
+   "id": "craig-pittman",
+   "file": "js/data.js",
+   "collection": "WRESTLERS",
+   "confidence": "Medium",
+   "changes": {
+    "turn": 32
+   },
+   "audit_note": "WCW debut mid-late 1995",
+   "move_to": "FA_ARRIVALS",
+   "review": "C"
+  },
+  {
+   "ref": "wrestler_medium/mabel",
+   "op": "modify",
+   "id": "mabel",
+   "file": "js/data.js",
+   "collection": "WRESTLERS",
+   "confidence": "Medium",
+   "changes": {
+    "align": "face",
+    "age": 23
+   },
+   "audit_note": "MOM faces until mid-1995; Mabel b. Feb 14, 1971"
+  },
+  {
+   "ref": "wrestler_medium/brian-pillman",
+   "op": "modify",
+   "id": "brian-pillman",
+   "file": "js/data.js",
+   "collection": "WRESTLERS",
+   "confidence": "Medium",
+   "changes": {
+    "contract": 53,
+    "noRenew": true
+   },
+   "audit_note": "WCW exit Feb 11, 1996; ECW Feb-Apr 1996; WWF June 1996"
+  },
+  {
+   "ref": "wrestler_medium/big-bubba-rogers",
+   "op": "modify",
+   "id": "big-bubba-rogers",
+   "file": "js/data.js",
+   "collection": "WRESTLERS",
+   "confidence": "Medium",
+   "changes": {
+    "name": "The Boss",
+    "age": 31,
+    "align": "face"
+   },
+   "audit_note": "Traylor was The Boss (face) at start; Big Bubba repackaging spring 1995"
+  },
+  {
+   "ref": "wrestler_medium/marty-jannetty",
+   "op": "modify",
+   "id": "marty-jannetty",
+   "file": "js/data.js",
+   "collection": "WRESTLERS",
+   "confidence": "Medium",
+   "changes": {
+    "age": 34
+   },
+   "audit_note": "b. Feb 3, 1960"
+  },
+  {
+   "ref": "wrestler_medium/jimmy-snuka",
+   "op": "modify",
+   "id": "jimmy-snuka",
+   "file": "js/data.js",
+   "collection": "WRESTLERS",
+   "confidence": "Medium",
+   "changes": {
+    "age": 51
+   },
+   "audit_note": "b. May 18, 1943"
+  },
+  {
+   "ref": "wrestler_medium/owen-hart",
+   "op": "modify",
+   "id": "owen-hart",
+   "file": "js/data.js",
+   "collection": "WRESTLERS",
+   "confidence": "Medium",
+   "changes": {
+    "ceiling": 87
+   },
+   "audit_note": "Upper-card IC-title level all decade"
+  },
+  {
+   "ref": "wrestler_medium/taz",
+   "op": "modify",
+   "id": "taz",
+   "file": "js/data.js",
+   "collection": "WRESTLERS",
+   "confidence": "Medium",
+   "changes": {
+    "ceiling": 83
+   },
+   "audit_note": "1997-99 peak as ECW main-eventer"
+  },
+  {
+   "ref": "wrestler_medium/psicosis",
+   "op": "modify",
+   "id": "psicosis",
+   "file": "js/data.js",
+   "collection": "WRESTLERS",
+   "confidence": "Medium",
+   "changes": {
+    "ceiling": 74
+   },
+   "audit_note": "Long WCW cruiserweight run"
+  },
+  {
+   "ref": "wrestler_medium/juventud",
+   "op": "modify",
+   "id": "juventud",
+   "file": "js/data.js",
+   "collection": "WRESTLERS",
+   "confidence": "Medium",
+   "changes": {
+    "ceiling": 74
+   },
+   "audit_note": "3x WCW Cruiserweight champion"
+  },
+  {
+   "ref": "wrestler_medium/bam-bam-bigelow",
+   "op": "modify",
+   "id": "bam-bam-bigelow",
+   "file": "js/data.js",
+   "collection": "WRESTLERS",
+   "confidence": "Medium",
+   "changes": {
+    "work": 68
+   },
+   "audit_note": "WM XI main-eventer weeks after start"
+  },
+  {
+   "ref": "wrestler_medium/bull-nakano",
+   "op": "modify",
+   "id": "bull-nakano",
+   "file": "js/data.js",
+   "collection": "WRESTLERS",
+   "confidence": "Medium",
+   "changes": {
+    "work": 74
+   },
+   "audit_note": "Acclaimed Blayze series 1994-95"
+  },
+  {
+   "ref": "wrestler_medium/alundra-blayze",
+   "op": "modify",
+   "id": "alundra-blayze",
+   "file": "js/data.js",
+   "collection": "WRESTLERS",
+   "confidence": "Medium",
+   "changes": {
+    "work": 70
+   },
+   "audit_note": "Carried the WWF women's division"
+  },
+  {
+   "ref": "wrestler_medium/jim-duggan",
+   "op": "modify",
+   "id": "jim-duggan",
+   "file": "js/data.js",
+   "collection": "WRESTLERS",
+   "confidence": "Medium",
+   "changes": {
+    "pop": 58
+   },
+   "audit_note": "Fading nostalgia act by 1995"
+  },
+  {
+   "ref": "wrestler_medium/scotty-riggs",
+   "op": "modify",
+   "id": "scotty-riggs",
+   "file": "js/data.js",
+   "collection": "WRESTLERS",
+   "confidence": "Medium",
+   "changes": {
+    "turn": 33
+   },
+   "audit_note": "WCW debut with American Males Aug-Sept 1995",
+   "move_to": "FA_ARRIVALS",
+   "review": "u"
+  },
+  {
+   "ref": "wrestler_medium/dances-with-dudley",
+   "op": "modify",
+   "id": "dances-with-dudley",
+   "file": "js/data.js",
+   "collection": "WRESTLERS",
+   "confidence": "Medium",
+   "changes": {
+    "turn": 24
+   },
+   "audit_note": "Dudley family debut July 1, 1995",
+   "move_to": "FA_ARRIVALS",
+   "review": "a"
+  },
+  {
+   "ref": "wrestler_medium/bertha-faye",
+   "op": "modify",
+   "id": "bertha-faye",
+   "file": "js/data.js",
+   "collection": "WRESTLERS",
+   "confidence": "Medium",
+   "changes": {
+    "age": 34
+   },
+   "audit_note": "Rhonda Singh b. Feb 21, 1961"
+  },
+  {
+   "ref": "wrestler_medium/chyna",
+   "op": "modify",
+   "id": "chyna",
+   "file": "js/data.js",
+   "collection": "WRESTLERS",
+   "confidence": "Medium",
+   "changes": {
+    "age": 26
+   },
+   "audit_note": "b. Dec 27, 1969"
+  },
+  {
+   "ref": "wrestler_medium/trish-stratus",
+   "op": "modify",
+   "id": "trish-stratus",
+   "file": "js/data.js",
+   "collection": "WRESTLERS",
+   "confidence": "Medium",
+   "changes": {
+    "age": 23
+   },
+   "audit_note": "b. Dec 18, 1975"
+  },
+  {
+   "ref": "wrestler_medium/buh-buh-ray-dudley",
+   "op": "add",
+   "id": "buh-buh-ray-dudley",
+   "file": "js/data.js",
+   "collection": "FA_ARRIVALS",
+   "confidence": "Medium",
+   "changes": {
+    "id": "buh-buh-ray-dudley",
+    "name": "Buh Buh Ray Dudley",
+    "age": 24,
+    "pop": 25,
+    "work": 62,
+    "mic": 60,
+    "ceiling": 82,
+    "align": "face"
+   },
+   "audit_note": "FA arrival ~turn 48-56 (ECW debut late 1995-early 1996 as the stuttering hillbilly of the Dudley family - exact first date unverified) | Half of what became the Dudley Boyz, ECW's ",
+   "guidance": "free-agent arrival; the audit gives ~turn 48-56 but no exact turn - it is left MANUAL rather than guessed"
+  },
+  {
+   "ref": "wrestler_medium/megumi-kudo",
+   "op": "add",
+   "id": "megumi-kudo",
+   "file": "js/data.js",
+   "collection": "WRESTLERS",
+   "confidence": "Medium",
+   "changes": {
+    "id": "megumi-kudo",
+    "name": "Megumi Kudo",
+    "age": 25,
+    "pop": 55,
+    "work": 84,
+    "mic": 30,
+    "ceiling": 78,
+    "align": "face",
+    "gender": "f"
+   },
+   "audit_note": "Seeded FMW starter (she was the ace of FMW's women's division throughout 1995-96); optional retirement event ~turn 111 (April 29, 1997 farewell) | FMW's female ace; two-time FMW/WW",
+   "guidance": "seed as an FMW starter: set company to FMW when adding"
+  }
+ ]
+}

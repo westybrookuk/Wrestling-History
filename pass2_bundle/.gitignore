@@ -1,0 +1,4 @@
+# runtime artefacts from apply_ops.mjs (in this bundle only; real backups are
+# written to <repo>/.pass2-backups/)
+.backups/
+.syntax-dump-*
