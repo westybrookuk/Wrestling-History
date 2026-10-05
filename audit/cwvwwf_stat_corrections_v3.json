@@ -1,0 +1,713 @@
+[
+ {
+  "id": "shane-douglas",
+  "current_value": "ECW starter, age 30, contract 80 (no noRenew flag)",
+  "recommended_value": "Keep as ECW World Champion starter (age 30 is correct: born Nov 21, 1964); change contract from 80 turns to ~27 turns + noRenew (he left ECW for the WWF in July 1995)",
+  "explanation": "Douglas was ECW World Heavyweight Champion at the start (lost the belt to The Sandman on April 15, 1995) and departed for the WWF in July 1995 (Dean Douglas vignettes from July 29, 1995). An 80-turn contract keeps him in ECW into mid-1996, which is wrong. The separate FA_ARRIVALS entry dean-douglas (turn 40, age 36) is the same person with a wrong age - see the FA_ARRIVALS findings.",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Shane_Douglas (b. Nov 21, 1964; lost ECW title Apr 15, 1995; WWF July 1995; IC title Oct 22, 1995)",
+  "category": "Major adjustment"
+ },
+ {
+  "id": "phineas-godwinn",
+  "current_value": "WWF starting roster as Phineas Godwinn, age 34, contract 80, pop 36",
+  "recommended_value": "Remove from the starting roster: Dennis Knight was in WCW as Tex Slazenger (with Shanghai Pierce) in January 1995. Add Phineas as a WWF arrival ~turn 28-31 (the Godwinns debuted on WWF TV in August 1995), age 26",
+  "explanation": "The Phineas I. Godwinn character debuted with the WWF in mid-1995. In January 1995 Knight was finishing his WCW run as Tex Slazenger. He was born December 25, 1968 (age 26, not 34). (A simple alternative: leave him out of the 1995 start entirely and let the Godwinns arrive as a team.)",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Henry_O._Godwinn (Godwinns debut 1995; Knight previously Tex Slazenger in WCW)",
+  "category": "Wrong company"
+ },
+ {
+  "id": "waylon-mercy",
+  "current_value": "WWF starting roster (age 37, contract 30, pop 38)",
+  "recommended_value": "Convert to a WWF FA arrival ~turn 24 (Spivey rejoined the WWF in June 1995; Waylon Mercy's Raw debut: July 3, 1995). Age 37 should be 42 (b. Oct 14, 1952)",
+  "explanation": "Dan Spivey spent January 1995 finishing his All Japan tours; he rejoined the WWF in June 1995 and Waylon Mercy debuted on the July 3, 1995 Raw. He retired in October 1995 - so a short 30-turn-style contract is actually right, but the start date and age are not.",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Dan_Spivey (WWF June 1995; b. Oct 14, 1952; retired Oct 1995); Web: https://puroresusystem.fandom.com/wiki/Dan_Spivey (AJPW tours through 1995)",
+  "category": "Wrong availability date"
+ },
+ {
+  "id": "vader",
+  "current_value": "Contract 150 turns (~end 1997), no noRenew flag",
+  "recommended_value": "Contract ~35 turns + noRenew (Vader was fired by WCW in August/September 1995; WWF debut at the Jan 1996 Royal Rumble, ~turn 50)",
+  "explanation": "Vader's WCW tenure ended abruptly in August/September 1995 (after the Orlando incident and subsequent suspension/release). A 150-turn contract keeps him in WCW into 1997. He signed with the WWF and appeared at the January 1996 Royal Rumble. His in-game age 39 is wrong too: born May 14, 1956 he was 38 (close, leave as-is).",
+  "confidence": "High",
+  "source": "Research: WCW_Jul-Sep_1995_Research.md (Vader suspension/release Aug-Sept 1995); Web: https://en.wikipedia.org/wiki/Big_Van_Vader (WWF debut Royal Rumble, Jan 21, 1996)",
+  "category": "Major adjustment"
+ },
+ {
+  "id": "jeff-jarrett",
+  "current_value": "Contract 90 turns + noRenew (~Sept 1996)",
+  "recommended_value": "Contract ~27 turns (Jarrett left the WWF in July 1995 for the USWA); flag him for a 1996-97 WWF return rather than a long single run",
+  "explanation": "Jarrett's 1995 WWF run ended in July 1995 (he left for the USWA after a pay dispute); he returned to the WWF in late 1996. A 90-turn noRenew contract holds him until September 1996, which misrepresents the gap year.",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Jeff_Jarrett (left WWF July 1995 for USWA; returned late 1996)",
+  "category": "Major adjustment"
+ },
+ {
+  "id": "bam-bam-bigelow",
+  "current_value": "Contract 40 turns + noRenew (~October 1995)",
+  "recommended_value": "Contract ~43 turns + noRenew (last WWF match: Survivor Series, Nov 19, 1995 - a loss to Goldust); then ECW from early 1996",
+  "explanation": "Bigelow's WWF exit was November 1995 (Survivor Series), not October; he then made ECW appearances from early 1996 (feuding with Taz) before the 1998 WCW move. The game is one turn-month early - a small correction, and an ECW arrival event ~turn 48-52 would complete the chain.",
+  "confidence": "High",
+  "source": "Web: https://prowrestling.fandom.com/wiki/Bam_Bam_Bigelow (last WWF match Survivor Series Nov 19, 1995; ECW early 1996)",
+  "category": "Minor adjustment"
+ },
+ {
+  "id": "british-bulldog",
+  "current_value": "Contract 120 turns (~July 1997)",
+  "recommended_value": "Contract ~143 turns (Bulldog jumped to WCW in November/December 1997 alongside Jim Neidhart, after Survivor Series 1997)",
+  "explanation": "Davey Boy Smith remained with the WWF from his 1994 return until the November 1997 Montreal aftermath, appearing in WCW by December 1997. 120 turns has him leave six months early.",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Davey_Boy_Smith (WCW debut Dec 1997)",
+  "category": "Minor adjustment"
+ },
+ {
+  "id": "steve-austin",
+  "current_value": "Contract 20 turns + noRenew (~June 1995)",
+  "recommended_value": "Contract ~35 turns + noRenew (Austin was fired by WCW in September 1995; ECW debut Sept 1995; WWF debut Dec 1995/Jan 1996, ~turn 48)",
+  "explanation": "Austin was injured in mid-1994 and fired by WCW in September 1995 (phone call from Bischoff while rehabbing). The 20-turn contract has him gone by June 1995 - about three months early. The correct arc: WCW to ~turn 35, ECW through ~turn 47, WWF from ~turn 48.",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Stone_Cold_Steve_Austin (fired from WCW Sept 1995; ECW Sept 1995; WWF Dec 1995)",
+  "category": "Major adjustment"
+ },
+ {
+  "id": "brian-pillman",
+  "current_value": "Contract 56 turns + noRenew (~May 1996)",
+  "recommended_value": "Contract ~53 turns (Pillman's WCW run ended Feb 11, 1996 - the worked firing that springboarded his ECW appearances Feb-Apr 1996 and his guaranteed WWF deal from June 1996)",
+  "explanation": "Pillman's WCW tenure ran to February 1996 (Four Horsemen until Oct 1995, then the Loose Cannon exit); he appeared in ECW February-April 1996 and signed with the WWF in June 1996. The game's 56 turns is three turns (three weeks) late - trim to ~53 (Feb 11, 1996) and the arc lands.",
+  "confidence": "Medium",
+  "source": "Web: https://www.thesmackdownhotel.com/wrestlers/brian-pillman (WCW to Feb 11, 1996; ECW Feb-Apr 1996; WWF June 10, 1996); Web: https://prowrestlingstories.com/pro-wrestling-stories/brian-pillman-wrestling-legacy/ (WWF contract June 1996)",
+  "category": "Minor adjustment"
+ },
+ {
+  "id": "chris-benoit",
+  "current_value": "Contract 28 turns (~July 1995)",
+  "recommended_value": "Contract ~32-36 turns (Benoit, Guerrero and Malenko left ECW for WCW together in September 1995)",
+  "explanation": "Benoit's ECW run (from August 1994) ended in September 1995 when he, Eddy Guerrero and Dean Malenko jumped to WCW. The 28-turn contract is about a month and a half short.",
+  "confidence": "High",
+  "source": "Web: https://www.imdb.com/name/nm0539357/bio (Benoit, Guerrero and Malenko left for WCW in Sept 1995)",
+  "category": "Minor adjustment"
+ },
+ {
+  "id": "dean-malenko",
+  "current_value": "ECW starter, contract 32 turns (~Sept 1995)",
+  "recommended_value": "Correct: Malenko left ECW for WCW in September 1995 with Benoit and Guerrero. (Optional polish: his ECW debut was Feb 1995, so a turn-4 arrival would be exact.)",
+  "explanation": "Contract length matches the real September 1995 ECW-to-WCW jump. Age 34 is correct (b. 1959/60 - sources differ slightly; within tolerance).",
+  "confidence": "High",
+  "source": "Web: https://www.imdb.com/name/nm0539357/bio (Malenko left ECW for WCW Sept 1995)",
+  "category": "Correct"
+ },
+ {
+  "id": "lex-luger",
+  "current_value": "Contract 32 turns + noRenew (~September 1995)",
+  "recommended_value": "Correct: Luger's WWF deal lapsed in 1995 and he appeared on the very first WCW Monday Nitro (Sept 4, 1995)",
+  "explanation": "Textbook contract modelling - his Nitro debut is turn 32 in game terms.",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Lex_Luger (appeared on first Nitro, Sept 4, 1995)",
+  "category": "Correct"
+ },
+ {
+  "id": "diesel",
+  "current_value": "Contract 64 turns + noRenew (~May 1996)",
+  "recommended_value": "Correct: Nash's last WWF match was April 1996 and he debuted in WCW on the May 27, 1996 Nitro (turn ~65)",
+  "explanation": "Accurate within one turn.",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Kevin_Nash (WWF exit Apr 1996; Nitro debut May 27, 1996)",
+  "category": "Correct"
+ },
+ {
+  "id": "razor-ramon",
+  "current_value": "Contract 64 turns + noRenew (~May 1996)",
+  "recommended_value": "Correct: Hall's last WWF match was April 1996 and he walked onto Nitro on May 27, 1996 (turn ~65)",
+  "explanation": "Accurate within one turn. (Age 36 in game; Hall was born Oct 20, 1958, so 36 is exact.)",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Scott_Hall (Nitro debut May 27, 1996)",
+  "category": "Correct"
+ },
+ {
+  "id": "bret-hart",
+  "current_value": "Contract 144 turns + noRenew (~Jan 1998)",
+  "recommended_value": "Correct: Bret left the WWF after Survivor Series 1997 (Nov 9, 1997) and debuted in WCW in December 1997 (turn ~142)",
+  "explanation": "Accurate within ~3 turns - and the noRenew flag is exactly the Montreal mechanic.",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Montreal_Screwjob (Nov 9, 1997)",
+  "category": "Correct"
+ },
+ {
+  "id": "one-two-three-kid",
+  "current_value": "Contract 72 turns + noRenew (~July 1996)",
+  "recommended_value": "Correct within tolerance: the Kid's WWF run ended in 1996 and he appeared in WCW as Syxx from Sept 1996 (turn ~80)",
+  "explanation": "Slightly early (72 turns = July 1996 vs a ~Sept 1996 WCW debut), but the noRenew flag and rough window are right.",
+  "confidence": "Medium",
+  "source": "Web: https://en.wikipedia.org/wiki/Syxx (WCW debut 1996)",
+  "category": "Correct"
+ },
+ {
+  "id": "cactus-jack",
+  "current_value": "Contract 60 turns + noRenew (~Jan 1996)",
+  "recommended_value": "Correct within tolerance: Foley's ECW farewell came in early 1996 (the Mankind WWF debut followed on Apr 1, 1996, turn ~60)",
+  "explanation": "The 60-turn window lands between his ECW exit (early 1996) and WWF debut - close enough for the sim.",
+  "confidence": "Medium",
+  "source": "Web: https://en.wikipedia.org/wiki/Mick_Foley (Mankind debut Apr 1, 1996)",
+  "category": "Correct"
+ },
+ {
+  "id": "alundra-blayze",
+  "current_value": "Contract 49 turns + noRenew (~Feb 1996)",
+  "recommended_value": "Correct: Blayze left the WWF in late 1995 and threw the WWF Women's title in the trash on the Dec 18, 1995 Nitro (turn ~46)",
+  "explanation": "Excellent modelling - the noRenew flag and 49-turn window bracket the trash-can Nitro moment. (She is the wrong starting Women's champion though - see INITIAL_TITLES: wwf-women.)",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Alundra_Blazey (Nitro Dec 18, 1995)",
+  "category": "Correct"
+ },
+ {
+  "id": "hulk-hogan",
+  "current_value": "heel, pop 97, age 41, contract 240",
+  "recommended_value": "face at the January 1995 start (red-and-yellow top babyface); heel turn at Bash at the Beach, July 7, 1996 (turn ~72) as the nWo founding moment",
+  "explanation": "Hogan entered 1995 as the unquestioned top babyface (the Dungeon of Doom was being built as his foil); his heel turn is THE hinge of the era and should be an event, not the starting state. Pop 97 and age 41 are correct.",
+  "confidence": "High",
+  "source": "Research: WCW_Jan-Mar_1995_Research.md (Hogan babyface champion); Web: https://en.wikipedia.org/wiki/Bash_at_the_Beach_(1996) (heel turn July 7, 1996)",
+  "category": "Major adjustment"
+ },
+ {
+  "id": "booker-t",
+  "current_value": "face (Harlem Heat), age 29, contract 180",
+  "recommended_value": "heel: Harlem Heat worked heel through 1995-96 (managed by Sister Sherri from early 1995); face turns came later (1997+)",
+  "explanation": "Harlem Heat were heels in the 1995 Dungeon/villain ecosystem, holding the WCW tag titles as heels. The game has Stevie Ray heel but Booker face - they should match.",
+  "confidence": "High",
+  "source": "Research: WCW_1995_Research.md (Harlem Heat heel tag champions)",
+  "category": "Minor adjustment"
+ },
+ {
+  "id": "mabel",
+  "current_value": "heel, age 27, contract 80, pop 40",
+  "recommended_value": "face at the start: Men on a Mission were babyfaces through early 1995 (Mabel's King of the Ring heel turn came mid-1995). Age ~23 (b. Feb 14, 1971)",
+  "explanation": "MOM worked as fun-loving faces in January 1995; the heel turn came with the King Mabel push in mid-1995. Age 27 is about four years high - Nelson Frazier was born February 14, 1971.",
+  "confidence": "Medium",
+  "source": "Web: https://en.wikipedia.org/wiki/Viscera_(wrestler) (b. Feb 14, 1971; heel turn mid-1995)",
+  "category": "Minor adjustment"
+ },
+ {
+  "id": "mo",
+  "current_value": "heel, age 30, contract 40, pop 33",
+  "recommended_value": "face at the start (Men on a Mission were babyfaces until mid-1995)",
+  "explanation": "Same MOM timeline as Mabel - faces at the January 1995 start.",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Men_on_a_Mission (face act through early 1995)",
+  "category": "Minor adjustment"
+ },
+ {
+  "id": "johnny-b-badd",
+  "current_value": "31",
+  "recommended_value": "34 (Marc Mero, b. July 9, 1960)",
+  "explanation": "Mero was 34 in January 1995, not 31. Everything else about the entry (WCW face, TV champion level) is right.",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Marc_Mero (b. July 9, 1960)",
+  "category": "Minor adjustment"
+ },
+ {
+  "id": "meng",
+  "current_value": "31",
+  "recommended_value": "35 (Tonga Uliuli Fifita, b. February 1959)",
+  "explanation": "Fifita was born February 1959 (Feb 3 or Feb 10 in sources), making him 35 at the start - turning 36 within the first month of game time. The game's 31 understates him by four-plus years.",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Uliuli_Fifita (b. Feb 10, 1959); Web: https://tvtropes.org/pmwiki/pmwiki.php/Wrestling/Meng (b. Feb 3, 1959)",
+  "category": "Minor adjustment"
+ },
+ {
+  "id": "avalanche",
+  "current_value": "37",
+  "recommended_value": "31 (John Tenta, b. June 22, 1963)",
+  "explanation": "Tenta was 31 in January 1995, not 37. (The same correction applies to the duplicate the-shark entry if it is kept.)",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/John_Tenta (b. June 22, 1963)",
+  "category": "Minor adjustment"
+ },
+ {
+  "id": "big-bubba-rogers",
+  "current_value": "Big Bubba Rogers, heel, age 34",
+  "recommended_value": "In January 1995 Ray Traylor was working as THE BOSS (WCW's guardian-of-the-front-office babyface; Big Bubba Rogers repackaging came in spring 1995). Age ~31 (b. May 19, 1963)",
+  "explanation": "The character name and alignment are anachronistic: Traylor's Boss run (late 1994 - April 1995) was a face gimmick that transitioned into the Dungeon-adjacent Big Bubba heel in spring 1995. A rename event around turn 16-19 (May-June 1995) would capture it. Age 34 should be about 31.",
+  "confidence": "Medium",
+  "source": "Web: https://prowrestling.fandom.com/wiki/Big_Bubba_Rogers (The Boss 1994-95; Big Bubba from 1995); Research: WCW_Jan-Mar_1995_Research.md",
+  "category": "Minor adjustment"
+ },
+ {
+  "id": "marty-jannetty",
+  "current_value": "35",
+  "recommended_value": "34 (b. February 3, 1960 - turns 35 within the first month of game time)",
+  "explanation": "A one-year overstatement; effectively cosmetic given his birthday falls on game turn 1.",
+  "confidence": "Medium",
+  "source": "Web: https://www.thesmackdownhotel.com/wrestlers/marty-jannetty (b. Feb 3, 1960)",
+  "category": "Minor adjustment"
+ },
+ {
+  "id": "rocco-rock",
+  "current_value": "32",
+  "recommended_value": "41 (b. September 3, 1953)",
+  "explanation": "Rocco Rock (Teddy Pettingill) was 41 in January 1995, not 32 - the game appears to have given him his partner's approximate age. The Public Enemy were the reigning ECW World Tag Team champions at the start (see INITIAL_TITLES missing-title finding).",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/The_Public_Enemy_(professional_wrestling) (Rocco Rock b. Sept 3, 1953)",
+  "category": "Major adjustment"
+ },
+ {
+  "id": "fatu",
+  "current_value": "24",
+  "recommended_value": "29 (b. October 11, 1965)",
+  "explanation": "Fatu (Solofa Fatu Jr.) was 29 in January 1995, not 24.",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Rikishi_(wrestler) (b. Oct 11, 1965)",
+  "category": "Minor adjustment"
+ },
+ {
+  "id": "hakushi",
+  "current_value": "29",
+  "recommended_value": "28 (b. December 2, 1966)",
+  "explanation": "Off by one; his January 9, 1995 Raw-area debut timing is otherwise modelled correctly.",
+  "confidence": "High",
+  "source": "Web: https://www.wwe.com/superstars/hakushi; Web: https://puroresusystem.fandom.com/wiki/Jinsei_Shinzaki (b. Dec 2, 1966)",
+  "category": "Minor adjustment"
+ },
+ {
+  "id": "adam-bomb",
+  "current_value": "31",
+  "recommended_value": "30 (b. March 3, 1964)",
+  "explanation": "Off by one; otherwise a correct WWF mid-card placement (heel Bomb, pre-face turn).",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Bryan_Clark_(wrestler) (b. Mar 3, 1964)",
+  "category": "Minor adjustment"
+ },
+ {
+  "id": "rey-mysterio",
+  "current_value": "21",
+  "recommended_value": "20 (b. December 11, 1974)",
+  "explanation": "Off by one. Note that he held no AAA title in January 1995 (see INITIAL_TITLES: aaa-cruiser).",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Rey_Mysterio (b. Dec 11, 1974)",
+  "category": "Minor adjustment"
+ },
+ {
+  "id": "nakanishi",
+  "current_value": "26",
+  "recommended_value": "27 (b. October 3, 1967)",
+  "explanation": "Off by one; otherwise correct (he challenged Hashimoto at Battle 7 on Jan 4, 1995).",
+  "confidence": "High",
+  "source": "Web: https://prowrestling.fandom.com/wiki/Manabu_Nakanishi (b. Oct 3, 1967)",
+  "category": "Minor adjustment"
+ },
+ {
+  "id": "duke-droese",
+  "current_value": "WWF starter, age 29",
+  "recommended_value": "Keep as a WWF starter (correct: Droese joined the WWF roster in 1994) but correct the age to 26 (b. August 20, 1968)",
+  "explanation": "Verification note: Droese debuted with the WWF in 1994 (his Lawler garbage-can feud ran from then), so unlike the other new 1995 WWF characters he is a legitimate January 1995 starter. Only the age is off.",
+  "confidence": "High",
+  "source": "Web: https://charactersdb.com/duke-the-dumpster-droese (WWF debut 1994; b. Aug 20, 1968); Web: https://www.foxsports.com/wwe/duke-droese-superstar-bio (debuted 1994)",
+  "category": "Minor adjustment"
+ },
+ {
+  "id": "chris-candido",
+  "current_value": "23",
+  "recommended_value": "24 (b. March 21, 1970) - and he is the reigning NWA World Heavyweight Champion at the start (see INITIAL_TITLES: nwa-world)",
+  "explanation": "Off by one. His SMW placement is correct; the game is missing his championship status, which is one of the highest-impact title fixes in this audit.",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Chris_Candido (b. Mar 21, 1970; NWA World champion Nov 19, 1994 - Feb 24, 1995)",
+  "category": "Minor adjustment"
+ },
+ {
+  "id": "stevie-ray",
+  "current_value": "36",
+  "recommended_value": "~31-32 (Lane Huffman, b. 1963 per most sources) - verify DOB before changing",
+  "explanation": "The game age of 36 appears 4-5 years high (Booker T, his younger brother, was born March 1, 1965). Public DOB sources for Stevie Ray are inconsistent; recommend confirming before import.",
+  "confidence": "Low",
+  "source": "Web: https://en.wikipedia.org/wiki/Stevie_Ray (birth year varies across sources)",
+  "category": "Needs manual review"
+ },
+ {
+  "id": "hack-meyers",
+  "current_value": "34",
+  "recommended_value": "~21 (b. June 30, 1973) - verify DOB before changing",
+  "explanation": "The game age of 34 is roughly 13 years high: Meyers was an ECW young lion in 1995 (he died in 2020 aged 46). Confirm the DOB before import.",
+  "confidence": "Low",
+  "source": "Web: https://prowrestling.fandom.com/wiki/Hack_Meyers (b. 1973; d. 2020)",
+  "category": "Needs manual review"
+ },
+ {
+  "id": "johnny-grunge",
+  "current_value": "31",
+  "recommended_value": "~29 (b. 1965/66) - verify DOB before changing",
+  "explanation": "Grunge (Mike Durham) was about 29 in January 1995; sources give 1965 or 1966. Marked for verification rather than a silent change.",
+  "confidence": "Low",
+  "source": "Web: https://en.wikipedia.org/wiki/The_Public_Enemy_(professional_wrestling) (Grunge b. 1965/66)",
+  "category": "Needs manual review"
+ },
+ {
+  "id": "owen-hart",
+  "current_value": "82",
+  "recommended_value": "86-88",
+  "explanation": "Owen spent the entire 1995-99 period as an upper-card PPV opener/IC-title-level performer and was regarded as the best pure worker on the roster. A ceiling of 82 rates him below Booker T (88) and equal to Jake-era ceilings; he was a safer long-term bet than that. (His pop 64 and work 88 at start are spot-on.)",
+  "confidence": "Medium",
+  "source": "Research: WWF quarterly files 1995-99 (Owen consistently upper-card)",
+  "category": "Minor adjustment"
+ },
+ {
+  "id": "taz",
+  "current_value": "78",
+  "recommended_value": "82-84",
+  "explanation": "Taz's 1997-99 peak (Human Suplex Machine, FTW champion, one of ECW's two or three biggest acts, WWF debut at Royal Rumble 2000 as a former ECW World Champion) clears a 78 ceiling. Current value is fine for the 1995 Tazmaniac but the ceiling should encode his peak.",
+  "confidence": "Medium",
+  "source": "Research: ECW quarterly files 1997-99",
+  "category": "Minor adjustment"
+ },
+ {
+  "id": "psicosis",
+  "current_value": "66",
+  "recommended_value": "72-76",
+  "explanation": "Psicosis had a long WCW cruiserweight run (1996-2000) including a Cruiserweight title reign and several  PPV spots; 66 caps him as a jobber-to-the-stars.",
+  "confidence": "Medium",
+  "source": "Research: WCW quarterly files 1996-2000",
+  "category": "Minor adjustment"
+ },
+ {
+  "id": "juventud",
+  "current_value": "66",
+  "recommended_value": "72-76",
+  "explanation": "Juventud became a three-time WCW Cruiserweight champion (1998-99) and a genuine TV act; like Psicosis he is undervalued by the ceiling.",
+  "confidence": "Medium",
+  "source": "Research: WCW quarterly files 1996-2000",
+  "category": "Minor adjustment"
+ },
+ {
+  "id": "bam-bam-bigelow",
+  "current_value": "60",
+  "recommended_value": "66-70",
+  "explanation": "Bigelow was one of the best big-man workers of the era and was trusted with the WrestleMania XI main event (vs Lawrence Taylor, Apr 2, 1995) weeks after the game starts. 60 is low for 1995 Bigelow.",
+  "confidence": "Medium",
+  "source": "Research: WWF_Jan-Mar_1995_Research.md (WM XI main event)",
+  "category": "Minor adjustment"
+ },
+ {
+  "id": "bull-nakano",
+  "current_value": "66",
+  "recommended_value": "72-76",
+  "explanation": "Nakano's 1994-95 series with Alundra Blayze was the best women's wrestling on US TV; she was an excellent worker by any standard. 66 underrates her.",
+  "confidence": "Medium",
+  "source": "Research: WWF quarterly files 1994-95 (Blayze/Nakano series)",
+  "category": "Minor adjustment"
+ },
+ {
+  "id": "alundra-blayze",
+  "current_value": "58",
+  "recommended_value": "68-72",
+  "explanation": "See Bull Nakano: Blayze carried the division and their matches were praised in wrestling media. 58 is a jobber-adjacent work score for someone who was a genuinely good worker.",
+  "confidence": "Medium",
+  "source": "Research: WWF quarterly files 1994-95",
+  "category": "Minor adjustment"
+ },
+ {
+  "id": "jim-duggan",
+  "current_value": "65",
+  "recommended_value": "55-60",
+  "explanation": "Duggan in January 1995 was a fading nostalgia act in the WCW mid-card (his last real push had been 1993-94). A pop of 65 puts him level with Arn Anderson and above Marty Jannetty-era stars; he was over with live crowds but cooling fast.",
+  "confidence": "Medium",
+  "source": "Research: WCW_Jan-Mar_1995_Research.md (Duggan mid-card comedy act)",
+  "category": "Minor adjustment"
+ },
+ {
+  "id": "lita",
+  "current_value": "24 at turn 200 (Mar 1999)",
+  "recommended_value": "21 at turn 200 (b. April 14, 1975 - she was 23 when she debuted in ECW in 1999 and 24 only in April 2000); recommend age 21 at arrival and the arrival itself should move to turn ~245 (Feb 8, 2000) per the FA findings",
+  "explanation": "Amy Dumas was born April 14, 1975. The FA entry also carries the wrong arrival year (see the FA_ARRIVALS findings) - both the date and the age should be corrected together.",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Lita_(wrestler) (b. Apr 14, 1975; WWF debut Feb 2000)",
+  "category": "Minor adjustment"
+ },
+ {
+  "id": "bertha-faye",
+  "current_value": "27 at turn 32 (Aug 1995)",
+  "recommended_value": "~34 at turn 32 (Rhonda Singh b. February 21, 1961; she died in July 2001 aged 40)",
+  "explanation": "The game understates her age by roughly seven years.",
+  "confidence": "Medium",
+  "source": "Web: https://en.wikipedia.org/wiki/Bertha_Faye (b. Feb 21, 1961; d. July 27, 2001)",
+  "category": "Minor adjustment"
+ },
+ {
+  "id": "sable",
+  "current_value": "29 at turn 84",
+  "recommended_value": "28 (Rena Mero b. August 8, 1967)",
+  "explanation": "Off by one at her (already-corrected) WrestleMania XII arrival window.",
+  "confidence": "Medium",
+  "source": "Web: https://en.wikipedia.org/wiki/Rena_Mero (b. Aug 8, 1967)",
+  "category": "Minor adjustment"
+ },
+ {
+  "id": "rick-steiner",
+  "current_value": "34 at turn 60",
+  "recommended_value": "35 (b. March 9, 1961)",
+  "explanation": "Off by one at arrival.",
+  "confidence": "Medium",
+  "source": "Web: https://en.wikipedia.org/wiki/Rick_Steiner (b. Mar 9, 1961)",
+  "category": "Minor adjustment"
+ },
+ {
+  "id": "chyna",
+  "current_value": "27 at turn 100",
+  "recommended_value": "26 (Joanie Laurer b. December 27, 1969; 27 only from late December 1997)",
+  "explanation": "Off by one at her (correctly dated) February 1997 arrival.",
+  "confidence": "Medium",
+  "source": "Web: https://en.wikipedia.org/wiki/Chyna (b. Dec 27, 1969)",
+  "category": "Minor adjustment"
+ },
+ {
+  "id": "trish-stratus",
+  "current_value": "24 at turn 260",
+  "recommended_value": "23 (Patricia Stratigeas b. December 18, 1975; 24 only from mid-December 2000)",
+  "explanation": "Off by one at her June 2000 arrival.",
+  "confidence": "Medium",
+  "source": "Web: https://en.wikipedia.org/wiki/Trish_Stratus (b. Dec 18, 1975)",
+  "category": "Minor adjustment"
+ },
+ {
+  "id": "jimmy-snuka",
+  "current_value": "52",
+  "recommended_value": "51 (b. May 18, 1943)",
+  "explanation": "Off by one at game start.",
+  "confidence": "Medium",
+  "source": "Web: https://en.wikipedia.org/wiki/Jimmy_Snuka (b. May 18, 1943)",
+  "category": "Minor adjustment"
+ },
+ {
+  "id": "hulk-hogan",
+  "current_value": "42",
+  "recommended_value": "No change - defensible",
+  "explanation": "Correct-as-is (judgment call, documented): Hogan's in-ring work was genuinely limited by 1995; 42 is at the harsh end but within reason. His pop 97 and ceiling 97 are correct for the biggest draw in US wrestling.",
+  "confidence": "Medium",
+  "source": "Research: WCW quarterly files",
+  "category": "Correct"
+ },
+ {
+  "id": "the-rock",
+  "current_value": "80 at debut (turn 88)",
+  "recommended_value": "No change - defensible",
+  "explanation": "Judgment call, documented: a mic rating of 80 on debut is generous for the rookie blue-chipper gimmick, but his ceiling (95) and the 1997-98 trajectory justify scouting him as an elite talker. Leave as a deliberate design statement rather than an error.",
+  "confidence": "Medium",
+  "source": "Research: WWF quarterly files 1996-98",
+  "category": "Correct"
+ },
+ {
+  "id": "rey-mysterio",
+  "current_value": "35",
+  "recommended_value": "No change - defensible (optionally 40-45 if the game models Mexican popularity separately)",
+  "explanation": "Judgment call, documented: 35 reflects a US-centric baseline; in Mexico Rey was already a sensation at 20. The game has no per-market popularity, so 35 is a fair compromise. Work 92 and ceiling 90 are exactly right.",
+  "confidence": "Medium",
+  "source": "Research: AAA quarterly files",
+  "category": "Correct"
+ },
+ {
+  "id": "road-warrior-hawk",
+  "current_value": "turn 52 (Feb 1996), tagged as \"one half of the legendary Road Warriors\", interest WCW",
+  "recommended_value": "Hawk returns to WCW ~turn 17-19 (May 1995) as a singles wrestler (helped Sting vs Meng & Kurasawa; kayfabe arm injury Aug 1995); the Road Warriors reunion stays at turn ~52-53 (SuperBrawl VI, Feb 11, 1996)",
+  "explanation": "Hawk reappeared in WCW in May 1995 as a singles act (feud with Meng/Kurasawa storyline; the Kurasawa arm-break angle was written to give him time off). He returned in January 1996 and the Road Warriors reformed for SuperBrawl VI (Feb 11, 1996). Animal's Feb 1996 arrival is correct; Hawk's should be ~9 months earlier.",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Road_Warrior_Hawk (reappeared in WCW May 1995; Warriors reformed Jan-Feb 1996); Web: https://bwwe.fandom.com/wiki/Hawk (Hawk returned January 1996, brought Animal back); Research: WCW_Jan-Mar_1996_Research.md (Road Warriors at SuperBrawl VI)",
+  "category": "Wrong availability date"
+ },
+ {
+  "id": "road-warrior-animal",
+  "current_value": "turn 52 (Feb 1996), interest WCW",
+  "recommended_value": "Keep as-is (correct); optionally model his 1995 back-injury layoff",
+  "explanation": "Animal returned alongside Hawk at SuperBrawl VI (Feb 11, 1996) after a long back-injury layoff. Turn 52 = Feb 1996 W1, an accurate placement.",
+  "confidence": "High",
+  "source": "Research: WCW_Jan-Mar_1996_Research.md",
+  "category": "Correct"
+ },
+ {
+  "id": "scott-steiner",
+  "current_value": "turn 60 (Apr 1996), note \"returning from a run in the independents\", interest WCW",
+  "recommended_value": "turn ~52-53 (SuperBrawl VI, Feb 11, 1996); note should read \"from New Japan\": the Steiners were NJPW-based in 1995 (IWGP tag challengers at Battle 7, Jan 4, 1995) with ECW guest shots",
+  "explanation": "The Steiners signed with WCW in early 1996 and debuted at SuperBrawl VI (Feb 11, 1996) - the game is ~2 months late. The \"independents\" note is wrong: through 1995 they were working New Japan (they challenged Hase & Muto for the IWGP tag titles on Jan 4, 1995) with brief ECW appearances.",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Battle_7 (Jan 4, 1995: Hase & Mutoh (c) def. Steiner Brothers); Research: WCW_Jan-Mar_1996_Research.md (Steiners debut at SuperBrawl VI)",
+  "category": "Minor adjustment"
+ },
+ {
+  "id": "rick-steiner",
+  "current_value": "turn 60 (Apr 1996), interest WCW",
+  "recommended_value": "turn ~52-53 (Feb 1996); see scott-steiner finding",
+  "explanation": "See scott-steiner finding: SuperBrawl VI (Feb 11, 1996) debut, NJPW-based through 1995.",
+  "confidence": "High",
+  "source": "See scott-steiner finding",
+  "category": "Minor adjustment"
+ },
+ {
+  "id": "chris-jericho",
+  "current_value": "turn 72 (July 1996), interest ANY",
+  "recommended_value": "ECW arrival ~turn 52 (ECW debut early 1996); WCW signing ~turn 78 (WCW debut Aug 20, 1996, defeating Mr. JL)",
+  "explanation": "Jericho's ECW run began in early 1996 (he was ECW Television Champion June-July 1996) and he debuted for WCW on Aug 20, 1996 (taped for the Aug 31 WCW Saturday Night; his first match was against Mr. JL). A single July 1996 \"ANY interest\" arrival is 6+ months late for ECW and a month early for WCW.",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Chris_Jericho (WCW debut Aug 20, 1996 by defeating Mr. JL); Research: ECW_1996_Q1-Q3_Research.md (Jericho ECW TV champion June 22, 1996)",
+  "category": "Wrong availability date"
+ },
+ {
+  "id": "rob-van-dam",
+  "current_value": "turn 72 (July 1996), interest ANY",
+  "recommended_value": "ECW arrival ~turn 48 (debut at House Party, Jan 5, 1996, defeating Axl Rotten)",
+  "explanation": "RVD signed with ECW in January 1996 and debuted at House Party on Jan 5, 1996. The July 1996 arrival is 6 months late. (He also worked brief WWF enhancement shots in 1996-97, but ECW is the correct first landing.)",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/House_Party_(1996) (RVD ECW debut Jan 5, 1996); Web: https://prowrestling.fandom.com/wiki/Rob_Van_Dam (signed January 1996)",
+  "category": "Wrong availability date"
+ },
+ {
+  "id": "the-rock",
+  "current_value": "turn 88 (Nov 1996 W1), interest WWF",
+  "recommended_value": "Keep as-is (correct): Survivor Series Nov 17, 1996 debut",
+  "explanation": "Rocky Maivia debuted at Survivor Series 96 (Nov 17, 1996). Turn 88 = November 1996 W1 - accurate.",
+  "confidence": "High",
+  "source": "Research: WWF_Oct-Dec_1996_Research.md (Rocky Maivia debut, Survivor Series 96)",
+  "category": "Correct"
+ },
+ {
+  "id": "ken-shamrock",
+  "current_value": "turn 116 (June 1997), interest WWF",
+  "recommended_value": "turn ~101-107 (Feb-Mar 1997): first WWF appearances around In Your House 13: Final Four (Feb 16, 1997); special referee at WrestleMania 13 (Mar 23, 1997)",
+  "explanation": "Shamrock's WWF arrival was February 1997 (Final Four era), not June 1997 - roughly 3-4 months late in the game.",
+  "confidence": "Medium",
+  "source": "Research: WWF_Jan-Mar_1997_Research.md (Shamrock WWF arrival, IYH: Final Four / WrestleMania 13 referee)",
+  "category": "Wrong availability date"
+ },
+ {
+  "id": "val-venis",
+  "current_value": "turn 132 (Oct 1997), interest WWF",
+  "recommended_value": "turn ~163 (May 1998): Val Venis debuted in the WWF in mid-1998",
+  "explanation": "Sean Morley debuted as Val Venis in the WWF around May 1998 (first TV matches May 1998; first PPV SummerSlam 98 era). The October 1997 arrival is ~7 months early - at that time Morley was working Mexico (CMLL as Steel).",
+  "confidence": "High",
+  "source": "Auditor knowledge (career chronology): Val Venis WWF debut May 1998; no WWF TV appearances in 1997",
+  "category": "Wrong availability date"
+ },
+ {
+  "id": "kane",
+  "current_value": "turn 140 (Dec 1997), interest WWF",
+  "recommended_value": "turn ~132 (Oct 1997): Kane debuted at Badd Blood, Oct 5, 1997",
+  "explanation": "Kane's debut was the first-ever Hell in a Cell main event at Badd Blood (Oct 5, 1997), ripping the Cell door off to attack the Undertaker. December 1997 is 10 weeks late.",
+  "confidence": "High",
+  "source": "Research: WWF_Oct-Dec_1997_Research.md (Kane debut Badd Blood, Oct 5, 1997)",
+  "category": "Wrong availability date"
+ },
+ {
+  "id": "bill-goldberg",
+  "current_value": "turn 160 (May 1998), interest WCW, note \"training at the Power Plant\"",
+  "recommended_value": "turn ~131 (Sept 1997): TV debut on Nitro Sept 22, 1997 (dark matches from June 1997)",
+  "explanation": "Goldberg's televised WCW debut was Sept 22, 1997 (Nitro, vs. Hugh Morrus); he had been working dark matches since June 1997. The May 1998 arrival is ~7 months late - it would place the game's Goldberg debut around the US title reign instead of the 173-0 streak. The \"training at the Power Plant\" note fits a Sept 1997 arrival well.",
+  "confidence": "High",
+  "source": "Research: WCW_Jul-Sep_1997_Research.md (Goldberg TV debut Sept 22, 1997)",
+  "category": "Wrong availability date"
+ },
+ {
+  "id": "scotty-riggs",
+  "current_value": "turn 16 (May 1995), interest ANY",
+  "recommended_value": "Verify: Riggs' WCW signing date is unconfirmed; the American Males team formed ~Aug-Sept 1995",
+  "explanation": "No reliable source found for Riggs joining WCW in May 1995. The American Males formed in the second half of 1995 (they won the WCW tag titles in the autumn). Also note the internal inconsistency: the game's TEAMS list already has american-males as a STARTING WCW team while Riggs himself is a May 1995 arrival.",
+  "confidence": "Low",
+  "source": "Auditor note: needs verification",
+  "category": "Needs manual review"
+ },
+ {
+  "id": "isaac-yankem",
+  "current_value": "turn 24 (July 1995), interest WWF",
+  "recommended_value": "Keep as-is (acceptable): Yankem debuted on WWF TV in August 1995 (Lawler's dentist)",
+  "explanation": "Isaac Yankem first appeared in mid-1995 (vignettes/first matches July-August 1995, first big program vs Bret Hart from Aug 1995). Turn 24 (July 1995) is a good match. See the isaac-yankem roster finding for the missing SMW \"Unabomb\" phase.",
+  "confidence": "High",
+  "source": "Research: WWF_Jul-Sep_1995_Research.md (Yankem debut)",
+  "category": "Correct"
+ },
+ {
+  "id": "bertha-faye",
+  "current_value": "turn 32 (Sept 1995 W1), interest WWF",
+  "recommended_value": "Keep as-is (correct): Bertha Faye debuted around SummerSlam 95 (Aug 27, 1995)",
+  "explanation": "Bertha Faye (Rhonda Singh) arrived in mid-1995 and beat Alundra Blayze for the Women's title at SummerSlam (Aug 27, 1995). Turn 32 = September 1995 W1, within a fortnight.",
+  "confidence": "High",
+  "source": "Research: WWF_Jul-Sep_1995_Research.md (Bertha Faye debut/Women's title win)",
+  "category": "Correct"
+ },
+ {
+  "id": "dean-douglas",
+  "current_value": "turn 40 (Nov 1995), interest WWF, separate wrestler (age 36, ceiling 58)",
+  "recommended_value": "Remove as a separate person (duplicate of shane-douglas): script Shane Douglas's WWF signing ~turn 27 (vignettes July 29, 1995; IC title Oct 22, 1995)",
+  "explanation": "Dean Douglas IS Shane Douglas, who correctly starts on the ECW roster as World Champion. Because both entries exist, the same person appears twice. Historically Douglas left ECW in July 1995 and his WWF run ran to early 1996 (returning to ECW at House Party, Jan 5-6, 1996). See the shane-douglas roster finding for the full fix.",
+  "confidence": "High",
+  "source": "Web: https://www.wikiwand.com/en/Shane_Douglas (first appearance as Dean Douglas July 29, 1995; ECW return Jan 1996)",
+  "category": "Should be removed"
+ },
+ {
+  "id": "the-giant",
+  "current_value": "turn 40 (Nov 1995 W1), interest WCW, note \"arrives at World War 3\"",
+  "recommended_value": "Keep as-is (acceptable); first appearance was actually earlier: Sept 18, 1995 Nitro, in-ring debut Halloween Havoc (Oct 29, 1995)",
+  "explanation": "The Giant first appeared in September 1995 and had his first match at Halloween Havoc (Oct 29, 1995); he won the World title from Hogan via DQ at World War 3 (Nov 19, 1995), which the note references. Turn 40 (Nov 1995 W1) is acceptable, though turn ~38-39 would nail the debut.",
+  "confidence": "High",
+  "source": "Research: WCW_Oct-Dec_1995_Research.md (Giant debut Halloween Havoc, title win at WW3)",
+  "category": "Correct"
+ },
+ {
+  "id": "dances-with-dudley",
+  "current_value": "turn 40 (Nov 1995), interest ECW",
+  "recommended_value": "turn ~24 (July 1995): the Dudley family debuted in ECW on July 1, 1995",
+  "explanation": "Dances With Dudley was one of the original Dudleys who debuted in ECW in July 1995 (Buh Buh Ray Dudley followed). The November 1995 arrival is ~4 months late.",
+  "confidence": "High",
+  "source": "Research: ECW_1995_Q3_Research.md (Dudley family debut July 1, 1995)",
+  "category": "Wrong availability date"
+ },
+ {
+  "id": "sable",
+  "current_value": "turn 84 (Oct 1996), interest WWF",
+  "recommended_value": "turn ~59 (March 1996): Sable debuted at WrestleMania XII (Mar 31, 1996)",
+  "explanation": "Sable (Rena Mero) debuted as Triple H's valet at WrestleMania XII on March 31, 1996. The October 1996 arrival is ~7 months late.",
+  "confidence": "High",
+  "source": "Research: WWF_Jan-Mar_1996_Research.md (Sable debut WrestleMania XII)",
+  "category": "Wrong availability date"
+ },
+ {
+  "id": "jacqueline",
+  "current_value": "turn 96 (Jan 1997), interest ANY",
+  "recommended_value": "turn ~164 (June 1998): Jacqueline debuted in the WWF in mid-1998; in Jan 1997 she was Miss Texas in the USWA",
+  "explanation": "Jacqueline (Jacqueline Moore) joined the WWF in 1998 (debut on the June 1998 TV; won the relaunched Women's title in Sept 1998, first champion of the revival). In January 1997 she was working Memphis/USWA as Miss Texas. The January 1997 arrival is ~17 months early.",
+  "confidence": "High",
+  "source": "Research: WWF_Apr-Jun_1998_Research.md (Jacqueline WWF debut); Auditor knowledge: Miss Texas in USWA 1996-97",
+  "category": "Wrong availability date"
+ },
+ {
+  "id": "chyna",
+  "current_value": "turn 100 (Feb 1997 W1), interest WWF",
+  "recommended_value": "Keep as-is (correct): Chyna debuted in early 1997 as Triple H's bodyguard",
+  "explanation": "Chyna appeared in the WWF in early 1997 (widely dated to the In Your House: Final Four period, Feb 1997, and prominent from WrestleMania 13). Turn 100 = Feb 1997 W1 - accurate.",
+  "confidence": "High",
+  "source": "Research: WWF_Jan-Mar_1997_Research.md (Chyna debut)",
+  "category": "Correct"
+ },
+ {
+  "id": "lita",
+  "current_value": "turn 200 (Mar 1999), interest ANY",
+  "recommended_value": "turn ~210 for ECW (Miss Congeniality, mid-1999) or turn ~245 for the WWF (Essa Rios valet debut Feb 8, 2000)",
+  "explanation": "Amy Dumas appeared in ECW as Miss Congeniality in 1999 before debuting in the WWF as Lita in February 2000 (with Essa Rios). The March 1999 \"ANY interest\" arrival is ~9-11 months early for either landing.",
+  "confidence": "High",
+  "source": "Research: ECW_1999_Research.md (Miss Congeniality); WWF_Jan-Mar_2000_Research.md (Lita debut Feb 2000)",
+  "category": "Wrong availability date"
+ },
+ {
+  "id": "trish-stratus",
+  "current_value": "turn 260 (June 2000 W1), interest WWF",
+  "recommended_value": "turn ~254 (March 2000): Trish debuted on WWF TV on March 19, 2000",
+  "explanation": "Trish Stratus's first TV appearance was March 19, 2000 (managing Test & Prince Albert). The game is ~2-3 weeks late - close enough to keep with a small nudge.",
+  "confidence": "High",
+  "source": "Research: WWF_Jan-Mar_2000_Research.md (Trish debut March 19, 2000)",
+  "category": "Minor adjustment"
+ },
+ {
+  "id": "ahmed-johnson",
+  "current_value": "turn 52 (Feb 1996), interest WWF",
+  "recommended_value": "Keep as-is (acceptable): Johnson was in the WWF by late 1995/early 1996 (he held the USWA Unified title in Nov 1995 during the WWF-USWA relationship)",
+  "explanation": "Ahmed Johnson signed with the WWF in late 1995 (while USWA Unified Champion, Nov 6, 1995) and appeared on WWF TV around the turn of 1996. Turn 52 (Feb 1996) is within a couple of months.",
+  "confidence": "Medium",
+  "source": "Web: https://www.whenitwascool.com/history-of-wrestling-1995 (Ahmed Johnson pinned Lawler for USWA Unified title, Nov 6, 1995)",
+  "category": "Correct"
+ }
+]

@@ -1,0 +1,1373 @@
+{
+ "meta": {
+  "description": "Recommended changes to js/data.js / js/engine.js / js/timeline.js derived from the audit. NOT APPLIED - the repository has not been modified.",
+  "revision": "PR #4 branch arena/01a042dd-wcw-vs-wwf, commit 12d9fcd",
+  "warning": "Stat values for new entries are suggestions pending tuning; every date/identity change carries its own confidence level. Do not apply Low-confidence ops without verification."
+ },
+ "operations": [
+  {
+   "op": "remove_from_start",
+   "target": "WRESTLERS",
+   "id": "mike-awesome",
+   "note": "Duplicate of the-gladiator; Mike Alfonso was in FMW until 1997",
+   "confidence": "High"
+  },
+  {
+   "op": "remove_from_start",
+   "target": "WRESTLERS",
+   "id": "the-shark",
+   "note": "Duplicate of avalanche; The Shark name came Feb-Mar 1995 (add rename event ~turn 8-12)",
+   "confidence": "High"
+  },
+  {
+   "op": "remove_from_start",
+   "target": "WRESTLERS",
+   "id": "kurasawa",
+   "note": "Duplicate of nakanishi; Kurasawa joined WCW Oct 1995 (add arrival ~turn 36)",
+   "confidence": "High"
+  },
+  {
+   "op": "remove_from_start",
+   "target": "WRESTLERS",
+   "id": "barbarian",
+   "note": "Duplicate of sione; WCW return late 1995 (add arrival ~turn 44)",
+   "confidence": "High"
+  },
+  {
+   "op": "remove_from_start",
+   "target": "WRESTLERS",
+   "id": "savio-vega",
+   "note": "Duplicate of kwang; Savio debuted spring 1995 (add rename/repackage event ~turn 17-20)",
+   "confidence": "High"
+  },
+  {
+   "op": "remove_from_start",
+   "target": "WRESTLERS",
+   "id": "rad-radford",
+   "note": "Duplicate of louie-spicolli; WWF debut May 13, 1995 (add arrival ~turn 18)",
+   "confidence": "High"
+  },
+  {
+   "op": "remove_from_start",
+   "target": "WRESTLERS",
+   "id": "louie-spicolli",
+   "note": "Duplicate of rad-radford; ECW from July 1996 (add arrival ~turn 81)",
+   "confidence": "High"
+  },
+  {
+   "op": "remove_from_start",
+   "target": "WRESTLERS",
+   "id": "barry-windham",
+   "note": "Retired 1994; WWF Stalker return mid-1996 (optional arrival ~turn 80)",
+   "confidence": "High"
+  },
+  {
+   "op": "remove_from_start",
+   "target": "WRESTLERS",
+   "id": "jim-neidhart",
+   "note": "Fired by WWF Dec 94/Jan 95; ECW April 1995 (add arrival ~turn 15)",
+   "confidence": "High"
+  },
+  {
+   "op": "remove_from_start",
+   "target": "WRESTLERS",
+   "id": "phineas-godwinn",
+   "note": "Dennis Knight was in WCW as Tex Slazenger; Phineas debuted Aug 1995 (add arrival ~turn 33)",
+   "confidence": "High"
+  },
+  {
+   "op": "remove_from_start",
+   "target": "WRESTLERS",
+   "id": "tom-brandi",
+   "note": "WWF from 1996 as Salvatore Sincere (add arrival ~turn 76+)",
+   "confidence": "High"
+  },
+  {
+   "op": "remove_from_start",
+   "target": "WRESTLERS",
+   "id": "missy-hyatt",
+   "note": "Left WCW Feb 1994; ECW Dec 29, 1995 (add manager arrival ~turn 48)",
+   "confidence": "High"
+  },
+  {
+   "op": "convert_to_fa_arrival",
+   "target": "WRESTLERS -> FA_ARRIVALS",
+   "id": "disco-inferno",
+   "changes": {
+    "turn": 34
+   },
+   "note": "WCW debut Sept 1995",
+   "confidence": "High"
+  },
+  {
+   "op": "convert_to_fa_arrival",
+   "target": "WRESTLERS -> FA_ARRIVALS",
+   "id": "craig-pittman",
+   "changes": {
+    "turn": 32
+   },
+   "note": "WCW debut mid-late 1995",
+   "confidence": "Medium"
+  },
+  {
+   "op": "convert_to_fa_arrival",
+   "target": "WRESTLERS -> FA_ARRIVALS",
+   "id": "mr-jl",
+   "changes": {
+    "turn": 34
+   },
+   "note": "Jerry Lynn joined WCW Sept 1995",
+   "confidence": "High"
+  },
+  {
+   "op": "convert_to_fa_arrival",
+   "target": "WRESTLERS -> FA_ARRIVALS",
+   "id": "the-renegade",
+   "changes": {
+    "turn": 10
+   },
+   "note": "Debut March 1995 (Uncensored Mar 19)",
+   "confidence": "High"
+  },
+  {
+   "op": "convert_to_fa_arrival",
+   "target": "WRESTLERS -> FA_ARRIVALS",
+   "id": "waylon-mercy",
+   "changes": {
+    "turn": 24
+   },
+   "note": "Raw debut July 3, 1995",
+   "confidence": "High"
+  },
+  {
+   "op": "convert_to_fa_arrival",
+   "target": "WRESTLERS -> FA_ARRIVALS",
+   "id": "man-mountain-rock",
+   "changes": {
+    "turn": 4
+   },
+   "note": "Debut Feb 1995",
+   "confidence": "High"
+  },
+  {
+   "op": "convert_to_fa_arrival",
+   "target": "WRESTLERS -> FA_ARRIVALS",
+   "id": "jacob-blu",
+   "changes": {
+    "turn": 8
+   },
+   "note": "Blu Brothers debut spring 1995",
+   "confidence": "High"
+  },
+  {
+   "op": "convert_to_fa_arrival",
+   "target": "WRESTLERS -> FA_ARRIVALS",
+   "id": "eli-blu",
+   "changes": {
+    "turn": 8
+   },
+   "note": "Blu Brothers debut spring 1995",
+   "confidence": "High"
+  },
+  {
+   "op": "convert_to_fa_arrival",
+   "target": "WRESTLERS -> FA_ARRIVALS",
+   "id": "jean-pierre-lafitte",
+   "changes": {
+    "turn": 13
+   },
+   "note": "Debut spring 1995",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "hulk-hogan",
+   "changes": {
+    "align": "face"
+   },
+   "note": "Babyface until the nWo turn (July 7, 1996) - the engine's own third-man decision flips him heel",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "booker-t",
+   "changes": {
+    "align": "heel"
+   },
+   "note": "Harlem Heat were heels",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "mabel",
+   "changes": {
+    "align": "face",
+    "age": 23
+   },
+   "note": "MOM faces until mid-1995; Mabel b. Feb 14, 1971",
+   "confidence": "Medium"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "mo",
+   "changes": {
+    "align": "face"
+   },
+   "note": "MOM faces until mid-1995",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "vader",
+   "changes": {
+    "contract": 35,
+    "noRenew": true
+   },
+   "note": "Fired Aug-Sept 1995; WWF Royal Rumble Jan 21, 1996 (~turn 50)",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "steve-austin",
+   "changes": {
+    "contract": 35,
+    "noRenew": true
+   },
+   "note": "Fired Sept 1995; ECW from turn 32, then WWF Dec 1995/Jan 1996 (~turn 48)",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "jeff-jarrett",
+   "changes": {
+    "contract": 27
+   },
+   "note": "Left WWF July 1995 for USWA; returned late 1996",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "bam-bam-bigelow",
+   "changes": {
+    "contract": 43,
+    "noRenew": true
+   },
+   "note": "Last WWF match Survivor Series Nov 19, 1995; ECW early 1996",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "british-bulldog",
+   "changes": {
+    "contract": 143
+   },
+   "note": "WCW debut Dec 1997",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "brian-pillman",
+   "changes": {
+    "contract": 53,
+    "noRenew": true
+   },
+   "note": "WCW exit Feb 11, 1996; ECW Feb-Apr 1996; WWF June 1996",
+   "confidence": "Medium"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "chris-benoit",
+   "changes": {
+    "contract": 34
+   },
+   "note": "Benoit/Guerrero/Malenko left ECW for WCW Sept 1995",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "shane-douglas",
+   "changes": {
+    "contract": 27,
+    "noRenew": true
+   },
+   "note": "Left ECW for WWF July 1995",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "sid",
+   "changes": {
+    "company": "USWA"
+   },
+   "note": "Reigning USWA Unified champion; WWF return Feb 20, 1995 (~turn 6)",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "goldust",
+   "changes": {
+    "id": "dustin-rhodes",
+    "name": "Dustin Rhodes",
+    "company": "WCW",
+    "age": 29,
+    "contract": 15,
+    "noRenew": true,
+    "align": "face"
+   },
+   "note": "Replace Goldust starter with Dustin Rhodes (WCW babyface); add Goldust FA arrival ~turn 37 (Oct-Nov 1995)",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "eddy-guerrero",
+   "changes": {
+    "company": null,
+    "contract": 21
+   },
+   "note": "NJPW/AAA at start; ECW arrival turn 13 (Apr 8, 1995); left ECW Sept 1995",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "bobby-eaton",
+   "changes": {
+    "company": "WCW"
+   },
+   "note": "WCW 1993-2000; Blue Bloods with Regal from Apr 8, 1995",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "bobby-blaze",
+   "changes": {
+    "company": "SMW"
+   },
+   "note": "SMW regular",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "dynamite-kansai",
+   "note": "JWP is not a game company - keep in AJW as interpromotional guests, or add JWP to COMPANY_DEFS",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "mayumi-ozaki",
+   "note": "See dynamite-kansai",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "johnny-b-badd",
+   "changes": {
+    "age": 34
+   },
+   "note": "Marc Mero b. July 9, 1960",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "meng",
+   "changes": {
+    "age": 35
+   },
+   "note": "Tonga Fifita b. Feb 1959",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "avalanche",
+   "changes": {
+    "age": 31
+   },
+   "note": "John Tenta b. June 22, 1963",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "big-bubba-rogers",
+   "changes": {
+    "name": "The Boss",
+    "age": 31,
+    "align": "face"
+   },
+   "note": "Traylor was The Boss (face) at start; Big Bubba repackaging spring 1995",
+   "confidence": "Medium"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "marty-jannetty",
+   "changes": {
+    "age": 34
+   },
+   "note": "b. Feb 3, 1960",
+   "confidence": "Medium"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "rocco-rock",
+   "changes": {
+    "age": 41
+   },
+   "note": "b. Sept 3, 1953",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "fatu",
+   "changes": {
+    "age": 29
+   },
+   "note": "b. Oct 11, 1965",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "hakushi",
+   "changes": {
+    "age": 28
+   },
+   "note": "b. Dec 2, 1966",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "adam-bomb",
+   "changes": {
+    "age": 30
+   },
+   "note": "b. Mar 3, 1964",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "rey-mysterio",
+   "changes": {
+    "age": 20
+   },
+   "note": "b. Dec 11, 1974",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "nakanishi",
+   "changes": {
+    "age": 27
+   },
+   "note": "b. Oct 3, 1967",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "duke-droese",
+   "changes": {
+    "age": 26
+   },
+   "note": "b. Aug 20, 1968; 1994 WWF debut confirmed",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "chris-candido",
+   "changes": {
+    "age": 24
+   },
+   "note": "b. Mar 21, 1970; also the reigning NWA World champion (see titles)",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "jimmy-snuka",
+   "changes": {
+    "age": 51
+   },
+   "note": "b. May 18, 1943",
+   "confidence": "Medium"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "owen-hart",
+   "changes": {
+    "ceiling": 87
+   },
+   "note": "Upper-card IC-title level all decade",
+   "confidence": "Medium"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "taz",
+   "changes": {
+    "ceiling": 83
+   },
+   "note": "1997-99 peak as ECW main-eventer",
+   "confidence": "Medium"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "psicosis",
+   "changes": {
+    "ceiling": 74
+   },
+   "note": "Long WCW cruiserweight run",
+   "confidence": "Medium"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "juventud",
+   "changes": {
+    "ceiling": 74
+   },
+   "note": "3x WCW Cruiserweight champion",
+   "confidence": "Medium"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "bam-bam-bigelow",
+   "changes": {
+    "work": 68
+   },
+   "note": "WM XI main-eventer weeks after start",
+   "confidence": "Medium"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "bull-nakano",
+   "changes": {
+    "work": 74
+   },
+   "note": "Acclaimed Blayze series 1994-95",
+   "confidence": "Medium"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "alundra-blayze",
+   "changes": {
+    "work": 70
+   },
+   "note": "Carried the WWF women's division",
+   "confidence": "Medium"
+  },
+  {
+   "op": "modify",
+   "target": "WRESTLERS",
+   "id": "jim-duggan",
+   "changes": {
+    "pop": 58
+   },
+   "note": "Fading nostalgia act by 1995",
+   "confidence": "Medium"
+  },
+  {
+   "op": "modify",
+   "target": "FA_ARRIVALS",
+   "id": "bill-goldberg",
+   "changes": {
+    "turn": 131
+   },
+   "note": "TV debut Sept 22, 1997",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "FA_ARRIVALS",
+   "id": "kane",
+   "changes": {
+    "turn": 132
+   },
+   "note": "Badd Blood, Oct 5, 1997",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "FA_ARRIVALS",
+   "id": "ken-shamrock",
+   "changes": {
+    "turn": 102
+   },
+   "note": "WWF Feb 1997 (ref) - Mar 1997 (in-ring)",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "FA_ARRIVALS",
+   "id": "val-venis",
+   "changes": {
+    "turn": 163
+   },
+   "note": "WWF debut May 1998",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "FA_ARRIVALS",
+   "id": "sable",
+   "changes": {
+    "turn": 59
+   },
+   "note": "WrestleMania XII, Mar 31, 1996",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "FA_ARRIVALS",
+   "id": "jacqueline",
+   "changes": {
+    "turn": 164
+   },
+   "note": "WWF debut June 1998",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "FA_ARRIVALS",
+   "id": "lita",
+   "changes": {
+    "turn": 245,
+    "age": 21
+   },
+   "note": "WWF debut Feb 8, 2000; b. Apr 14, 1975",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "FA_ARRIVALS",
+   "id": "rob-van-dam",
+   "changes": {
+    "turn": 48
+   },
+   "note": "ECW debut Jan 5, 1996",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "FA_ARRIVALS",
+   "id": "chris-jericho",
+   "changes": {
+    "turn": 52
+   },
+   "note": "ECW debut early 1996 (then WCW Aug 20, 1996 ~turn 78)",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "FA_ARRIVALS",
+   "id": "scott-steiner",
+   "changes": {
+    "turn": 52
+   },
+   "note": "Steiners NJPW-based through 1995; WCW return ~Feb 1996",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "FA_ARRIVALS",
+   "id": "rick-steiner",
+   "changes": {
+    "turn": 52,
+    "age": 35
+   },
+   "note": "See Scott Steiner; b. Mar 9, 1961",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "FA_ARRIVALS",
+   "id": "road-warrior-hawk",
+   "changes": {
+    "turn": 16
+   },
+   "note": "Hawk's WCW singles return May 1995",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "FA_ARRIVALS",
+   "id": "dean-douglas",
+   "changes": {
+    "turn": 27,
+    "age": 31
+   },
+   "note": "Dean Douglas vignettes from July 29, 1995; Shane Douglas b. Nov 21, 1964",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "FA_ARRIVALS",
+   "id": "scotty-riggs",
+   "changes": {
+    "turn": 33
+   },
+   "note": "WCW debut with American Males Aug-Sept 1995",
+   "confidence": "Medium"
+  },
+  {
+   "op": "modify",
+   "target": "FA_ARRIVALS",
+   "id": "dances-with-dudley",
+   "changes": {
+    "turn": 24
+   },
+   "note": "Dudley family debut July 1, 1995",
+   "confidence": "Medium"
+  },
+  {
+   "op": "modify",
+   "target": "FA_ARRIVALS",
+   "id": "bertha-faye",
+   "changes": {
+    "age": 34
+   },
+   "note": "Rhonda Singh b. Feb 21, 1961",
+   "confidence": "Medium"
+  },
+  {
+   "op": "modify",
+   "target": "FA_ARRIVALS",
+   "id": "chyna",
+   "changes": {
+    "age": 26
+   },
+   "note": "b. Dec 27, 1969",
+   "confidence": "Medium"
+  },
+  {
+   "op": "modify",
+   "target": "FA_ARRIVALS",
+   "id": "trish-stratus",
+   "changes": {
+    "age": 23
+   },
+   "note": "b. Dec 18, 1975",
+   "confidence": "Medium"
+  },
+  {
+   "op": "modify",
+   "target": "INITIAL_TITLES",
+   "id": "wwf-women",
+   "changes": {
+    "holder": "bull-nakano"
+   },
+   "note": "Bull Nakano champion since Nov 20, 1994; Blayze regained Apr 3, 1995",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "INITIAL_TITLES",
+   "id": "wwf-tag",
+   "changes": {
+    "holder": "VACANT"
+   },
+   "note": "Vacant at start; 1-2-3 Kid & Bob Holly won at the Jan 22, 1995 Royal Rumble",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "INITIAL_TITLES",
+   "id": "nwa-world",
+   "changes": {
+    "holder": "chris-candido"
+   },
+   "note": "Champion Nov 19, 1994 - Feb 24, 1995 (Severn wins Feb 24)",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "INITIAL_TITLES",
+   "id": "njpw-junior",
+   "changes": {
+    "holder": "norio-honaga"
+   },
+   "note": "Retained vs Sasuke at Battle 7, Jan 4, 1995 (requires adding honaga)",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "INITIAL_TITLES",
+   "id": "njpw-tag",
+   "changes": {
+    "holder": "hase-muto"
+   },
+   "note": "Hase & Muto held the IWGP tag belts Nov 25, 1994 - May 6, 1995 (requires adding hase + team)",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "INITIAL_TITLES",
+   "id": "ajpw-triple",
+   "changes": {
+    "holder": "kawada"
+   },
+   "note": "Kawada Oct 22, 1994 - Mar 4, 1995 (Hansen)",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "INITIAL_TITLES",
+   "id": "ajpw-tag",
+   "changes": {
+    "holder": "misawa-kobashi"
+   },
+   "note": "Misawa & Kobashi were the World Tag champions (HDA won the belts June 9, 1995)",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "INITIAL_TITLES",
+   "id": "cmll-world",
+   "changes": {
+    "holder": "silver-king"
+   },
+   "note": "Silver King July 28, 1994 - 1995; Santo never held this title",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "INITIAL_TITLES",
+   "id": "smw-world",
+   "changes": {
+    "holder": "dirty-white-boy"
+   },
+   "note": "SMW champion since July 1994",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "INITIAL_TITLES",
+   "id": "smw-tv",
+   "changes": {
+    "holder": "buddy-landel"
+   },
+   "note": "Beat the Champ TV winner from Lee, Dec 5, 1994",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "INITIAL_TITLES",
+   "id": "uswa-world",
+   "changes": {
+    "holder": "sid"
+   },
+   "note": "Reigning USWA Unified champion (lost to Lawler Feb 6, 1995)",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "INITIAL_TITLES",
+   "id": "ajw-tag",
+   "changes": {
+    "holder": "kyoko-takako"
+   },
+   "note": "Kyoko & Takako Inoue WWWA tag champions from Oct 9, 1994 (requires the corrected team)",
+   "confidence": "High"
+  },
+  {
+   "op": "remove",
+   "target": "INITIAL_TITLES",
+   "id": "ecw-hardcore",
+   "note": "The ECW Hardcore title did not exist in 1995",
+   "confidence": "High"
+  },
+  {
+   "op": "remove",
+   "target": "INITIAL_TITLES",
+   "id": "aaa-world",
+   "note": "AAA had no World Heavyweight title until 1996+ (Americas HW began Feb 2, 1996)",
+   "confidence": "High"
+  },
+  {
+   "op": "remove",
+   "target": "INITIAL_TITLES",
+   "id": "aaa-cruiser",
+   "note": "AAA had no Cruiserweight title in Jan 1995; Rey held no title",
+   "confidence": "High"
+  },
+  {
+   "op": "add",
+   "target": "INITIAL_TITLES",
+   "id": "ecw-tag",
+   "changes": {
+    "name": "ECW World Tag Team",
+    "company": "ECW",
+    "kind": "tag",
+    "holder": "public-enemy",
+    "prestige": 48
+   },
+   "note": "Public Enemy were the champions at the start",
+   "confidence": "High"
+  },
+  {
+   "op": "add",
+   "target": "INITIAL_TITLES",
+   "id": "smw-tag",
+   "changes": {
+    "name": "SMW United States Tag Team",
+    "company": "SMW",
+    "kind": "tag",
+    "holder": "rock-n-roll-express",
+    "prestige": 40
+   },
+   "note": "R&R Express won the belts at Christmas Chaos, Dec 25, 1994",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "INITIAL_FACTIONS",
+   "id": "four-horsemen",
+   "note": "Do not seed at start; formation event ~turn 39 (Oct 29, 1995: Flair/Arn/Pillman, +Benoit by year end)",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "INITIAL_FACTIONS",
+   "id": "dungeon-of-doom",
+   "changes": {
+    "id": "three-faces-of-fear",
+    "name": "The Three Faces of Fear",
+    "members": [
+     "kevin-sullivan",
+     "the-butcher",
+     "avalanche"
+    ]
+   },
+   "note": "Rename at start; Dungeon of Doom forms mid-1995 and absorbs Meng (~turn 24-28)",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "INITIAL_FACTIONS",
+   "id": "million-dollar-corp",
+   "changes": {
+    "leader": "ted-dibiase"
+   },
+   "note": "Leader should be DiBiase; Tatanka joins ~turn 5-6 (heel turn Feb 20, 1995); Bigelow exits ~turn 13; consider adding volkoff/kama",
+   "confidence": "High"
+  },
+  {
+   "op": "remove",
+   "target": "ANN_STARTERS.CMLL",
+   "id": "mike-tenay",
+   "note": "Move from ANN_ARRIVALS (turn 48) to ANN_STARTERS.WCW - Tenay called When Worlds Collide Nov 6, 1994",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "ANN_ARRIVALS",
+   "id": "larry-zbyszko",
+   "changes": {
+    "turn": 67
+   },
+   "note": "Nitro commentary from May 27, 1996",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "ANN_ARRIVALS",
+   "id": "michael-cole",
+   "changes": {
+    "turn": 119
+   },
+   "note": "First on-screen June 30, 1997",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "ANN_ARRIVALS",
+   "id": "tazz",
+   "changes": {
+    "turn": 243
+   },
+   "note": "Signs Jan 2000 as an active wrestler (ECW champion at the Royal Rumble, Jan 23); commentary role later",
+   "confidence": "High"
+  },
+  {
+   "op": "remove",
+   "target": "ANN_STARTERS.CMLL",
+   "id": "kent-walton",
+   "note": "Remove - Walton retired from ITV commentary in 1988",
+   "confidence": "High"
+  },
+  {
+   "op": "remove",
+   "target": "ANN_STARTERS.CMLL",
+   "id": "tirantes",
+   "note": "Remove from the CMLL booth - Tirantes is a referee",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "TIMELINE",
+   "id": "austin-316",
+   "changes": {
+    "turn": 71
+   },
+   "note": "King of the Ring speech June 23, 1996",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "TIMELINE",
+   "id": "dx",
+   "changes": {
+    "turn": 129
+   },
+   "note": "DX formed Sept-Oct 1997",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "TIMELINE",
+   "id": "ecw-raven-title-96",
+   "changes": {
+    "turn": 51
+   },
+   "note": "Raven won the ECW title Jan 27, 1996",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "TIMELINE",
+   "id": "wcw-flair-returns-99",
+   "changes": {
+    "turn": 177
+   },
+   "note": "Flair's WCW return Sept 14, 1998",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "TIMELINE",
+   "id": "wcw-final-nitro-2001",
+   "changes": {
+    "turn": 299
+   },
+   "note": "Final Nitro Mar 26, 2001",
+   "confidence": "High"
+  },
+  {
+   "op": "modify",
+   "target": "TIMELINE",
+   "id": "ecw-final-show-2001",
+   "changes": {
+    "turn": 290
+   },
+   "note": "ECW's final weekly show early Jan 2001",
+   "confidence": "Medium"
+  },
+  {
+   "op": "modify",
+   "target": "TIMELINE",
+   "id": "womens-revival",
+   "changes": {
+    "turn": 178
+   },
+   "note": "WWF women's division revival Sept 1998 (Sable/Jacqueline programme)",
+   "confidence": "Medium"
+  },
+  {
+   "op": "remove",
+   "target": "TIMELINE",
+   "id": "ecw-raven-debuts-95",
+   "note": "Remove - Raven debuted Jan 10, 1995 and is already on the starting roster",
+   "confidence": "High"
+  },
+  {
+   "op": "remove",
+   "target": "TIMELINE",
+   "id": "ecw-taz-rises-95",
+   "note": "Re-date: Taz's rise came after his July 1995 neck injury; singles push from late 1995",
+   "confidence": "Medium"
+  },
+  {
+   "op": "add",
+   "target": "TIMELINE (death/retirement events)",
+   "id": "brian-pillman-death",
+   "changes": {
+    "turn": 132
+   },
+   "note": "Pillman died Oct 5, 1997",
+   "confidence": "High"
+  },
+  {
+   "op": "add",
+   "target": "TIMELINE (death/retirement events)",
+   "id": "yokozuna-death",
+   "changes": {
+    "turn": 279
+   },
+   "note": "Yokozuna died Oct 23, 2000",
+   "confidence": "High"
+  },
+  {
+   "op": "add",
+   "target": "TIMELINE (death/retirement events)",
+   "id": "giant-baba-death",
+   "changes": {
+    "turn": 195
+   },
+   "note": "Baba died Jan 31, 1999",
+   "confidence": "High"
+  },
+  {
+   "op": "add",
+   "target": "TIMELINE (death/retirement events)",
+   "id": "jumbo-tsuruta-death",
+   "changes": {
+    "turn": 257
+   },
+   "note": "Jumbo died May 13, 2000",
+   "confidence": "Medium"
+  },
+  {
+   "op": "add",
+   "target": "TIMELINE (death/retirement events)",
+   "id": "onita-retirement",
+   "changes": {
+    "turn": 16
+   },
+   "note": "Kawasaki retirement show May 5, 1995",
+   "confidence": "High"
+  },
+  {
+   "op": "add",
+   "target": "TIMELINE (death/retirement events)",
+   "id": "louie-spicolli-death",
+   "changes": {
+    "turn": 150
+   },
+   "note": "Spicolli died Feb 15, 1998 (conditional on the rad-radford chain)",
+   "confidence": "High"
+  },
+  {
+   "op": "add",
+   "target": "TIMELINE (death/retirement events)",
+   "id": "rick-rude-death",
+   "changes": {
+    "turn": 206
+   },
+   "note": "Rude died Apr 20, 1999 (conditional on his arrival chain)",
+   "confidence": "High"
+  },
+  {
+   "op": "add",
+   "target": "TIMELINE (death/retirement events)",
+   "id": "wwf-in-your-house-8-add",
+   "changes": {
+    "turn": 67
+   },
+   "note": "Add the missing IYH 8 \"Beware of Dog\" (May 26, 1996) and move International Incident to turn 71 (July 21, 1996)",
+   "confidence": "High"
+  },
+  {
+   "op": "add",
+   "target": "WRESTLERS or FA_ARRIVALS",
+   "id": "kurt-angle",
+   "changes": {
+    "id": "kurt-angle",
+    "name": "Kurt Angle",
+    "age": 30,
+    "pop": 40,
+    "work": 88,
+    "mic": 70,
+    "ceiling": 94,
+    "align": "heel"
+   },
+   "note": "FA arrival ~turn 233 (televised debut November 14, 1999, Survivor Series, def. Shawn Stasiak; signed Oct 1998, dark matches from spring 1999) | Olympic gold medallist (1996, 110kg freestyle); WWF Champion by October 2000; four-time WWF/WCW/world champion in-window; the single most co…",
+   "confidence": "High"
+  },
+  {
+   "op": "add",
+   "target": "WRESTLERS or FA_ARRIVALS",
+   "id": "edge",
+   "changes": {
+    "id": "edge",
+    "name": "Edge",
+    "age": 24,
+    "pop": 30,
+    "work": 78,
+    "mic": 60,
+    "ceiling": 92,
+    "align": "face"
+   },
+   "note": "FA arrival ~turn 167 (WWF debut June 22, 1998, Raw Is War, entering through the crowd) | Became a multi-time tag/IC/US champion and, by 2001, a main-eventer (King of the Ring 2001, TLC legacy); brother-storyline anchor of The Bro…",
+   "confidence": "High"
+  },
+  {
+   "op": "add",
+   "target": "WRESTLERS or FA_ARRIVALS",
+   "id": "christian",
+   "changes": {
+    "id": "christian",
+    "name": "Christian",
+    "age": 24,
+    "pop": 25,
+    "work": 74,
+    "mic": 62,
+    "ceiling": 88,
+    "align": "heel"
+   },
+   "note": "FA arrival ~turn 179 (WWF debut September 27, 1998 at In Your House: Breakdown; won the Light Heavyweight title in his first match) | Edge's kayfabe brother; multi-time tag/Light Heavyweight champion; eventual main-eventer (slightly post-window peak)…",
+   "confidence": "High"
+  },
+  {
+   "op": "add",
+   "target": "WRESTLERS or FA_ARRIVALS",
+   "id": "jeff-hardy",
+   "changes": {
+    "id": "jeff-hardy",
+    "name": "Jeff Hardy",
+    "age": 17,
+    "pop": 8,
+    "work": 65,
+    "mic": 30,
+    "ceiling": 90,
+    "align": "face"
+   },
+   "note": "Seeded unsigned free agent at start (he was a 17-year-old WWF enhancement jobber from 1994, under fake names); WWF contract arrival ~turn 144 (signed 1998) | Half of the Hardy Boyz; TLC main-eventer by 2000-01; at game start he was literally the anonymous kid losing to Razor Ramon and being squash…",
+   "confidence": "High"
+  },
+  {
+   "op": "add",
+   "target": "WRESTLERS or FA_ARRIVALS",
+   "id": "matt-hardy",
+   "changes": {
+    "id": "matt-hardy",
+    "name": "Matt Hardy",
+    "age": 20,
+    "pop": 8,
+    "work": 62,
+    "mic": 35,
+    "ceiling": 84,
+    "align": "face"
+   },
+   "note": "Seeded unsigned free agent at start (WWF enhancement talent from 1994); WWF contract arrival ~turn 144 (signed 1998) | See Jeff Hardy; also ran the OMEGA indie promotion with Jeff in this window…",
+   "confidence": "High"
+  },
+  {
+   "op": "add",
+   "target": "WRESTLERS or FA_ARRIVALS",
+   "id": "buh-buh-ray-dudley",
+   "changes": {
+    "id": "buh-buh-ray-dudley",
+    "name": "Buh Buh Ray Dudley",
+    "age": 24,
+    "pop": 25,
+    "work": 62,
+    "mic": 60,
+    "ceiling": 82,
+    "align": "face"
+   },
+   "note": "FA arrival ~turn 48-56 (ECW debut late 1995-early 1996 as the stuttering hillbilly of the Dudley family - exact first date unverified) | Half of what became the Dudley Boyz, ECW's dominant tag act (7-time ECW tag champions) before the WWF move in 1999; future WWF tag champion…",
+   "confidence": "Medium"
+  },
+  {
+   "op": "add",
+   "target": "WRESTLERS or FA_ARRIVALS",
+   "id": "d-von-dudley",
+   "changes": {
+    "id": "d-von-dudley",
+    "name": "D-Von Dudley",
+    "age": 23,
+    "pop": 25,
+    "work": 58,
+    "mic": 62,
+    "ceiling": 80,
+    "align": "heel"
+   },
+   "note": "FA arrival ~turn 61 (ECW debut April 13, 1996, Massacre on Queens Boulevard) | The preacher of the Dudley family; teamed with Bubba from February 1997 to form the definitive Dudley Boyz…",
+   "confidence": "High"
+  },
+  {
+   "op": "add",
+   "target": "WRESTLERS or FA_ARRIVALS",
+   "id": "mark-henry",
+   "changes": {
+    "id": "mark-henry",
+    "name": "Mark Henry",
+    "age": 24,
+    "pop": 30,
+    "work": 55,
+    "mic": 50,
+    "ceiling": 88,
+    "align": "face"
+   },
+   "note": "FA arrival ~turn 57 (first TV appearance March 11, 1996, press-slamming Jerry Lawler on Raw; in-ring debut September 21, 1996; full-time TV from December 1997) | Olympic weightlifter on a famous 10-year contract; Nation of Domination from January 1998; European champion 1999…",
+   "confidence": "High"
+  },
+  {
+   "op": "add",
+   "target": "WRESTLERS or FA_ARRIVALS",
+   "id": "rick-rude",
+   "changes": {
+    "id": "rick-rude",
+    "name": "\"Ravishing\" Rick Rude",
+    "age": 36,
+    "pop": 62,
+    "work": 72,
+    "mic": 82,
+    "ceiling": 76,
+    "align": "heel"
+   },
+   "note": "Not on the roster at start (CORRECT - he was forced to retire in 1994 by the back injury suffered against Sting in Japan). Add FA chain: ECW arrival ~turn 96 (Nov 1996) (November 1996, as himself), WCW/nWo arrival ~turn 137 (Nov 10, 1997) (November 1997 - the night he appeared on both Raw and Nitro), exit March 1999, deceased April 20, 1999 | One of the best talkers of the era; his post-retirement ECW/WCW runs are famous. The game has no trace of him…",
+   "confidence": "High"
+  },
+  {
+   "op": "add",
+   "target": "WRESTLERS or FA_ARRIVALS",
+   "id": "megumi-kudo",
+   "changes": {
+    "id": "megumi-kudo",
+    "name": "Megumi Kudo",
+    "age": 25,
+    "pop": 55,
+    "work": 84,
+    "mic": 30,
+    "ceiling": 78,
+    "align": "face",
+    "gender": "f"
+   },
+   "note": "Seeded FMW starter (she was the ace of FMW's women's division throughout 1995-96); optional retirement event ~turn 111 (April 29, 1997 farewell) | FMW's female ace; two-time FMW/WWA Women's champion in this window; her retirement spectacular (with the famous shark-tank cage match) was F…",
+   "confidence": "Medium"
+  }
+ ]
+}

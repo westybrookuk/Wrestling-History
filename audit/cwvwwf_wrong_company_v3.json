@@ -1,0 +1,110 @@
+[
+ {
+  "id": "sid",
+  "current_value": "WWF starting roster, age 34, contract 100, pop 62",
+  "recommended_value": "Move to USWA (he was the reigning USWA Unified World Heavyweight Champion); add a WWF signing ~turn 6 (Sid returned to the WWF on Feb 20, 1995 as Shawn Michaels' bodyguard)",
+  "explanation": "In January 1995 Sid was in the USWA, where he was the reigning Unified World Heavyweight Champion (retained against Brian Christopher on Jan 23, 1995; lost the belt to Jerry Lawler on Feb 6, 1995). His WWF return came on February 20, 1995. Age 34 in the game is correct. This also fixes the USWA title holder (see INITIAL_TITLES: uswa-world).",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Sid_Eudy (returned to WWF Feb 20, 1995); Web: https://www.whenitwascool.com/history-of-wrestling-1995 (Sid USWA Unified champion; Lawler wins it Feb 6, 1995)",
+  "category": "Wrong company"
+ },
+ {
+  "id": "goldust",
+  "current_value": "WWF starting roster as Goldust, age 26, contract 120 + noRenew, pop 32",
+  "recommended_value": "Replace the starter with Dustin Rhodes (WCW babyface, age 29, short contract ~15 turns + noRenew - he left WCW after Uncensored, Mar 19, 1995); add Goldust as a WWF FA arrival ~turn 36-38 (Oct-Nov 1995)",
+  "explanation": "In January 1995 Dustin Rhodes was an active WCW babyface (he had challenged for the U.S. title in late 1994 and was in the Uncensored 1995 main event picture before leaving for the WWF). The Goldust character did not debut until late 1995. Starting him as WWF Goldust with a 120-turn contract skips his entire WCW stint. Born April 11, 1965, Dustin was 29, not 26.",
+  "confidence": "High",
+  "source": "Research: WCW_Jan-Mar_1995_Research.md (Dustin active in WCW; exit at Uncensored Mar 19, 1995); Web: https://en.wikipedia.org/wiki/Goldust (WWF debut late 1995)",
+  "category": "Wrong company"
+ },
+ {
+  "id": "eddy-guerrero",
+  "current_value": "ECW starting roster, age 27, contract 36, pop 42",
+  "recommended_value": "Remove from the ECW starting roster; make him a free agent (NJPW Black Tiger II / AAA affiliate) at start with ECW arrival ~turn 13 (ECW debut April 8, 1995) and a ~21-turn ECW contract (he left ECW for WCW in September 1995 with Benoit and Malenko)",
+  "explanation": "In January 1995 Eddy was working New Japan (Black Tiger II) and AAA (fresh off When Worlds Collide, Nov 6, 1994); his ECW debut came on April 8, 1995, and he left ECW for WCW in September 1995. Age 27 is correct (b. Oct 9, 1967). The cruiserweight-division payoff (game CRUISERWEIGHTS entry) still works once he arrives.",
+  "confidence": "High",
+  "source": "Web: https://www.imdb.com/name/nm0539357/bio (Benoit, Guerrero and Malenko left ECW for WCW in Sept 1995); Research: ECW_1995_Research.md (ECW debut Apr 8, 1995)",
+  "category": "Wrong company"
+ },
+ {
+  "id": "barry-windham",
+  "current_value": "WCW starting roster, age 34, contract 40, pop 62",
+  "recommended_value": "Remove from the starting roster (retired in 1994); optionally add a WWF arrival ~turn 72 (The Stalker, mid-1996)",
+  "explanation": "Windham retired from full-time wrestling in 1994 and was not on any roster in January 1995. He returned to the WWF as The Stalker in mid-1996. Age 34 itself is correct (b. July 4, 1960).",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/U.S._Express (Windham retired 1994; WWF return as The Stalker 1996)",
+  "category": "Wrong company"
+ },
+ {
+  "id": "jim-neidhart",
+  "current_value": "NWA starting roster, age 39, contract 40, pop 50",
+  "recommended_value": "Remove from the NWA starting roster; optionally add an ECW arrival ~turn 12-15 (Neidhart resurfaced in ECW in April 1995 after a short indie run)",
+  "explanation": "Neidhart was fired by the WWF around December 1994/January 1995 (after no-shows), then worked the independents (MEWF, February 1995) before debuting in ECW in April 1995. He had no NWA affiliation in January 1995.",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Jim_Neidhart (fired ~Dec 94/Jan 95; MEWF Feb 95; ECW Apr 95)",
+  "category": "Wrong company"
+ },
+ {
+  "id": "bobby-eaton",
+  "current_value": "SMW starting roster, age 36, contract 40 + noRenew, pop 54",
+  "recommended_value": "Move to WCW: Eaton remained under WCW contract through 1995-1999 and formed The Blue Bloods with Lord Steven Regal (TV debut on WCW Saturday Night, April 8, 1995)",
+  "explanation": "Eaton was a WCW wrestler for the entire 1993-2000 period (with brief ECW guest shots in 1994 under a talent trade). The Blue Bloods team with Regal debuted April 8, 1995 - and Regal is already correctly on the WCW roster, so the game data is one move away from being able to book it. Age 36 is correct (b. Aug 14, 1958).",
+  "confidence": "High",
+  "source": "Web: https://alchetron.com/Bobby_Eaton (WCW 1993-2000; Blue Bloods debut Apr 8, 1995); Web: https://www.wikiwand.com/en/Bobby_Eaton (released from WCW March 2000)",
+  "category": "Wrong company"
+ },
+ {
+  "id": "bobby-blaze",
+  "current_value": "NWA starting roster, age 24, contract 60, pop 34",
+  "recommended_value": "Move to SMW: Bobby Blaze was a Smoky Mountain Wrestling regular (he held the SMW Beat the Champ TV title in 1995)",
+  "explanation": "Blaze's January 1995 home was SMW, where he worked the full 1995 season (including the TV title run). Placing him in the generic NWA promotion mis-assigns him.",
+  "confidence": "High",
+  "source": "Research: SMW_1995_Research.md (Blaze on SMW TV cards through 1995)",
+  "category": "Wrong company"
+ },
+ {
+  "id": "dynamite-kansai",
+  "current_value": "AJW starting roster, age 27, contract 100, pop 58",
+  "recommended_value": "JWP placement historically, BUT note: JWP is not one of the game's 16 companies (COMPANY_DEFS: WCW, WWF, ECW, NJPW, AJPW, CMLL, AAA, FMW, SMW, CWA, WWC, USWA, NWA, AWF, ASW, AJW). Two workable fixes: (a) keep them in AJW and treat them as interpromotional JWP guests (the game already books them in the AJW tag title picture, which mirrors the interpromotional era), or (b) add JWP as a 17th company. Do not change the company field to a promotion that does not exist in COMPANY_DEFS.",
+  "explanation": "Kansai (and Ozaki) were the cornerstone JWP Joshi team of the era; they challenged the AJW stars in interpromotional matches but were never AJW roster members. This also interacts with the ajw-kansai-ozaki TEAMS entry (see TEAMS findings). [v2 amplification: the original recommendation said \"move to JWP\" without checking the game's company list - JWP does not exist in the data model.]",
+  "confidence": "High",
+  "source": "Web: https://blogofdoom.com/ (Joshi 1995: Kansai & Ozaki as JWP); Research: AJW/JWP research files",
+  "category": "Wrong company"
+ },
+ {
+  "id": "mayumi-ozaki",
+  "current_value": "AJW starting roster, age 23, contract 100, pop 48",
+  "recommended_value": "JWP placement historically, BUT note: JWP is not one of the game's 16 companies (COMPANY_DEFS: WCW, WWF, ECW, NJPW, AJPW, CMLL, AAA, FMW, SMW, CWA, WWC, USWA, NWA, AWF, ASW, AJW). Two workable fixes: (a) keep them in AJW and treat them as interpromotional JWP guests (the game already books them in the AJW tag title picture, which mirrors the interpromotional era), or (b) add JWP as a 17th company. Do not change the company field to a promotion that does not exist in COMPANY_DEFS.",
+  "explanation": "See Dynamite Kansai: Ozaki was a JWP regular in January 1995, not an AJW wrestler. Age 23 is correct (b. Oct 18, 1971). [v2 amplification: the original recommendation said \"move to JWP\" without checking the game's company list - JWP does not exist in the data model.]",
+  "confidence": "High",
+  "source": "Web: https://blogofdoom.com/ (Joshi 1995); Research: AJW/JWP research files",
+  "category": "Wrong company"
+ },
+ {
+  "id": "phineas-godwinn",
+  "current_value": "WWF starting roster as Phineas Godwinn, age 34, contract 80, pop 36",
+  "recommended_value": "Remove from the starting roster: Dennis Knight was in WCW as Tex Slazenger (with Shanghai Pierce) in January 1995. Add Phineas as a WWF arrival ~turn 28-31 (the Godwinns debuted on WWF TV in August 1995), age 26",
+  "explanation": "The Phineas I. Godwinn character debuted with the WWF in mid-1995. In January 1995 Knight was finishing his WCW run as Tex Slazenger. He was born December 25, 1968 (age 26, not 34). (A simple alternative: leave him out of the 1995 start entirely and let the Godwinns arrive as a team.)",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Henry_O._Godwinn (Godwinns debut 1995; Knight previously Tex Slazenger in WCW)",
+  "category": "Wrong company"
+ },
+ {
+  "id": "missy-hyatt",
+  "current_value": "WCW manager on the starting roster",
+  "recommended_value": "Remove from the WCW start (she left WCW in February 1994); optionally add an ECW manager arrival ~turn 47 (ECW debut Dec 29, 1995)",
+  "explanation": "Hyatt was not under WCW contract in January 1994, let alone 1995 - she had left in February 1994 and worked independents (including a short ECW run) before her ECW return in late 1995.",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Missy_Hyatt (left WCW Feb 26, 1994; ECW debut Dec 29, 1995)",
+  "category": "Wrong company"
+ },
+ {
+  "id": "ajw-kansai-ozaki",
+  "current_value": "company: AJW",
+  "recommended_value": "company: JWP (both were JWP wrestlers in 1995 - they were defending the JWP tag titles on Jan 8, 1995)",
+  "explanation": "Dynamite Kansai and Mayumi Ozaki were JWP Joshi Puroresu workers (Ozaki & Fukuoka defended the JWP tag titles against LCO on Jan 8, 1995). They challenged AJW in the interpromotional era but were not AJW roster members.",
+  "confidence": "Medium",
+  "source": "Web: https://www.blogofdoom.com/2022/02/07/joshi-spotlight-joshi-in-1995/ (Jan 8, 1995: LCO vs Ozaki & Fukuoka, JWP tag titles)",
+  "category": "Wrong company"
+ }
+]

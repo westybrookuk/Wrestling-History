@@ -1,0 +1,290 @@
+[
+ {
+  "id": "mike-awesome",
+  "current_value": "On the WCW starting roster (age 30, contract 40, noRenew)",
+  "recommended_value": "Remove from the WCW roster; keep The Gladiator (FMW) as the single January 1995 entry for Mike Alfonso",
+  "explanation": "Mike Awesome is already on the roster as The Gladiator (FMW). In January 1995 Alfonso worked exclusively for FMW (and had made guest ECW shots); he did not appear for WCW until 1997 and never had a 1995 WCW run. Two entries for one performer also breaks the 1:1 roster audit.",
+  "confidence": "High",
+  "source": "Web: https://prowrestling.fandom.com/wiki/Mike_Awesome (FMW 1992-1997; ECW shots from 1993); Research: FMW research files (Gladiator as FMW double champion)",
+  "category": "Should be removed"
+ },
+ {
+  "id": "the-shark",
+  "current_value": "On the WCW starting roster (age 36, contract 60, pop 38) alongside Avalanche",
+  "recommended_value": "Remove The Shark; keep Avalanche as the January 1995 entry; add a repackaging event ~turn 4-8 (Feb-Mar 1995) that renames Avalanche to The Shark",
+  "explanation": "Both entries are John Tenta. In January 1995 Tenta was Avalanche (debuting late 1994 as part of the Dungeon of Doom build); The Shark name did not appear until roughly February/March 1995. A rename event gives the same history without a duplicate.",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/John_Tenta (Avalanche late 1994; repackaged as The Shark in 1995); Research: WCW_Jan-Mar_1995_Research.md",
+  "category": "Should be removed"
+ },
+ {
+  "id": "kurasawa",
+  "current_value": "On the WCW starting roster (age 29, contract 40, pop 32) alongside Manabu Nakanishi (NJPW)",
+  "recommended_value": "Remove Kurasawa from the start; keep nakanishi (NJPW); add a WCW signing event ~turn 36 (October 1995) - Kurasawa is Nakanishi under a mask and joined WCW then",
+  "explanation": "Kurasawa is Manabu Nakanishi working under a mask in WCW. On January 4, 1995 (Battle 7) Nakanishi lost to Hashimoto for NJPW; his WCW run as Kurasawa began in October 1995. The masked-loan storyline is a nice event, but two simultaneous entries are ahistorical.",
+  "confidence": "High",
+  "source": "Web: https://prowrestling.fandom.com/wiki/Manabu_Nakanishi (Kurasawa in WCW from Oct 1995); Web: https://en.wikipedia.org/wiki/Battle_7 (Nakanishi vs Hashimoto, Jan 4, 1995)",
+  "category": "Should be removed"
+ },
+ {
+  "id": "barbarian",
+  "current_value": "On the NWA starting roster (age 37, contract 60) alongside Sione (WWF)",
+  "recommended_value": "Remove the NWA Barbarian entry; keep sione (WWF, correct for Jan 1995); optionally add a WCW arrival event ~turn 44-47 (late 1995, Super Assassins) and pair with Meng from turn ~51 (Faces of Fear, Jan 29, 1996)",
+  "explanation": "Sione Vailahi appears twice. In January 1995 he was under WWF contract as Sionne of the New Headshrinkers (Sept 1994 to mid-1995); his WCW return came in late 1995 (as a Super Assassin), and the Faces of Fear team with Meng only formed on the January 29, 1996 Nitro. The game's TEAMS entry faces-of-fear (Meng + Barbarian at start) is therefore also anachronistic - see the TEAMS findings.",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Powers_of_Pain (Barbarian as Sionne Sept 1994 - mid-1995; WCW return late 1995); Web: https://thehistoryofwwe.com/wcw-monday-nitro-1996 (Faces of Fear, Jan 29, 1996)",
+  "category": "Should be removed"
+ },
+ {
+  "id": "rad-radford",
+  "current_value": "On the WWF starting roster (age 25, contract 30, pop 28)",
+  "recommended_value": "Remove from the starting roster; add a WWF arrival ~turn 17-19 (Rad Radford's WWF debut: May 13, 1995)",
+  "explanation": "Rad Radford is Louie Spicolli (Louis Mucciolo Jr.), who also appears on the ECW roster as Louie Spicolli. In January 1995 he was working the independents; his WWF debut as Rad Radford came on May 13, 1995, and his ECW run not until July 1996. Both entries are premature.",
+  "confidence": "High",
+  "source": "Web: https://grokipedia.com/page/Louie_Spicolli (Rad Radford WWF debut May 13, 1995); Web: https://www.thesmackdownhotel.com/wrestlers/louie-spicolli (ECW from July 1996)",
+  "category": "Wrong availability date"
+ },
+ {
+  "id": "louie-spicolli",
+  "current_value": "On the ECW starting roster (age 24, contract 60, pop 32)",
+  "recommended_value": "Remove from the starting roster; single future chain: WWF as Rad Radford from turn ~18 (May 1995), then ECW from turn ~73 (July 1996)",
+  "explanation": "Same person as rad-radford (duplicate). Spicolli's ECW run began in July 1996 (after leaving the WWF in 1995-96); he was not an ECW wrestler in January 1995. If one entry is kept it should be the indies/WWF chain, not ECW.",
+  "confidence": "High",
+  "source": "Web: https://www.thesmackdownhotel.com/wrestlers/louie-spicolli (ECW July 1996); Web: https://grokipedia.com/page/Louie_Spicolli",
+  "category": "Wrong availability date"
+ },
+ {
+  "id": "savio-vega",
+  "current_value": "On the WWF starting roster (age 30, contract 100, pop 44) alongside Kwang",
+  "recommended_value": "Remove savio-vega; keep kwang (correct for Jan 1995); add a repackaging event ~turn 17-20 (spring 1995) turning Kwang into Savio Vega",
+  "explanation": "Kwang and Savio Vega are both Juan Rivera. In January 1995 he was Kwang; Savio Vega debuted in spring 1995 and Kwang was phased out from May 1995. A rename/turn event preserves the arc without a duplicate.",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Savio_Vega (Kwang 1994 - early 1995; Savio Vega from 1995); Research: WWF_Jan-Mar_1995_Research.md",
+  "category": "Should be removed"
+ },
+ {
+  "id": "barry-windham",
+  "current_value": "WCW starting roster, age 34, contract 40, pop 62",
+  "recommended_value": "Remove from the starting roster (retired in 1994); optionally add a WWF arrival ~turn 72 (The Stalker, mid-1996)",
+  "explanation": "Windham retired from full-time wrestling in 1994 and was not on any roster in January 1995. He returned to the WWF as The Stalker in mid-1996. Age 34 itself is correct (b. July 4, 1960).",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/U.S._Express (Windham retired 1994; WWF return as The Stalker 1996)",
+  "category": "Wrong company"
+ },
+ {
+  "id": "jim-neidhart",
+  "current_value": "NWA starting roster, age 39, contract 40, pop 50",
+  "recommended_value": "Remove from the NWA starting roster; optionally add an ECW arrival ~turn 12-15 (Neidhart resurfaced in ECW in April 1995 after a short indie run)",
+  "explanation": "Neidhart was fired by the WWF around December 1994/January 1995 (after no-shows), then worked the independents (MEWF, February 1995) before debuting in ECW in April 1995. He had no NWA affiliation in January 1995.",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Jim_Neidhart (fired ~Dec 94/Jan 95; MEWF Feb 95; ECW Apr 95)",
+  "category": "Wrong company"
+ },
+ {
+  "id": "phineas-godwinn",
+  "current_value": "WWF starting roster as Phineas Godwinn, age 34, contract 80, pop 36",
+  "recommended_value": "Remove from the starting roster: Dennis Knight was in WCW as Tex Slazenger (with Shanghai Pierce) in January 1995. Add Phineas as a WWF arrival ~turn 28-31 (the Godwinns debuted on WWF TV in August 1995), age 26",
+  "explanation": "The Phineas I. Godwinn character debuted with the WWF in mid-1995. In January 1995 Knight was finishing his WCW run as Tex Slazenger. He was born December 25, 1968 (age 26, not 34). (A simple alternative: leave him out of the 1995 start entirely and let the Godwinns arrive as a team.)",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Henry_O._Godwinn (Godwinns debut 1995; Knight previously Tex Slazenger in WCW)",
+  "category": "Wrong company"
+ },
+ {
+  "id": "tom-brandi",
+  "current_value": "WWF starting roster (age 27, contract 40, pop 24)",
+  "recommended_value": "Remove from the starting roster; optionally add a WWF arrival ~turn 76+ (Brandi's WWF run as Salvatore Sincere began in 1996)",
+  "explanation": "Tom Brandi did not join the WWF until 1996 (as Salvatore Sincere). In early 1995 he was working the independents.",
+  "confidence": "Medium",
+  "source": "Web: https://prowrestling.fandom.com/wiki/Tom_Brandi (WWF 1996-1998 as Salvatore Sincere)",
+  "category": "Wrong availability date"
+ },
+ {
+  "id": "missy-hyatt",
+  "current_value": "WCW manager on the starting roster",
+  "recommended_value": "Remove from the WCW start (she left WCW in February 1994); optionally add an ECW manager arrival ~turn 47 (ECW debut Dec 29, 1995)",
+  "explanation": "Hyatt was not under WCW contract in January 1994, let alone 1995 - she had left in February 1994 and worked independents (including a short ECW run) before her ECW return in late 1995.",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Missy_Hyatt (left WCW Feb 26, 1994; ECW debut Dec 29, 1995)",
+  "category": "Wrong company"
+ },
+ {
+  "id": "disco-inferno",
+  "current_value": "WCW starting roster (age 28, contract 80, pop 34)",
+  "recommended_value": "Convert to a WCW FA arrival ~turn 34 (Disco Inferno's WCW TV debut: September 1995)",
+  "explanation": "Glen Gilbertti's Disco Inferno did not appear on WCW television until September 1995; he was not on the roster in January 1995. His later longevity (contract 80) is fine - just the start date is wrong.",
+  "confidence": "High",
+  "source": "Research: WCW_Jul-Sep_1995_Research.md (Disco debut Sept 1995); Web: https://prowrestling.fandom.com/wiki/Disco_Inferno",
+  "category": "Wrong availability date"
+ },
+ {
+  "id": "craig-pittman",
+  "current_value": "WCW starting roster (age 33, contract 60, pop 32)",
+  "recommended_value": "Convert to a WCW FA arrival ~turn 30-34 (Pittman's WCW debut: mid-to-late 1995)",
+  "explanation": "Sgt. Craig Pittman (the Cobra-turned-sergeant character) debuted on WCW television in mid/late 1995, not January 1995.",
+  "confidence": "Medium",
+  "source": "Research: WCW_Jul-Sep_1995_Research.md",
+  "category": "Wrong availability date"
+ },
+ {
+  "id": "mr-jl",
+  "current_value": "WCW starting roster (age 32, contract 60, pop 36)",
+  "recommended_value": "Convert to a WCW FA arrival ~turn 34 (September 1995). Note for docs/flavour: Mr. JL is Jerry Lynn, not Jushin Liger",
+  "explanation": "Mr. JL (Jerry Lynn) joined WCW in September 1995 and was used in the cruiserweight division until early 1996 (he was Jericho's first WCW TV opponent in August 1996 under his later name). He was not in WCW in January 1995.",
+  "confidence": "High",
+  "source": "Web: https://wrestlecrap.com/inductions/mr-jl/ (Mr. JL = Jerry Lynn; WCW Sept 1995 - Feb 1996)",
+  "category": "Wrong availability date"
+ },
+ {
+  "id": "the-renegade",
+  "current_value": "WCW starting roster (age 28, contract 60, pop 44)",
+  "recommended_value": "Convert to a WCW FA arrival ~turn 10 (Renegade's WCW debut: March 1995, with the Uncensored push on Mar 19, 1995)",
+  "explanation": "The Renegade (Richard Wilson) debuted in March 1995 as the Ultimate Warrior knockoff pushed by Hogan. He was not on the roster in January 1995.",
+  "confidence": "High",
+  "source": "Research: WCW_Apr-Jun_1995_Research.md (Renegade debut Mar 1995; Uncensored Mar 19, 1995)",
+  "category": "Wrong availability date"
+ },
+ {
+  "id": "waylon-mercy",
+  "current_value": "WWF starting roster (age 37, contract 30, pop 38)",
+  "recommended_value": "Convert to a WWF FA arrival ~turn 24 (Spivey rejoined the WWF in June 1995; Waylon Mercy's Raw debut: July 3, 1995). Age 37 should be 42 (b. Oct 14, 1952)",
+  "explanation": "Dan Spivey spent January 1995 finishing his All Japan tours; he rejoined the WWF in June 1995 and Waylon Mercy debuted on the July 3, 1995 Raw. He retired in October 1995 - so a short 30-turn-style contract is actually right, but the start date and age are not.",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Dan_Spivey (WWF June 1995; b. Oct 14, 1952; retired Oct 1995); Web: https://puroresusystem.fandom.com/wiki/Dan_Spivey (AJPW tours through 1995)",
+  "category": "Wrong availability date"
+ },
+ {
+  "id": "man-mountain-rock",
+  "current_value": "WWF starting roster (age 36, contract 30, pop 34)",
+  "recommended_value": "Convert to a WWF FA arrival ~turn 4-6 (MMR debuted on WWF cards in February 1995)",
+  "explanation": "Tony Atlas' Man Mountain Rock character appeared on WWF house shows and TV tapings from February 1995; he was not on the January 1995 roster.",
+  "confidence": "High",
+  "source": "Web: https://theofficialwrestlingmuseum.com/wwf-live-event-results-1995.html (MMR on Feb 1995 cards)",
+  "category": "Wrong availability date"
+ },
+ {
+  "id": "jacob-blu",
+  "current_value": "Jacob Blu (age 33) and Eli Blu (age 31) both on the WWF starting roster",
+  "recommended_value": "Convert both to a WWF FA arrival ~turn 8-12 (the Blu Brothers debuted on WWF TV in spring 1995)",
+  "explanation": "Ron and Don Harris signed with the WWF in early 1995; the bearded Blu Brothers gimmick first appeared on television in spring 1995, not January 1995. (The TEAMS blu-brothers entry has the same timing issue.)",
+  "confidence": "Medium",
+  "source": "Research: WWF_Apr-Jun_1995_Research.md (Blu Brothers debut spring 1995)",
+  "category": "Wrong availability date"
+ },
+ {
+  "id": "jean-pierre-lafitte",
+  "current_value": "WWF starting roster (age 26, contract 40, pop 38)",
+  "recommended_value": "Convert to a WWF FA arrival ~turn 12-20 (Carl Ouellet returned to the WWF as the pirate in spring 1995)",
+  "explanation": "Ouellet's pirate character debuted on WWF television in spring 1995 (building to the Bret Hart and Kevin Nash programs later that year). He was not on the January 1995 roster.",
+  "confidence": "Medium",
+  "source": "Research: WWF_Apr-Jun_1995_Research.md (Lafitte debut spring 1995)",
+  "category": "Wrong availability date"
+ },
+ {
+  "id": "eddy-guerrero",
+  "current_value": "ECW starting roster, age 27, contract 36, pop 42",
+  "recommended_value": "Remove from the ECW starting roster; make him a free agent (NJPW Black Tiger II / AAA affiliate) at start with ECW arrival ~turn 13 (ECW debut April 8, 1995) and a ~21-turn ECW contract (he left ECW for WCW in September 1995 with Benoit and Malenko)",
+  "explanation": "In January 1995 Eddy was working New Japan (Black Tiger II) and AAA (fresh off When Worlds Collide, Nov 6, 1994); his ECW debut came on April 8, 1995, and he left ECW for WCW in September 1995. Age 27 is correct (b. Oct 9, 1967). The cruiserweight-division payoff (game CRUISERWEIGHTS entry) still works once he arrives.",
+  "confidence": "High",
+  "source": "Web: https://www.imdb.com/name/nm0539357/bio (Benoit, Guerrero and Malenko left ECW for WCW in Sept 1995); Research: ECW_1995_Research.md (ECW debut Apr 8, 1995)",
+  "category": "Wrong company"
+ },
+ {
+  "id": "shane-douglas",
+  "current_value": "ECW starter, age 30, contract 80 (no noRenew flag)",
+  "recommended_value": "Keep as ECW World Champion starter (age 30 is correct: born Nov 21, 1964); change contract from 80 turns to ~27 turns + noRenew (he left ECW for the WWF in July 1995)",
+  "explanation": "Douglas was ECW World Heavyweight Champion at the start (lost the belt to The Sandman on April 15, 1995) and departed for the WWF in July 1995 (Dean Douglas vignettes from July 29, 1995). An 80-turn contract keeps him in ECW into mid-1996, which is wrong. The separate FA_ARRIVALS entry dean-douglas (turn 40, age 36) is the same person with a wrong age - see the FA_ARRIVALS findings.",
+  "confidence": "High",
+  "source": "Web: https://en.wikipedia.org/wiki/Shane_Douglas (b. Nov 21, 1964; lost ECW title Apr 15, 1995; WWF July 1995; IC title Oct 22, 1995)",
+  "category": "Major adjustment"
+ },
+ {
+  "id": "dean-douglas",
+  "current_value": "turn 40 (Nov 1995), interest WWF, separate wrestler (age 36, ceiling 58)",
+  "recommended_value": "Remove as a separate person (duplicate of shane-douglas): script Shane Douglas's WWF signing ~turn 27 (vignettes July 29, 1995; IC title Oct 22, 1995)",
+  "explanation": "Dean Douglas IS Shane Douglas, who correctly starts on the ECW roster as World Champion. Because both entries exist, the same person appears twice. Historically Douglas left ECW in July 1995 and his WWF run ran to early 1996 (returning to ECW at House Party, Jan 5-6, 1996). See the shane-douglas roster finding for the full fix.",
+  "confidence": "High",
+  "source": "Web: https://www.wikiwand.com/en/Shane_Douglas (first appearance as Dean Douglas July 29, 1995; ECW return Jan 1996)",
+  "category": "Should be removed"
+ },
+ {
+  "id": "real-fa-pool-gap",
+  "current_value": "No real-person free agents exist at game start: the FA market is 100% fictional generated workers (plus 23 scripted future arrivals that enter later)",
+  "recommended_value": "Seed a small real-person FA pool at start: the Hardy Boyz (unsigned WWF jobbers), Al Snow, Unabomb/Glen Jacobs (pre-Yankem), the Gangstas (pre-SMW), Louie Spicolli (indies), Ron Simmons/Tully Blanchard (between deals), Barry Windham (retired, could be absent), Sabu's NJPW affiliates, etc. - or convert them to early scripted arrivals",
+  "explanation": "In January 1995 a promotion signing \"a free agent\" could realistically land the Hardys, Al Snow or the Gangstas. With a purely fictional market, the player can never sign these people until their scripted arrival, which slightly misrepresents how the era's talent market worked.",
+  "confidence": "High",
+  "source": "Web: https://www.wikiwand.com/en/Jeff_Hardy (Hardys as WWF enhancement talent from 1994, unsigned until 1998); Web: https://tvtropes.org/pmwiki/pmwiki.php/Wrestling/TheDudleyBoys (Dudley family act debuted July 1, 1995)",
+  "category": "Missing"
+ },
+ {
+  "id": "FA-ENG-1",
+  "current_value": "The January intake re-runs the ENTIRE generator: generateWorldTalent(state, 15) at js/engine.js L3361 also executes the unguarded INDY_JOBBERS_PER_FED loop at L329-333, adding 37 signed local jobbers every January 1996-2001",
+  "recommended_value": "Split the function - e.g. generateIndyClass(state, n) that skips the jobber loop - or pass an options object ({ pool: 15, jobbers: false }). Keep the 37 jobbers as a single turn-0 seeding.",
+  "explanation": "The headline defect of the revision. Measured: each January 1996-2000 adds +15 unsigned indies AND +37 signed local jobbers (NJPW +4/yr -> 20 by 1999, AJW +5/yr -> 25, CMLL/AAA/USWA/ASW +3/yr -> 15 each). By end-2001 the world carries 259 generated jobbers instead of 37, inflating every mid-card fed payroll and contradicting the documented design (\"90 total generated wrestlers gradually entering\"; the new-game hint promises only the 15/year). Historical note: real NJPW/AJPW/AJW undercards did not gain 4-5 permanent local hands per year.",
+  "confidence": "High",
+  "source": "Code: WCW-vs-WWF @ 1754a04 (branch arena/01a042dd-wcw-vs-wwf / PR #4, \"Refine free-agent pool and testing tools\", pushed 2026-08-29); Empirical: fresh-game simulation with the real engine (this audit, 2026-08-29)",
+  "category": "Bug"
+ },
+ {
+  "id": "FA-ENG-2",
+  "current_value": "Generated indies can never be signed: the AI free-agent loop filters w.faUntil !== null (js/engine.js L3995) and generated indies are created with faUntil: null (L313); the FREE AGENTS tab only offers BID to \"hot\" (pop >= 55) workers and routes every generated indie to a REMOVE FROM WORLD button instead (js/ui.js L713-742); placeBlindBid rejects faUntil === null outright (L5536)",
+  "recommended_value": "Give generated indies an open bid window on creation (e.g. faUntil = turn + 8-24, like the training-class rookies at L3393), and/or add SIGN/PPA buttons for isIndy workers, and/or let AI feds periodically open windows on the best remaining indies. signFreeAgent() itself works on them if invoked - only the paths to reach it are closed.",
+  "explanation": "Measured over a 5.5-year simulation: 0 of 135+ available generated indies were ever signed by any company (the AI signed only faUntil-window workers). The engine functions accept indies (signFreeAgent/placeBid succeed when called directly), so this is a reachability defect, not a data defect. Consequence: the curated 60 + 15/year market is decorative - it only grows, and the player's only interaction is deleting workers.",
+  "confidence": "High",
+  "source": "Code: WCW-vs-WWF @ 1754a04 (branch arena/01a042dd-wcw-vs-wwf / PR #4, \"Refine free-agent pool and testing tools\", pushed 2026-08-29); Empirical: fresh-game simulation with the real engine (this audit, 2026-08-29)",
+  "category": "Bug / design defect"
+ },
+ {
+  "id": "FA-ENG-3",
+  "current_value": "The indyPool=0 new-game option (\"historical names only\") does not disable the January classes: state.game.indyPool is stored (js/engine.js L94) but never read, and the January hook (L3358) fires regardless of the chosen pool size",
+  "recommended_value": "Gate the January class on (state.game.indyPool ?? 60) > 0, or store and honour a per-game flag.",
+  "explanation": "Measured: newGame with indyPool=0 correctly starts with 0 generated indies (348 wrestlers), but January 1996 still injects 15 indies + 37 jobbers. A player who chose \"historical names only\" silently receives generated talent anyway.",
+  "confidence": "High",
+  "source": "Code: WCW-vs-WWF @ 1754a04 (branch arena/01a042dd-wcw-vs-wwf / PR #4, \"Refine free-agent pool and testing tools\", pushed 2026-08-29); Empirical: fresh-game simulation with the real engine (this audit, 2026-08-29)",
+  "category": "Bug"
+ },
+ {
+  "id": "FA-ENG-4",
+  "current_value": "January jobbers record their career as starting at turn 0: makeWorker always writes career: [{ company, start: 0, end: null }] (js/engine.js L318) even when the worker is created at turn 51+",
+  "recommended_value": "Use start: state.game.turn (careerStartTurn at L321 is already correct - align the career array with it).",
+  "explanation": "Data-integrity: a jobber generated in January 1998 (turn 147) shows a career history beginning January 1995. Affects career-length displays, retirement timing and anything reading w.career.",
+  "confidence": "Medium",
+  "source": "Code: WCW-vs-WWF @ 1754a04 (branch arena/01a042dd-wcw-vs-wwf / PR #4, \"Refine free-agent pool and testing tools\", pushed 2026-08-29)",
+  "category": "Bug"
+ },
+ {
+  "id": "FA-ENG-5",
+  "current_value": "The new deleteGeneratedWrestler (js/engine.js L336-343) splices the wrestler but never cleans state.bids[id] (bid store at L228) or other id-keyed state",
+  "recommended_value": "Add delete state.bids[id] on removal, and sweep any other id-keyed references.",
+  "explanation": "If a bid was ever placed on a generated indie (placeBid accepts them), removing the worker leaves an orphaned bid entry; withdrawBid's UI handler dereferences wrestler(...).name and would throw on the orphan. Low likelihood, easy fix.",
+  "confidence": "Low",
+  "source": "Code: WCW-vs-WWF @ 1754a04 (branch arena/01a042dd-wcw-vs-wwf / PR #4, \"Refine free-agent pool and testing tools\", pushed 2026-08-29)",
+  "category": "Bug (edge case)"
+ },
+ {
+  "id": "FA-ENG-6",
+  "current_value": "Every January 1996-2001 fires TWO generated intakes: the new indy class (15) and the pre-existing training-class intake (4-6 rookies, js/engine.js L3366-3399) in the same January week 4",
+  "recommended_value": "Confirm the stacking is intended. If the 15/year class replaces the old supply, retire or thin the training class inside 1996-2001 - but note the rookies are the only generated workers the AI actually signs (they open faUntil windows), so removing them entirely would worsen FA-ENG-2.",
+  "explanation": "With FA-ENG-1 fixed, the true generated entry rate is 15 + 4-6 = 19-21 per year, not the stated 15. Needs a design decision rather than a silent guess - flagged as such.",
+  "confidence": "Medium",
+  "source": "Code: WCW-vs-WWF @ 1754a04 (branch arena/01a042dd-wcw-vs-wwf / PR #4, \"Refine free-agent pool and testing tools\", pushed 2026-08-29); Empirical: fresh-game simulation with the real engine (this audit, 2026-08-29)",
+  "category": "Needs manual review"
+ },
+ {
+  "id": "FA-ENG-7",
+  "current_value": "The January classes stop after 2001 (hook gated to d.year <= 2001, js/engine.js L3358) while the game timeline runs to turn 599 (June 2007)",
+  "recommended_value": "Acceptable as an intentional \"historical period\" cap; the 2002-2007 tail then has only the 4-6/year training class as new supply. Consider extending the class at a lower rate (e.g. 5/year) through the tail, or document the taper.",
+  "explanation": "Design note, not a bug.",
+  "confidence": "Low",
+  "source": "Code: WCW-vs-WWF @ 1754a04 (branch arena/01a042dd-wcw-vs-wwf / PR #4, \"Refine free-agent pool and testing tools\", pushed 2026-08-29)",
+  "category": "Design note"
+ },
+ {
+  "id": "FA-ENG-8",
+  "current_value": "js/ui.js L713 still says \"1,400+ unsigned independents exist - show the notable ones and summarize the rest\", and the summarize path (indyCount = market.length - notable.length) is now dead because every isIndy worker is notable",
+  "recommended_value": "Update the comment to the new model (60 + 15/year) and drop or repurpose the summarize path.",
+  "explanation": "Cosmetic, but the comment actively misdescribes the shipped model and will mislead future maintainers.",
+  "confidence": "Low",
+  "source": "Code: WCW-vs-WWF @ 1754a04 (branch arena/01a042dd-wcw-vs-wwf / PR #4, \"Refine free-agent pool and testing tools\", pushed 2026-08-29)",
+  "category": "Cosmetic"
+ }
+]

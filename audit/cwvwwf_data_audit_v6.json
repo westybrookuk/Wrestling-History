@@ -1,0 +1,1119 @@
+{
+  "meta": {
+    "audit": "CWVWWF data audit — v6 (delta audit of 3c43e7b + application of high-confidence corrections)",
+    "revision": "3c43e7b",
+    "branch": "arena/01a042dd-wcw-vs-wwf",
+    "prior_audited_revision": "c2fd37f",
+    "new_commits_audited": [
+      {
+        "sha": "3c43e7b",
+        "subject": "Constrain generated talent and improve AI scouting",
+        "files": "js/engine.js (+20/−8)"
+      }
+    ],
+    "date": "2026-08-30",
+    "two_parts": [
+      "Part 1 — delta audit of 3c43e7b against the v5 findings.",
+      "Part 2 — application of the high-confidence wrestler, free-agent and arrival-date corrections from the committed research (audit/cwvwwf_patch_recommendations.json, 133 ops @ 12d9fcd; data.js/timeline.js unchanged since, so the ops still mapped cleanly). Applied as local commit 7621cf2 in the WCW-vs-WWF clone and published as audit/cwvwwf_high_confidence_corrections.patch (push to the game repo was blocked by token permissions — see delivery)."
+    ]
+  },
+  "summary": {
+    "part1": "3c43e7b fixes 3 of the v5 findings outright (NEW-1 bias, NEW-2 no-compete bypass, FA-ENG-3 historical mode); the female-name fix is broken (NEW-9); 11 findings remain open.",
+    "part2": "92 correction operations applied to js/data.js (+2 test assertion updates) as local commit 7621cf2 / published patch; 6 documented deviations, all engine-necessity or turn-formula corrections.",
+    "model": "Pre-correction: 408 = 311+60+37 verified again. Post-correction baseline: 387 = 290+60+37 at t0, 43 dated FA arrivals, 430 workers ever by 2001. Both test suites green; determinism preserved."
+  },
+  "part1_fix_verification": [
+    {
+      "id": "NEW-1",
+      "status": "FIXED (3c43e7b) — verified empirically",
+      "evidence": "isIndy cold threshold lowered to 28 normal / 24 hard / 32 easy (was 38/32/38) and the gender bonus (+30 WWF/+15 WCW) deleted from the shared cold path. Measured: t1 WCW signed 12 indies — 10 male (9 ordinary), 2 female, 1 gem. Through t300: 37/39/37 of 150 signed on normal (ordinary men 26/31/30, women 5/1/5) and 79/150 on hard. Recruitment now tracks the stat distribution instead of gender.",
+      "note": "The bonus removal also affects HISTORICAL female FAs in the shared cold path (marginal women no longer clear the 55/48 thresholds) — a deliberate scope-broadening beyond generated talent, flagged as an observation."
+    },
+    {
+      "id": "NEW-2",
+      "status": "FIXED (3c43e7b) — verified empirically",
+      "evidence": "The cold path now calls canSign() before scoring ('const ncCold = canSign(state, w, comp); if (!ncCold.ok) continue;'). Repeated the v5 steal test: a written-released indy with a 16-week no-compete was NOT signed by the rival through the whole window."
+    },
+    {
+      "id": "FA-ENG-3",
+      "status": "FIXED (3c43e7b) — verified empirically",
+      "evidence": "New state.game.generatedTalentMode ('historical' when indyPool=0, else 'full') gates BOTH the January indy class and the rookie training class, plus a state.game.talentIntake ledger. indyPool=0 game: 348 wrestlers at t0 (37 jobbers remain), and after 110 weeks: 0 rookies, 0 indy classes, empty ledger. Old saves (no mode field) keep classes running — backwards compatible."
+    },
+    {
+      "id": "NEW-8",
+      "status": "ATTEMPTED, STILL BROKEN → superseded by NEW-9",
+      "evidence": "3c43e7b adds a 26-name FEMALE_FIRST_NAMES pool and a gender parameter to makeName — but the else branch unconditionally overwrites first with a ROOKIE_FIRST_NAMES pick, discarding the female name (see NEW-9)."
+    }
+  ],
+  "part1_new_findings": [
+    {
+      "id": "NEW-9",
+      "severity": "Medium (broken fix)",
+      "category": "Female generated workers still get male names",
+      "current_value": "js/engine.js makeName(): `if (gender === 'f' && !flavor) first = pick(FEMALE_FIRST_NAMES);` is followed by a SEPARATE `if (!first && flavor && ...) {...} else { first = pick(ROOKIE_FIRST_NAMES); last = pick(ROOKIE_LAST_NAMES); }` — the else reassigns first unconditionally, so the female pick is drawn and immediately discarded (and one extra rng call is consumed per female worker). Female international workers are exempt by design (!flavor guard) and keep drawing from the male INTL pools.",
+      "recommended_value": "Change the else to `else if (!first) { first = pick(ROOKIE_FIRST_NAMES); ... }` (or restructure so the female pick short-circuits).",
+      "explanation": "Verified empirically at 3c43e7b: 0 of 12 female indies in a fresh game have female first names ('Drew Bradley [f]', 'Ian Wright [f]', …); 0 female-named workers among all AI indy signings across four 300-week runs; all 5 AJW female jobbers male-named (intl exemption).",
+      "confidence": "High",
+      "source": "Code js/engine.js L272-286; empirical generator runs at 3c43e7b (this audit)"
+    }
+  ],
+  "part1_still_open": [
+    {
+      "id": "FA-ENG-6",
+      "note": "Double January intake (15 indies + 4-6 rookies) unchanged in 'full' mode — now at least tracked in the talentIntake ledger (indy classes record counts; rookie classes record only the year)."
+    },
+    {
+      "id": "FA-ENG-7",
+      "note": "Classes capped at 2001; tail is rookies-only. Unchanged."
+    },
+    {
+      "id": "FA-ENG-8",
+      "note": "'1,400+ unsigned independents' comment and the residual summary line unchanged (see also NEW-6)."
+    },
+    {
+      "id": "FA-ENG-9",
+      "note": "employmentStatus still write-only."
+    },
+    {
+      "id": "FA-ENG-10",
+      "note": "Name dedup still per-call; the new female pool slightly raises collision odds within a call (nickname suffix dedup still applies)."
+    },
+    {
+      "id": "FA-ENG-11",
+      "note": "sim.js still filters 'Need at least N matches' errors (3 sites)."
+    },
+    {
+      "id": "FA4-1",
+      "note": "Generator header comment (2,500-4,000 workers) unchanged."
+    },
+    {
+      "id": "NEW-3",
+      "note": "Fresh indies still cannot enter bidding wars (pop ceiling 21 < 55); released-and-pushed path still works (v5)."
+    },
+    {
+      "id": "NEW-4",
+      "note": "placeBid still accepts faUntil === null; ctx.sign still does not clear state.bids."
+    },
+    {
+      "id": "NEW-5",
+      "note": "Fresh vs released indy button sets still inconsistent (no OPEN for fresh, no REMOVE for released)."
+    },
+    {
+      "id": "NEW-6",
+      "note": "Residual-market summary line still mislabels non-generated low-pop FAs as 'unsigned independents'."
+    }
+  ],
+  "model_at_3c43e7b": {
+    "fresh_game_pre_correction": "408 = 311 scripted + 60 generated indies + 37 local jobbers (unchanged from v4/v5)",
+    "january_classes": "6 × 15 = 90 entering 1996-2001; 150 total indies by t300 in all four spectate runs",
+    "jobbers": "37 constant",
+    "determinism": "PRESERVED (120-week replay identical)",
+    "test_suites": "node test/sim.js → ALL SANITY CHECKS PASSED; node test/ai-stress.js → PASSED (12 seeded runs, 2,160 cards, save migration verified)"
+  },
+  "part2_applied": {
+    "source": "audit/cwvwwf_patch_recommendations.json (133 ops; 108 High) filtered to the requested categories — wrestler, free-agent and arrival-date corrections — at High confidence only",
+    "counts": {
+      "wrestler_modifies": "25 entries / 35 field changes (3 alignments, 7 contract/noRenew sets, 3 company moves, the Goldust→Dustin Rhodes identity swap, 11 birth-year ages)",
+      "removals_from_start": "21 entries (12 duplicate/not-under-contract removals + 9 conversions)",
+      "fa_arrival_modifies": "13 entries / 16 field changes (arrival turns + Lita/Rick Steiner/Dean Douglas ages)",
+      "conversions_to_fa_arrivals": "9 (8 High converts + Eddy Guerrero per DEV-1)",
+      "new_fa_arrivals": "11 (8 missing workers + 3 re-adds per DEV-4)",
+      "test_assertion_updates": 2
+    },
+    "new_baseline": {
+      "fresh_game": "387 = 290 starters + 60 generated indies + 37 local jobbers (was 408 = 311+60+37)",
+      "fa_arrivals": "43 entries (was 23)",
+      "workers_ever_by_2001": "430 distinct scripted workers (was 411)"
+    },
+    "verification": [
+      "node test/sim.js → ALL SANITY CHECKS PASSED (after the 2 assertion updates); node test/ai-stress.js → PASSED",
+      "Parse/id checks: 290 unique wrestler ids, 43 unique FA ids, no WRESTLERS↔FA_ARRIVALS id overlap, entries turn-sorted",
+      "300-week spectate: no errors; all 20 new/converted arrivals present exactly on schedule (goldberg careerStartTurn=131, rvd=48, sable=59); Eddy Guerrero organically ran ECW → WCW as his real 1995 chain",
+      "Determinism preserved (120-week replay identical); indy model intact (150 indies, 37 jobbers, 6 classes)",
+      "Cross-reference safety pre-checked: sid timeline events null-guarded; teamValid tolerates the temporarily-missing Blu Brothers; DEFAULT_PICKS harmless; no other references to renamed/removed ids"
+    ],
+    "delivery": {
+      "local_commit": "7621cf2 (branch audit-work in the workspace clone, on top of 3c43e7b)",
+      "patch": "audit/cwvwwf_high_confidence_corrections.patch (git format-patch; apply with `git am`)",
+      "push": "BLOCKED — the sandbox token (arena-ai-coding-agent[bot]) has no push permission on westybrookuk/WCW-vs-WWF (403). The commit is preserved in the workspace and published as the patch; it can be pushed once GitHub access for that repo is granted, or applied directly by the owner."
+    }
+  },
+  "part2_deviations": [
+    {
+      "id": "DEV-1",
+      "what": "Eddy Guerrero applied as an ECW FA arrival at t13 instead of the literal op {company: null, contract: 21}.",
+      "why": "WRESTLERS entries with company:null are unsignable decoration in the current engine: newGame hardcodes faUntil:null/asking:null for starters, the AI allFAs filter excludes non-indy faUntil-null workers, and the FA tab hides pop<20 non-notable rows. The research itself specifies 'ECW arrival ~turn 13 (April 8, 1995)', which the FA_ARRIVALS mechanism delivers cleanly (16-week window, ECW interest)."
+    },
+    {
+      "id": "DEV-2",
+      "what": "Hardy Boyz applied as WWF FA arrivals at t144 instead of 'seeded unsigned free agents at start'.",
+      "why": "Same engine limitation as DEV-1 — seeded starters with company:null cannot be signed by anyone. The t144 arrival (mid-1998, interest WWF) is the historically load-bearing event and is fully playable. Jeff's age set to 20 and Matt's to 23 (arrival-date ages; the research's 17/20 were framed for a Jan-1995 seed and the engine has no aging mechanic)."
+    },
+    {
+      "id": "DEV-3",
+      "what": "Rick Rude's arrival turn corrected from the research's '~96' to t90.",
+      "why": "The research note is internally inconsistent: t96 is January 1997 by the game's turn formula (year=1995+⌊t/48⌋, month=⌊t/4⌋%12), while the sourced date is November 1996 (= t88-91). Per the standing 'never hand-derive turns' rule the DATE wins; t90 = November wk3 1996 (November to Remember, Nov 16)."
+    },
+    {
+      "id": "DEV-4",
+      "what": "Kurasawa (t36), Rad Radford (t18) and Phineas Godwinn (t30, age 26) were re-added as dated FA arrivals alongside their removals from the start.",
+      "why": "Their High-confidence recommendations explicitly include the later arrival ('add a WCW signing event ~turn 36', 'WWF debut May 13, 1995', 'the Godwinns debuted on WWF TV in August 1995, age 26'), and Phineas's absence would permanently break the Godwinns team. The nine 'optionally add…' removals (barbarian, barry-windham, jim-neidhart, tom-brandi, missy-hyatt, the-shark/savio-vega rename chains, louie-spicolli) were applied as removals only, exactly as the ops list carries them."
+    },
+    {
+      "id": "DEV-5",
+      "what": "Mark Henry's finisher entered as 'Press Slam' (not 'World's Strongest Slam').",
+      "why": "Single-quoted JS string safety (apostrophe) plus period accuracy — the World's Strongest Slam name postdates 1996."
+    },
+    {
+      "id": "DEV-6",
+      "what": "Two test/sim.js assertions updated to the corrected data.",
+      "why": "'betrayal flip' assumed Hogan starts heel (he now correctly starts face; the test now asserts the align actually flips, direction-agnostic) and the custom-fed draft pick list included eddy-guerrero (now an FA arrival; replaced with chris-benoit, keeping the roster size at 8)."
+    }
+  ],
+  "part2_not_applied": [
+    {
+      "scope": "Initial title holders (17 High ops)",
+      "examples": "wwf-women → Bull Nakano, wwf-tag vacant, nwa-world → Chris Candido, AJPW/NJPW/CMLL/SMW/USWA title holders; remove ecw-hardcore/aaa titles; add ecw-tag and smw-tag"
+    },
+    {
+      "scope": "Faction corrections (3 High ops)",
+      "examples": "dungeon-of-doom → Three Faces of Fear roster; million-dollar-corp leader"
+    },
+    {
+      "scope": "Announcer corrections (6 High ops)",
+      "examples": "CMLL announcer starters; Larry Zbyszko t67, Michael Cole t119, Tazz t243 arrival turns"
+    },
+    {
+      "scope": "Timeline event-date corrections (5 High ops)",
+      "examples": "austin-316 t71, dx t129, ecw-raven-title-96 t51, wcw-flair-returns-99 t177, wcw-final-nitro-2001 t299"
+    },
+    {
+      "scope": "Timeline death/retirement events (7 High ops)",
+      "examples": "Pillman t132, Yokozuna t279, Baba t195, Onita t16, Spicolli t150, Rude t206, IYH-8 t67 — NOTE: until the Rude death event lands, the newly added Rick Rude will keep working past his April 20, 1999 death"
+    },
+    {
+      "scope": "Medium-confidence ops (25)",
+      "examples": "stat tuning (Bigelow/Bull Nakano/Blayze work rates), craig-pittman convert, dances-with-dudley t24, Bubba Ray Dudley & Megumi Kudo adds"
+    }
+  ],
+  "part2_full_op_log": [
+    {
+      "op": "modify_wrestler",
+      "id": "hulk-hogan",
+      "field": "align",
+      "from": "'heel'",
+      "to": "face",
+      "why": "face until the nWo turn"
+    },
+    {
+      "op": "modify_wrestler",
+      "id": "booker-t",
+      "field": "align",
+      "from": "'face'",
+      "to": "heel",
+      "why": "Harlem Heat were heels"
+    },
+    {
+      "op": "modify_wrestler",
+      "id": "mo",
+      "field": "align",
+      "from": "'heel'",
+      "to": "face",
+      "why": "MOM faces until mid-1995"
+    },
+    {
+      "op": "modify_wrestler",
+      "id": "vader",
+      "field": "contract",
+      "from": "150",
+      "to": "35",
+      "why": "fired Aug-Sept 1995; WWF Jan 1996"
+    },
+    {
+      "op": "modify_wrestler",
+      "id": "vader",
+      "field": "noRenew",
+      "from": null,
+      "to": "true",
+      "why": "fired Aug-Sept 1995; WWF Jan 1996"
+    },
+    {
+      "op": "modify_wrestler",
+      "id": "steve-austin",
+      "field": "contract",
+      "from": "20",
+      "to": "35",
+      "why": "fired Sept 1995"
+    },
+    {
+      "op": "modify_wrestler",
+      "id": "steve-austin",
+      "field": "noRenew",
+      "from": "true",
+      "to": "true",
+      "why": "fired Sept 1995"
+    },
+    {
+      "op": "modify_wrestler",
+      "id": "jeff-jarrett",
+      "field": "contract",
+      "from": "90",
+      "to": "27",
+      "why": "left WWF July 1995"
+    },
+    {
+      "op": "modify_wrestler",
+      "id": "bam-bam-bigelow",
+      "field": "contract",
+      "from": "40",
+      "to": "43",
+      "why": "last WWF match Nov 19, 1995"
+    },
+    {
+      "op": "modify_wrestler",
+      "id": "bam-bam-bigelow",
+      "field": "noRenew",
+      "from": "true",
+      "to": "true",
+      "why": "last WWF match Nov 19, 1995"
+    },
+    {
+      "op": "modify_wrestler",
+      "id": "british-bulldog",
+      "field": "contract",
+      "from": "120",
+      "to": "143",
+      "why": "WCW debut Dec 1997"
+    },
+    {
+      "op": "modify_wrestler",
+      "id": "chris-benoit",
+      "field": "contract",
+      "from": "28",
+      "to": "34",
+      "why": "left ECW for WCW Sept 1995"
+    },
+    {
+      "op": "modify_wrestler",
+      "id": "shane-douglas",
+      "field": "contract",
+      "from": "80",
+      "to": "27",
+      "why": "left ECW for WWF July 1995"
+    },
+    {
+      "op": "modify_wrestler",
+      "id": "shane-douglas",
+      "field": "noRenew",
+      "from": null,
+      "to": "true",
+      "why": "left ECW for WWF July 1995"
+    },
+    {
+      "op": "modify_wrestler",
+      "id": "sid",
+      "field": "company",
+      "from": "'WWF'",
+      "to": "USWA",
+      "why": "reigning USWA Unified champion"
+    },
+    {
+      "op": "modify_wrestler",
+      "id": "goldust",
+      "field": "id",
+      "from": "'goldust'",
+      "to": "dustin-rhodes",
+      "why": "replace Goldust starter with Dustin Rhodes (WCW babyface)"
+    },
+    {
+      "op": "modify_wrestler",
+      "id": "goldust",
+      "field": "name",
+      "from": "'Goldust'",
+      "to": "Dustin Rhodes",
+      "why": "replace Goldust starter with Dustin Rhodes (WCW babyface)"
+    },
+    {
+      "op": "modify_wrestler",
+      "id": "goldust",
+      "field": "company",
+      "from": "'WWF'",
+      "to": "WCW",
+      "why": "replace Goldust starter with Dustin Rhodes (WCW babyface)"
+    },
+    {
+      "op": "modify_wrestler",
+      "id": "goldust",
+      "field": "age",
+      "from": "26",
+      "to": "29",
+      "why": "replace Goldust starter with Dustin Rhodes (WCW babyface)"
+    },
+    {
+      "op": "modify_wrestler",
+      "id": "goldust",
+      "field": "contract",
+      "from": "120",
+      "to": "15",
+      "why": "replace Goldust starter with Dustin Rhodes (WCW babyface)"
+    },
+    {
+      "op": "modify_wrestler",
+      "id": "goldust",
+      "field": "noRenew",
+      "from": "true",
+      "to": "true",
+      "why": "replace Goldust starter with Dustin Rhodes (WCW babyface)"
+    },
+    {
+      "op": "modify_wrestler",
+      "id": "goldust",
+      "field": "align",
+      "from": "'heel'",
+      "to": "face",
+      "why": "replace Goldust starter with Dustin Rhodes (WCW babyface)"
+    },
+    {
+      "op": "modify_wrestler",
+      "id": "bobby-eaton",
+      "field": "company",
+      "from": "'SMW'",
+      "to": "WCW",
+      "why": "WCW 1993-2000"
+    },
+    {
+      "op": "modify_wrestler",
+      "id": "bobby-blaze",
+      "field": "company",
+      "from": "'NWA'",
+      "to": "SMW",
+      "why": "SMW regular"
+    },
+    {
+      "op": "modify_wrestler",
+      "id": "johnny-b-badd",
+      "field": "age",
+      "from": "31",
+      "to": "34",
+      "why": "b. July 9, 1960"
+    },
+    {
+      "op": "modify_wrestler",
+      "id": "meng",
+      "field": "age",
+      "from": "31",
+      "to": "35",
+      "why": "b. Feb 1959"
+    },
+    {
+      "op": "modify_wrestler",
+      "id": "avalanche",
+      "field": "age",
+      "from": "37",
+      "to": "31",
+      "why": "b. June 22, 1963"
+    },
+    {
+      "op": "modify_wrestler",
+      "id": "rocco-rock",
+      "field": "age",
+      "from": "32",
+      "to": "41",
+      "why": "b. Sept 3, 1953"
+    },
+    {
+      "op": "modify_wrestler",
+      "id": "fatu",
+      "field": "age",
+      "from": "24",
+      "to": "29",
+      "why": "b. Oct 11, 1965"
+    },
+    {
+      "op": "modify_wrestler",
+      "id": "hakushi",
+      "field": "age",
+      "from": "29",
+      "to": "28",
+      "why": "b. Dec 2, 1966"
+    },
+    {
+      "op": "modify_wrestler",
+      "id": "adam-bomb",
+      "field": "age",
+      "from": "31",
+      "to": "30",
+      "why": "b. Mar 3, 1964"
+    },
+    {
+      "op": "modify_wrestler",
+      "id": "rey-mysterio",
+      "field": "age",
+      "from": "21",
+      "to": "20",
+      "why": "b. Dec 11, 1974"
+    },
+    {
+      "op": "modify_wrestler",
+      "id": "nakanishi",
+      "field": "age",
+      "from": "26",
+      "to": "27",
+      "why": "b. Oct 3, 1967"
+    },
+    {
+      "op": "modify_wrestler",
+      "id": "duke-droese",
+      "field": "age",
+      "from": "29",
+      "to": "26",
+      "why": "b. Aug 20, 1968"
+    },
+    {
+      "op": "modify_wrestler",
+      "id": "chris-candido",
+      "field": "age",
+      "from": "23",
+      "to": "24",
+      "why": "b. Mar 21, 1970"
+    },
+    {
+      "op": "remove_from_start",
+      "id": "mike-awesome",
+      "why": "duplicate of the-gladiator (FMW until 1997)",
+      "stats": {
+        "name": "Mike Awesome",
+        "company": "WCW",
+        "align": "heel",
+        "pop": "28",
+        "work": "50",
+        "mic": "26",
+        "age": "30",
+        "ceiling": "70",
+        "wage": "14",
+        "finisher": "Awesome Bomb"
+      }
+    },
+    {
+      "op": "remove_from_start",
+      "id": "the-shark",
+      "why": "duplicate of avalanche (The Shark name came Feb-Mar 1995)",
+      "stats": {
+        "name": "The Shark",
+        "company": "WCW",
+        "align": "heel",
+        "pop": "38",
+        "work": "46",
+        "mic": "34",
+        "age": "36",
+        "ceiling": "52",
+        "wage": "18",
+        "finisher": "Shark Drop"
+      }
+    },
+    {
+      "op": "remove_from_start",
+      "id": "kurasawa",
+      "why": "Nakanishi under a mask; joined WCW Oct 1995 (re-added as FA arrival t36)",
+      "stats": {
+        "name": "Kurasawa",
+        "company": "WCW",
+        "align": "heel",
+        "pop": "32",
+        "work": "48",
+        "mic": "24",
+        "age": "29",
+        "ceiling": "46",
+        "wage": "14",
+        "finisher": "Kurasawa Bomb"
+      }
+    },
+    {
+      "op": "remove_from_start",
+      "id": "barbarian",
+      "why": "duplicate of sione (WWF, correct for Jan 1995)",
+      "stats": {
+        "name": "The Barbarian",
+        "company": "NWA",
+        "align": "heel",
+        "pop": "40",
+        "work": "50",
+        "mic": "24",
+        "age": "37",
+        "ceiling": "54",
+        "wage": "8",
+        "finisher": "Kongo Bomb"
+      }
+    },
+    {
+      "op": "remove_from_start",
+      "id": "savio-vega",
+      "why": "duplicate of kwang (Savio debuted spring 1995)",
+      "stats": {
+        "name": "Savio Vega",
+        "company": "WWF",
+        "align": "face",
+        "pop": "44",
+        "work": "60",
+        "mic": "44",
+        "age": "30",
+        "ceiling": "64",
+        "wage": "25",
+        "finisher": "Spinning Heel Kick"
+      }
+    },
+    {
+      "op": "remove_from_start",
+      "id": "rad-radford",
+      "why": "WWF debut May 13, 1995 (re-added as FA arrival t18)",
+      "stats": {
+        "name": "Rad Radford",
+        "company": "WWF",
+        "align": "heel",
+        "pop": "28",
+        "work": "44",
+        "mic": "36",
+        "age": "25",
+        "ceiling": "48",
+        "wage": "14",
+        "finisher": "Splash"
+      }
+    },
+    {
+      "op": "remove_from_start",
+      "id": "louie-spicolli",
+      "why": "duplicate of rad-radford (ECW from July 1996)",
+      "stats": {
+        "name": "Louie Spicolli",
+        "company": "ECW",
+        "align": "heel",
+        "pop": "32",
+        "work": "50",
+        "mic": "44",
+        "age": "24",
+        "ceiling": "54",
+        "wage": "10",
+        "finisher": "Spicolli Driver"
+      }
+    },
+    {
+      "op": "remove_from_start",
+      "id": "barry-windham",
+      "why": "retired 1994 (optional Stalker return not in research ops)",
+      "stats": {
+        "name": "Barry Windham",
+        "company": "WCW",
+        "align": "heel",
+        "pop": "62",
+        "work": "68",
+        "mic": "58",
+        "age": "34",
+        "ceiling": "72",
+        "wage": "40",
+        "finisher": "Running Bulldog"
+      }
+    },
+    {
+      "op": "remove_from_start",
+      "id": "jim-neidhart",
+      "why": "fired by WWF Dec 94/Jan 95 (optional ECW arrival not in research ops)",
+      "stats": {
+        "name": "Jim Neidhart",
+        "company": "NWA",
+        "align": "heel",
+        "pop": "50",
+        "work": "56",
+        "mic": "48",
+        "age": "39",
+        "ceiling": "62",
+        "wage": "15",
+        "finisher": "Anvil Flattening"
+      }
+    },
+    {
+      "op": "remove_from_start",
+      "id": "phineas-godwinn",
+      "why": "Dennis Knight was in WCW as Tex Slazenger (re-added as FA arrival t30)",
+      "stats": {
+        "name": "Phineas I. Godwinn",
+        "company": "WWF",
+        "align": "face",
+        "pop": "36",
+        "work": "46",
+        "mic": "38",
+        "age": "34",
+        "ceiling": "52",
+        "wage": "20",
+        "finisher": "Slop Drop"
+      }
+    },
+    {
+      "op": "remove_from_start",
+      "id": "tom-brandi",
+      "why": "WWF from 1996 as Salvatore Sincere (optional arrival not in research ops)",
+      "stats": {
+        "name": "Tom Brandi",
+        "company": "WWF",
+        "align": "face",
+        "pop": "24",
+        "work": "40",
+        "mic": "34",
+        "age": "27",
+        "ceiling": "40",
+        "wage": "10",
+        "finisher": "Brandi Bomb"
+      }
+    },
+    {
+      "op": "remove_from_start",
+      "id": "missy-hyatt",
+      "why": "left WCW Feb 1994 (optional ECW manager arrival not in research ops)",
+      "stats": {
+        "name": "Missy Hyatt",
+        "company": "WCW",
+        "align": "face",
+        "pop": "38",
+        "work": "0",
+        "mic": "62",
+        "age": "31",
+        "ceiling": "48",
+        "wage": "16",
+        "finisher": "—"
+      }
+    },
+    {
+      "op": "remove_from_start",
+      "id": "disco-inferno",
+      "why": "CONVERT to WCW FA arrival t34 (Sept 1995 debut)",
+      "stats": {
+        "name": "Disco Inferno",
+        "company": "WCW",
+        "align": "heel",
+        "pop": "34",
+        "work": "48",
+        "mic": "60",
+        "age": "28",
+        "ceiling": "56",
+        "wage": "16",
+        "finisher": "Chartbuster"
+      }
+    },
+    {
+      "op": "remove_from_start",
+      "id": "mr-jl",
+      "why": "CONVERT to WCW FA arrival t34 (Sept 1995 debut)",
+      "stats": {
+        "name": "Mr. JL",
+        "company": "WCW",
+        "align": "face",
+        "pop": "36",
+        "work": "62",
+        "mic": "44",
+        "age": "32",
+        "ceiling": "54",
+        "wage": "16",
+        "finisher": "Cradle Piledriver"
+      }
+    },
+    {
+      "op": "remove_from_start",
+      "id": "the-renegade",
+      "why": "CONVERT to WCW FA arrival t10 (Uncensored Mar 19, 1995)",
+      "stats": {
+        "name": "The Renegade",
+        "company": "WCW",
+        "align": "face",
+        "pop": "40",
+        "work": "46",
+        "mic": "34",
+        "age": "28",
+        "ceiling": "58",
+        "wage": "18",
+        "finisher": "Flying Shoulderblock"
+      }
+    },
+    {
+      "op": "remove_from_start",
+      "id": "waylon-mercy",
+      "why": "CONVERT to WWF FA arrival t24 (Raw debut July 3, 1995; age 42)",
+      "stats": {
+        "name": "Waylon Mercy",
+        "company": "WWF",
+        "align": "heel",
+        "pop": "38",
+        "work": "50",
+        "mic": "60",
+        "age": "37",
+        "ceiling": "54",
+        "wage": "18",
+        "finisher": "Sleeper Hold"
+      }
+    },
+    {
+      "op": "remove_from_start",
+      "id": "man-mountain-rock",
+      "why": "CONVERT to WWF FA arrival t4 (Feb 1995 debut)",
+      "stats": {
+        "name": "Man Mountain Rock",
+        "company": "WWF",
+        "align": "face",
+        "pop": "34",
+        "work": "44",
+        "mic": "54",
+        "age": "36",
+        "ceiling": "50",
+        "wage": "18",
+        "finisher": "Rock Dropper"
+      }
+    },
+    {
+      "op": "remove_from_start",
+      "id": "jacob-blu",
+      "why": "CONVERT to WWF FA arrival t8 (Blu Brothers spring 1995)",
+      "stats": {
+        "name": "Jacob Blu",
+        "company": "WWF",
+        "align": "heel",
+        "pop": "38",
+        "work": "52",
+        "mic": "30",
+        "age": "33",
+        "ceiling": "52",
+        "wage": "20",
+        "finisher": "Blu Bomb"
+      }
+    },
+    {
+      "op": "remove_from_start",
+      "id": "eli-blu",
+      "why": "CONVERT to WWF FA arrival t8 (Blu Brothers spring 1995)",
+      "stats": {
+        "name": "Eli Blu",
+        "company": "WWF",
+        "align": "heel",
+        "pop": "38",
+        "work": "52",
+        "mic": "30",
+        "age": "31",
+        "ceiling": "52",
+        "wage": "20",
+        "finisher": "Blu Bomb"
+      }
+    },
+    {
+      "op": "remove_from_start",
+      "id": "jean-pierre-lafitte",
+      "why": "CONVERT to WWF FA arrival t13 (spring 1995)",
+      "stats": {
+        "name": "Jean-Pierre Lafitte",
+        "company": "WWF",
+        "align": "heel",
+        "pop": "38",
+        "work": "56",
+        "mic": "44",
+        "age": "26",
+        "ceiling": "58",
+        "wage": "20",
+        "finisher": "La Bombe"
+      }
+    },
+    {
+      "op": "remove_from_start",
+      "id": "eddy-guerrero",
+      "why": "CONVERT to ECW FA arrival t13 (ECW debut Apr 8, 1995; NJPW/AAA before)",
+      "stats": {
+        "name": "Eddy Guerrero",
+        "company": "ECW",
+        "align": "face",
+        "pop": "42",
+        "work": "84",
+        "mic": "62",
+        "age": "27",
+        "ceiling": "90",
+        "wage": "25",
+        "finisher": "Frog Splash"
+      }
+    },
+    {
+      "op": "modify_fa_arrival",
+      "id": "bill-goldberg",
+      "field": "turn",
+      "from": "160",
+      "to": 131,
+      "why": "TV debut Sept 22, 1997"
+    },
+    {
+      "op": "modify_fa_arrival",
+      "id": "kane",
+      "field": "turn",
+      "from": "140",
+      "to": 132,
+      "why": "Badd Blood Oct 5, 1997"
+    },
+    {
+      "op": "modify_fa_arrival",
+      "id": "ken-shamrock",
+      "field": "turn",
+      "from": "116",
+      "to": 102,
+      "why": "WWF Feb 1997 (ref) - Mar 1997 (in-ring)"
+    },
+    {
+      "op": "modify_fa_arrival",
+      "id": "val-venis",
+      "field": "turn",
+      "from": "132",
+      "to": 163,
+      "why": "WWF debut May 1998"
+    },
+    {
+      "op": "modify_fa_arrival",
+      "id": "sable",
+      "field": "turn",
+      "from": "84",
+      "to": 59,
+      "why": "WrestleMania XII Mar 31, 1996"
+    },
+    {
+      "op": "modify_fa_arrival",
+      "id": "jacqueline",
+      "field": "turn",
+      "from": "96",
+      "to": 164,
+      "why": "WWF debut June 1998"
+    },
+    {
+      "op": "modify_fa_arrival",
+      "id": "lita",
+      "field": "turn",
+      "from": "200",
+      "to": 245,
+      "why": "WWF debut Feb 8, 2000; b. Apr 14, 1975"
+    },
+    {
+      "op": "modify_fa_arrival",
+      "id": "lita",
+      "field": "age",
+      "from": "24",
+      "to": 21,
+      "why": "WWF debut Feb 8, 2000; b. Apr 14, 1975"
+    },
+    {
+      "op": "modify_fa_arrival",
+      "id": "rob-van-dam",
+      "field": "turn",
+      "from": "72",
+      "to": 48,
+      "why": "ECW debut Jan 5, 1996"
+    },
+    {
+      "op": "modify_fa_arrival",
+      "id": "chris-jericho",
+      "field": "turn",
+      "from": "72",
+      "to": 52,
+      "why": "ECW early 1996"
+    },
+    {
+      "op": "modify_fa_arrival",
+      "id": "scott-steiner",
+      "field": "turn",
+      "from": "60",
+      "to": 52,
+      "why": "Steiners NJPW-based through 1995"
+    },
+    {
+      "op": "modify_fa_arrival",
+      "id": "rick-steiner",
+      "field": "turn",
+      "from": "60",
+      "to": 52,
+      "why": "as Scott; b. Mar 9, 1961"
+    },
+    {
+      "op": "modify_fa_arrival",
+      "id": "rick-steiner",
+      "field": "age",
+      "from": "34",
+      "to": 35,
+      "why": "as Scott; b. Mar 9, 1961"
+    },
+    {
+      "op": "modify_fa_arrival",
+      "id": "road-warrior-hawk",
+      "field": "turn",
+      "from": "52",
+      "to": 16,
+      "why": "WCW singles return May 1995"
+    },
+    {
+      "op": "modify_fa_arrival",
+      "id": "dean-douglas",
+      "field": "turn",
+      "from": "40",
+      "to": 27,
+      "why": "vignettes July 29, 1995; b. Nov 21, 1964"
+    },
+    {
+      "op": "modify_fa_arrival",
+      "id": "dean-douglas",
+      "field": "age",
+      "from": "36",
+      "to": 31,
+      "why": "vignettes July 29, 1995; b. Nov 21, 1964"
+    },
+    {
+      "op": "convert_to_fa_arrival",
+      "id": "the-renegade",
+      "turn": 10,
+      "interest": "WCW",
+      "age": "28",
+      "why": "WCW debut at Uncensored, March 19, 1995"
+    },
+    {
+      "op": "convert_to_fa_arrival",
+      "id": "man-mountain-rock",
+      "turn": 4,
+      "interest": "WWF",
+      "age": "36",
+      "why": "WWF undercard from February 1995"
+    },
+    {
+      "op": "convert_to_fa_arrival",
+      "id": "jacob-blu",
+      "turn": 8,
+      "interest": "WWF",
+      "age": "33",
+      "why": "the Blu Brothers hit WWF TV, spring 1995"
+    },
+    {
+      "op": "convert_to_fa_arrival",
+      "id": "eli-blu",
+      "turn": 8,
+      "interest": "WWF",
+      "age": "31",
+      "why": "the Blu Brothers hit WWF TV, spring 1995"
+    },
+    {
+      "op": "convert_to_fa_arrival",
+      "id": "jean-pierre-lafitte",
+      "turn": 13,
+      "interest": "WWF",
+      "age": "26",
+      "why": "the pirate back in the WWF, spring 1995"
+    },
+    {
+      "op": "convert_to_fa_arrival",
+      "id": "eddy-guerrero",
+      "turn": 13,
+      "interest": "ECW",
+      "age": "27",
+      "why": "NJPW Black Tiger II and AAA star; ECW debut April 8, 1995"
+    },
+    {
+      "op": "convert_to_fa_arrival",
+      "id": "waylon-mercy",
+      "turn": 24,
+      "interest": "WWF",
+      "age": 42,
+      "why": "the sinister drifter; Raw debut July 3, 1995"
+    },
+    {
+      "op": "convert_to_fa_arrival",
+      "id": "disco-inferno",
+      "turn": 34,
+      "interest": "WCW",
+      "age": "28",
+      "why": "WCW TV debut, September 1995"
+    },
+    {
+      "op": "convert_to_fa_arrival",
+      "id": "mr-jl",
+      "turn": 34,
+      "interest": "WCW",
+      "age": "32",
+      "why": "Jerry Lynn under a mask; WCW, September 1995"
+    },
+    {
+      "op": "convert_to_fa_arrival",
+      "id": "kurasawa",
+      "turn": 36,
+      "interest": "WCW",
+      "age": "29",
+      "why": "Nakanishi under a mask; joins WCW October 1995"
+    },
+    {
+      "op": "convert_to_fa_arrival",
+      "id": "rad-radford",
+      "turn": 18,
+      "interest": "WWF",
+      "age": "25",
+      "why": "WWF debut May 13, 1995"
+    },
+    {
+      "op": "convert_to_fa_arrival",
+      "id": "phineas-godwinn",
+      "turn": 30,
+      "interest": "WWF",
+      "age": 26,
+      "why": "the Godwinns hit WWF TV, August 1995"
+    },
+    {
+      "op": "add_fa_arrival",
+      "id": "kurt-angle",
+      "turn": 233,
+      "interest": "WWF",
+      "why": "Olympic gold medallist; televised debut at Survivor Series, November 14, 1999"
+    },
+    {
+      "op": "add_fa_arrival",
+      "id": "edge",
+      "turn": 167,
+      "interest": "WWF",
+      "why": "through the crowd on Raw, June 22, 1998"
+    },
+    {
+      "op": "add_fa_arrival",
+      "id": "christian",
+      "turn": 179,
+      "interest": "WWF",
+      "why": "Light Heavyweight champion in his debut, September 27, 1998"
+    },
+    {
+      "op": "add_fa_arrival",
+      "id": "jeff-hardy",
+      "turn": 144,
+      "interest": "WWF",
+      "why": "OMEGA standout; WWF enhancement talent from 1994, signed 1998"
+    },
+    {
+      "op": "add_fa_arrival",
+      "id": "matt-hardy",
+      "turn": 144,
+      "interest": "WWF",
+      "why": "OMEGA standout; WWF enhancement talent from 1994, signed 1998"
+    },
+    {
+      "op": "add_fa_arrival",
+      "id": "d-von-dudley",
+      "turn": 61,
+      "interest": "ECW",
+      "why": "the preacher of the Dudley family; ECW debut April 13, 1996"
+    },
+    {
+      "op": "add_fa_arrival",
+      "id": "mark-henry",
+      "turn": 57,
+      "interest": "WWF",
+      "why": "Olympic weightlifter; first Raw appearance March 11, 1996"
+    },
+    {
+      "op": "add_fa_arrival",
+      "id": "rick-rude",
+      "turn": 90,
+      "interest": "ECW",
+      "why": "back from forced retirement; ECW, November 1996"
+    }
+  ],
+  "carry_over_note": "Historical data findings beyond the applied ops (the 265-finding v2 list, six v3 lists, GEN-* generator verdicts) remain authoritative as committed in v4/v5. The not-applied op groups above are the natural next pass."
+}
